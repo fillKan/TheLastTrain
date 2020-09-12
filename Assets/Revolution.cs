@@ -13,9 +13,20 @@ public class Revolution : MonoBehaviour
     [SerializeField]
     private float Speed;
 
+    private IEnumerator mEUpdate;
+
     private void OnEnable()
     {
-        StartCoroutine(EUpdate());
+        StartCoroutine(mEUpdate = EUpdate());
+    }
+    private void OnDisable()
+    {
+        if (mEUpdate != null)
+        {
+            StopCoroutine(mEUpdate);
+
+            mEUpdate = null;
+        }
     }
     private IEnumerator EUpdate()
     {

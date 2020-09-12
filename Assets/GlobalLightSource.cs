@@ -41,24 +41,24 @@ public class GlobalLightSource : MonoBehaviour
     {
         while (gameObject.activeSelf)
         {
+            // Dawn -> Noon
             if (mRevolution.Angle <= 90f)
             {
-                // Dawn -> Noon
                 mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, mRevolution.Angle / 90f);
             }
+            // Noon -> Duty
             else if (mRevolution.Angle <= 360 && mRevolution.Angle > 270)
             {
-                // Noon -> Duty
                 mLight2D.color = Color.Lerp(ColorOfDuty, ColorOfNoon, (mRevolution.Angle - 270f) / 90f);
             }
+            // Duty -> MidNight
             else if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
             {
-                // Duty -> MidNight
                 mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDuty, (mRevolution.Angle - 180f) / 90f);
             }
+            // MidNight -> Dawn
             else if (mRevolution.Angle <= 180 && mRevolution.Angle > 90)
             {
-                // MidNight -> Dawn
                 mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfMidNight, (mRevolution.Angle - 90f) / 90f);
             }
             yield return null;
