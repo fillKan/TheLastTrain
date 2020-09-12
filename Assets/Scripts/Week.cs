@@ -29,7 +29,7 @@ namespace InGame.UI.Week
     {
         [SerializeField] [Range(0.1f, 1.0f)] private float UploadTime = 1.0f;
 
-        [SerializeField] private WeekTable StartYear;
+        [SerializeField] private WeekTable InitTable;
         private WeekTable _weekTable;
         public WeekTable GetWeekTable
         {
@@ -45,12 +45,12 @@ namespace InGame.UI.Week
         public UnityEngine.UI.Text text;
         void OnEnable()
         {
-            _weekTable = StartYear;
-            StartCoroutine(WeekProcessing());
+            _weekTable = InitTable;
+            StartCoroutine(EWeekProcess());
         }
         void OnDisable()
         {
-            StopCoroutine(WeekProcessing());
+            StopCoroutine(EWeekProcess());
         }
 
         // Check Leap Year
@@ -138,7 +138,7 @@ namespace InGame.UI.Week
             //Debug.Log($"year : {_weekTable.years} month : {_weekTable.month} day : {_weekTable.day}");
             text.text = $"{_weekTable.day} - {_weekTable.month} - {_weekTable.years}";
         }
-        public IEnumerator WeekProcessing()
+        public IEnumerator EWeekProcess()
         {
             while (true)
             {
