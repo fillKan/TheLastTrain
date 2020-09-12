@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Revolution : MonoBehaviour
 {
+    public float Angle
+    { get => transform.rotation.eulerAngles.z; }
+
     private float mSpeed
     { get => Time.deltaTime * Time.timeScale * Speed; }
 
