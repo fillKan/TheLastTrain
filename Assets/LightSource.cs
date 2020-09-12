@@ -19,8 +19,9 @@ public class LightSource : MonoBehaviour
 
     [SerializeField] private Light2D mLight2D;
 
-    [SerializeField] private LightInfo LightOfMidDay;
-    [SerializeField] private LightInfo LightOfMidNight;
+    [SerializeField] private Color ColorOfDawn;
+    [SerializeField] private Color ColorOfNoon;
+    [SerializeField] private Color ColorOfDuty;
 
     private void Reset()
     {
@@ -30,32 +31,32 @@ public class LightSource : MonoBehaviour
     {
         if (mIsSun)
         {
-            if (mRevolution.Angle <= 180)
+            if (mRevolution.Angle <= 90)
             {
-                mLight2D.pointLightOuterRadius = Mathf.Lerp(LightOfMidDay.scale, LightOfMidNight.scale, mRevolution.Angle / 180);
-
-                mLight2D.color = Color.Lerp(LightOfMidDay.color, LightOfMidNight.color, mRevolution.Angle / 180);
+                // Dawn -> Noon
             }
-            else if (mRevolution.Angle <= 360)
+            else if (mRevolution.Angle <= 360 && mRevolution.Angle > 270)
             {
-                mLight2D.pointLightOuterRadius = Mathf.Lerp(LightOfMidNight.scale, LightOfMidDay.scale, (mRevolution.Angle - 180f) / 180);
-
-                mLight2D.color = Color.Lerp(LightOfMidNight.color, LightOfMidDay.color, (mRevolution.Angle - 180f) / 180);
+                // Noon -> Duty
+            }
+            else if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
+            {
+                // Duty -> Dawn
             }
         }
         else
-        {
-            if (mRevolution.Angle <= 180)
+        {  
+            if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
             {
-                mLight2D.pointLightOuterRadius = Mathf.Lerp(LightOfMidNight.scale, LightOfMidDay.scale, mRevolution.Angle / 180);
-
-                mLight2D.color = Color.Lerp(LightOfMidNight.color, LightOfMidDay.color, mRevolution.Angle / 180);
+                // Dawn -> Noon
             }
-            else if (mRevolution.Angle <= 360)
+            else if (mRevolution.Angle <= 180 && mRevolution.Angle > 90)
             {
-                mLight2D.pointLightOuterRadius = Mathf.Lerp(LightOfMidDay.scale, LightOfMidNight.scale, (mRevolution.Angle - 180f) / 180);
-
-                mLight2D.color = Color.Lerp(LightOfMidDay.color, LightOfMidNight.color, (mRevolution.Angle - 180f) / 180);
+                // Noon -> Duty
+            }
+            else if (mRevolution.Angle <= 90)
+            {
+                // Duty -> Dawn
             }
         }
     }
