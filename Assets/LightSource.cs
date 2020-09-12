@@ -24,8 +24,8 @@ public class LightSource : MonoBehaviour
     {
         float lerpAmount = 0f;
 
-        Color targetColor = Color.white;
-        Color tracerColor = Color.white;
+        Color targetColor = Color.clear;
+        Color tracerColor = Color.clear;
 
         if (mIsSun)
         {
@@ -81,6 +81,9 @@ public class LightSource : MonoBehaviour
                 lerpAmount = mRevolution.Angle / 90f;
             }
         }
-        mLight2D.color = Color.Lerp(targetColor, tracerColor, lerpAmount);
+        if (!targetColor.Equals(Color.clear) && !tracerColor.Equals(Color.clear))
+        {
+            mLight2D.color = Color.Lerp(targetColor, tracerColor, lerpAmount);
+        }       
     }
 }
