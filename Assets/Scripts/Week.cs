@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /*
  * 
  * Usage
@@ -15,21 +16,10 @@ using UnityEngine;
  *  OnEvent -= Func;
  */
 
-
 namespace InGame.UI.Week
 {
-    [System.Serializable]
-    public struct WeekTable
+    public class Week : Iinit
     {
-        public uint years;
-        public uint month;
-        public uint day;
-    }
-    public class Week : MonoBehaviour
-    {
-        [SerializeField] [Range(0.1f, 1.0f)] private float UploadTime = 1.0f;
-
-        [SerializeField] private WeekTable InitTable;
         private WeekTable _weekTable;
         public WeekTable GetWeekTable
         {
@@ -38,19 +28,20 @@ namespace InGame.UI.Week
                 return _weekTable;
             }
         }
+        public System.Action OnDayEvent = delegate { };
+        public System.Action OnMonthEvent = delegate { };
 
-        public delegate void DayEvent();
-        public static event DayEvent OnEvent = delegate { };
-
-        public UnityEngine.UI.Text text;
-        void OnEnable()
+        private GameEvent evt;
+        //Constructor
+        public Week(GameEvent evt)
         {
-            _weekTable = InitTable;
-            StartCoroutine(EWeekProcess());
+            this.evt = evt;
         }
-        void OnDisable()
+
+        //override
+        public void Initialize()
         {
-            StopCoroutine(EWeekProcess());
+            _weekTable = evt.InitWeekTable;
         }
 
         // Check Leap Year
@@ -117,6 +108,7 @@ namespace InGame.UI.Week
                     Day = 1;
                 }
             }
+
             if (IsEndOfYear(Month))
             {
                 Month = 1;
@@ -124,19 +116,30 @@ namespace InGame.UI.Week
             }
         }
 
-        //Check Event Day
-        bool IsEventDay(ref uint day)
+        //Check Day Event
+        bool IsDayEvent(uint day)
         {
             if (day == 10 || day == 20)
                 return true;
             return false;
         }
 
-        //Print Current Weeks In Console : Debug
-        void PrintConsole()
+        //Check Month Event
+        uint LastMonth = 1;
+        bool IsMonthEvent(uint month)
         {
-            //Debug.Log($"year : {_weekTable.years} month : {_weekTable.month} day : {_weekTable.day}");
-            text.text = $"{_weekTable.day} - {_weekTable.month} - {_weekTable.years}";
+            if (LastMonth != month)
+            {
+                LastMonth = month;
+                return true;
+            }
+            return false;
+        }
+
+        //Print Current Weeks In Console : Debug
+        void ApplyWeekText()
+        {
+            evt.WeekText.text = $"{_weekTable.day} - {_weekTable.month} - {_weekTable.years}";
         }
         public IEnumerator EWeekProcess()
         {
@@ -144,10 +147,13 @@ namespace InGame.UI.Week
             {
                 ++(_weekTable.day);
                 Calendar(ref (_weekTable.day), ref _weekTable.month, ref _weekTable.years);
-                if (IsEventDay(ref _weekTable.day))
-                    OnEvent();
-                PrintConsole();
-                yield return new WaitForSeconds(UploadTime);
+                if (IsDayEvent(_weekTable.day))
+                    OnDayEvent();
+                if (IsMonthEvent(_weekTable.month))
+                    OnMonthEvent();
+
+                ApplyWeekText();
+                yield return new WaitForSeconds(evt.WeekUploadTime);
             }
         }
 

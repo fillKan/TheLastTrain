@@ -22,34 +22,9 @@ using UnityEngine;
  */
 namespace InGame.UI.Resource
 {
-    [System.Serializable]
-    public struct Table
+    public class Resource : Iinit
     {
-        [Tooltip("현재 자원 수")]
-        public uint Now;
-        [Tooltip("최대 자원 수")]
-        public uint Max;
-    }
-
-
-    [System.Serializable]
-    public class ResourceTable
-    {
-        public Table populationTable;
-        public Table foodTable;
-        public Table supportResourceTable;
-    }
-
-    [System.Serializable]
-    public struct GazeTable
-    {
-        public UnityEngine.UI.Text GazeText;
-        public UnityEngine.UI.Image GazeImage;
-    }
-
-    public class Resource : MonoBehaviour
-    {
-        [SerializeField] private ResourceTable InitTable;
+        
         private ResourceTable _resourceTable;
         public ResourceTable GetResourceTable
         {
@@ -59,11 +34,19 @@ namespace InGame.UI.Resource
             }
         }
 
-        public GazeTable populationUITable;
-        public GazeTable FoodUITable;
-        public GazeTable SurpportResourceUITable;
+        private GameEvent evt;
+        //Constructor
+        public Resource(GameEvent evt)
+        {
+            this.evt = evt;
+        }
 
-        
+        //override
+        public void Initialize()
+        {
+            _resourceTable = evt.InitResourceTable;
+        }
+
         public void ApplyPopulation(uint amount = 1)
         {
             _resourceTable.populationTable.Now += amount;
@@ -109,23 +92,15 @@ namespace InGame.UI.Resource
             gazeTable.GazeText.text = $"{table.Now}/{table.Max}";
             gazeTable.GazeImage.fillAmount = ConvertPercentToPoint(ConvertPercent(table.Now, table.Max), 2);
         }
-        void OnEnable()
-        {
-            _resourceTable = InitTable;
-            StartCoroutine(EResourceProcess());
-        }
-        void OnDisable()
-        {
-            StopCoroutine(EResourceProcess());
-        }
+        
 
         public IEnumerator EResourceProcess()
         {
             while (true)
             {
-                ApplyResource(populationUITable, GetResourceTable.populationTable);
-                ApplyResource(FoodUITable, GetResourceTable.foodTable);
-                ApplyResource(SurpportResourceUITable, GetResourceTable.supportResourceTable);
+                ApplyResource(evt.populationUITable, GetResourceTable.populationTable);
+                ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
+                ApplyResource(evt.SurpportResourceUITable, GetResourceTable.supportResourceTable);
                 yield return null;
             }
         }
