@@ -34,14 +34,17 @@ public class LightSource : MonoBehaviour
             if (mRevolution.Angle <= 90)
             {
                 // Dawn -> Noon
+                mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, mRevolution.Angle / 90f);
             }
             else if (mRevolution.Angle <= 360 && mRevolution.Angle > 270)
             {
                 // Noon -> Duty
+                mLight2D.color = Color.Lerp(ColorOfDuty, ColorOfNoon, (mRevolution.Angle - 270f) / 90f);
             }
             else if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
             {
                 // Duty -> Dawn
+                mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfDuty, (mRevolution.Angle - 180f) / 90f);
             }
         }
         else
@@ -49,14 +52,17 @@ public class LightSource : MonoBehaviour
             if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
             {
                 // Dawn -> Noon
+                mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, (mRevolution.Angle - 180f) / 90f);
             }
             else if (mRevolution.Angle <= 180 && mRevolution.Angle > 90)
             {
                 // Noon -> Duty
+                mLight2D.color = Color.Lerp(ColorOfDuty, ColorOfNoon, (mRevolution.Angle - 90f) / 90f);
             }
             else if (mRevolution.Angle <= 90)
             {
                 // Duty -> Dawn
+                mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfDuty, mRevolution.Angle / 90f);
             }
         }
     }
