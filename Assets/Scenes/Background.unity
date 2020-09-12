@@ -911,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492488896}
   - component: {fileID: 1492488895}
+  - component: {fileID: 1492488897}
   m_Layer: 0
   m_Name: Global Light
   m_TagString: Untagged
@@ -973,6 +974,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492488897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492488894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb6178c954d0534d938ef7b2c64136d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mRevolution: {fileID: 434409534}
+  mLight2D: {fileID: 1492488895}
+  ColorOfDawn: {r: 0.31327873, g: 0.36609602, b: 0.6037736, a: 1}
+  ColorOfNoon: {r: 1, g: 1, b: 1, a: 1}
+  ColorOfDuty: {r: 0.082324676, g: 0.2528582, b: 0.3490566, a: 1}
+  ColorOfMidNight: {r: 0.056069765, g: 0.07075471, b: 0.14150941, a: 1}
 --- !u!1 &1885357228
 GameObject:
   m_ObjectHideFlags: 0
