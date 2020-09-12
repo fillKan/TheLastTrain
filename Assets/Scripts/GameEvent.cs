@@ -114,17 +114,20 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void DescribeDayEvent(Action action) => GetWeek.OnDayEvent -= action;
     public void SetDayEvent(Action action) => GetWeek.OnDayEvent = action;
 
-    protected override void Awake()
+    void Awake()
     {
-        base.Awake();
-
         _resource = new Resource(this);
         _week = new Week(this);
     }
     void OnEnable()
     {
-        GetWeek.Initialize();
-        GetResource.Initialize();
+        if (_resource != null && _week != null)
+        {
+            GetWeek.Initialize();
+            GetResource.Initialize();
+        }
+        else throw new NullReferenceException($"_resource, _week NullRerenceException");
+            
         StartCoroutine(GetWeek.EWeekProcess());
         StartCoroutine(GetResource.EResourceProcess());
     }
