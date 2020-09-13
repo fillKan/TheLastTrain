@@ -30,6 +30,7 @@ namespace InGame.UI.Week
         }
         public System.Action OnDayEvent = delegate { };
         public System.Action OnMonthEvent = delegate { };
+        public System.Action OnBubbleEvent = delegate { };
 
         private GameEvent evt;
         //Constructor
@@ -152,8 +153,9 @@ namespace InGame.UI.Week
                 if (IsMonthEvent(_weekTable.month))
                     OnMonthEvent();
 
+                OnBubbleEvent();
                 ApplyWeekText();
-                yield return new WaitForSeconds(evt.WeekUploadTime);
+                yield return new WaitForSeconds(evt.GetWeekUploadTime());
             }
         }
 
