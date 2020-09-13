@@ -11,7 +11,7 @@ public class GlobalLightSource : MonoBehaviour
 
     [SerializeField] private Color ColorOfDawn;
     [SerializeField] private Color ColorOfNoon;
-    [SerializeField] private Color ColorOfDuty;
+    [SerializeField] private Color ColorOfDusk;
     [SerializeField] private Color ColorOfMidNight;
 
     private IEnumerator mEUpdate;
@@ -20,7 +20,7 @@ public class GlobalLightSource : MonoBehaviour
     {
         ColorOfDawn = Color.white;
         ColorOfNoon = Color.white;
-        ColorOfDuty = Color.white;
+        ColorOfDusk = Color.white;
 
         ColorOfMidNight = Color.white;
 
@@ -49,12 +49,12 @@ public class GlobalLightSource : MonoBehaviour
             // Noon -> Duty
             else if (mRotaryBody.Angle <= 360 && mRotaryBody.Angle > 270)
             {
-                mLight2D.color = Color.Lerp(ColorOfDuty, ColorOfNoon, (mRotaryBody.Angle - 270f) / 90f);
+                mLight2D.color = Color.Lerp(ColorOfDusk, ColorOfNoon, (mRotaryBody.Angle - 270f) / 90f);
             }
             // Duty -> MidNight
             else if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
             {
-                mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDuty, (mRotaryBody.Angle - 180f) / 90f);
+                mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDusk, (mRotaryBody.Angle - 180f) / 90f);
             }
             // MidNight -> Dawn
             else if (mRotaryBody.Angle <= 180 && mRotaryBody.Angle > 90)

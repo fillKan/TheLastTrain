@@ -14,7 +14,7 @@ public class LightSource : MonoBehaviour
 
     [SerializeField] private Color ColorOfDawn;
     [SerializeField] private Color ColorOfNoon;
-    [SerializeField] private Color ColorOfDuty;
+    [SerializeField] private Color ColorOfDusk;
 
     private void Reset()
     {
@@ -40,7 +40,7 @@ public class LightSource : MonoBehaviour
             // Noon -> Duty
             else if (mRotaryBody.Angle <= 360 && mRotaryBody.Angle > 270)
             {
-                targetColor = ColorOfDuty;
+                targetColor = ColorOfDusk;
                 tracerColor = ColorOfNoon;
 
                 lerpAmount = (mRotaryBody.Angle - 270f) / 90f;
@@ -49,7 +49,7 @@ public class LightSource : MonoBehaviour
             else if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
             {
                 targetColor = ColorOfDawn;
-                tracerColor = ColorOfDuty;
+                tracerColor = ColorOfDusk;
 
                 lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
             }
@@ -67,7 +67,7 @@ public class LightSource : MonoBehaviour
             // Noon -> Duty
             else if (mRotaryBody.Angle <= 180 && mRotaryBody.Angle > 90)
             {
-                targetColor = ColorOfDuty;
+                targetColor = ColorOfDusk;
                 tracerColor = ColorOfNoon;
 
                 lerpAmount = (mRotaryBody.Angle - 90f) / 90f;
@@ -76,7 +76,7 @@ public class LightSource : MonoBehaviour
             else if (mRotaryBody.Angle <= 90)
             {
                 targetColor = ColorOfDawn;
-                tracerColor = ColorOfDuty;
+                tracerColor = ColorOfDusk;
 
                 lerpAmount = mRotaryBody.Angle / 90f;
             }
