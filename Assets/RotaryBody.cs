@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolution : MonoBehaviour
+public class RotaryBody : MonoBehaviour
 {
     public float Angle
     { get => transform.rotation.eulerAngles.z; }

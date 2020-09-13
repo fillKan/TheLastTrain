@@ -8,7 +8,7 @@ public class LightSource : MonoBehaviour
 {
     [SerializeField] private bool mIsSun;
 
-    [SerializeField] private Revolution mRevolution;
+    [SerializeField] private RotaryBody mRotaryBody;
 
     [SerializeField] private Light2D mLight2D;
 
@@ -30,55 +30,55 @@ public class LightSource : MonoBehaviour
         if (mIsSun)
         {
             // Dawn -> Noon
-            if (mRevolution.Angle <= 90)
+            if (mRotaryBody.Angle <= 90)
             {
                 targetColor = ColorOfNoon;
                 tracerColor = ColorOfDawn;
 
-                lerpAmount = mRevolution.Angle / 90f;                
+                lerpAmount = mRotaryBody.Angle / 90f;                
             }
             // Noon -> Duty
-            else if (mRevolution.Angle <= 360 && mRevolution.Angle > 270)
+            else if (mRotaryBody.Angle <= 360 && mRotaryBody.Angle > 270)
             {
                 targetColor = ColorOfDuty;
                 tracerColor = ColorOfNoon;
 
-                lerpAmount = (mRevolution.Angle - 270f) / 90f;
+                lerpAmount = (mRotaryBody.Angle - 270f) / 90f;
             }
             // Duty -> Dawn
-            else if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
+            else if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
             {
                 targetColor = ColorOfDawn;
                 tracerColor = ColorOfDuty;
 
-                lerpAmount = (mRevolution.Angle - 180f) / 90f;
+                lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
             }
         }
         else
         {
             // Dawn -> Noon
-            if (mRevolution.Angle <= 270 && mRevolution.Angle > 180)
+            if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
             {
                 targetColor = ColorOfNoon;
                 tracerColor = ColorOfDawn;
 
-                lerpAmount = (mRevolution.Angle - 180f) / 90f;
+                lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
             }
             // Noon -> Duty
-            else if (mRevolution.Angle <= 180 && mRevolution.Angle > 90)
+            else if (mRotaryBody.Angle <= 180 && mRotaryBody.Angle > 90)
             {
                 targetColor = ColorOfDuty;
                 tracerColor = ColorOfNoon;
 
-                lerpAmount = (mRevolution.Angle - 90f) / 90f;
+                lerpAmount = (mRotaryBody.Angle - 90f) / 90f;
             }
             // Duty -> Dawn
-            else if (mRevolution.Angle <= 90)
+            else if (mRotaryBody.Angle <= 90)
             {
                 targetColor = ColorOfDawn;
                 tracerColor = ColorOfDuty;
 
-                lerpAmount = mRevolution.Angle / 90f;
+                lerpAmount = mRotaryBody.Angle / 90f;
             }
         }
         if (!targetColor.Equals(Color.clear) && !tracerColor.Equals(Color.clear))
