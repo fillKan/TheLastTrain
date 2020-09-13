@@ -41,25 +41,23 @@ public class GlobalLightSource : MonoBehaviour
     {
         while (gameObject.activeSelf)
         {
-            // Dawn -> Noon
-            if (mRotaryBody.Angle <= 90f)
+            switch (mRotaryBody.GetTimeOfDay())
             {
-                mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, mRotaryBody.Angle / 90f);
-            }
-            // Noon -> Duty
-            else if (mRotaryBody.Angle <= 360 && mRotaryBody.Angle > 270)
-            {
-                mLight2D.color = Color.Lerp(ColorOfDusk, ColorOfNoon, (mRotaryBody.Angle - 270f) / 90f);
-            }
-            // Duty -> MidNight
-            else if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
-            {
-                mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDusk, (mRotaryBody.Angle - 180f) / 90f);
-            }
-            // MidNight -> Dawn
-            else if (mRotaryBody.Angle <= 180 && mRotaryBody.Angle > 90)
-            {
-                mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfMidNight, (mRotaryBody.Angle - 90f) / 90f);
+                case TimeOfDay.Dawn:
+                    mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, mRotaryBody.Angle / 90f);
+                    break;
+
+                case TimeOfDay.Noon:
+                    mLight2D.color = Color.Lerp(ColorOfDusk, ColorOfNoon, (mRotaryBody.Angle - 270f) / 90f);
+                    break;
+
+                case TimeOfDay.Dusk:
+                    mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDusk, (mRotaryBody.Angle - 180f) / 90f);
+                    break;
+
+                case TimeOfDay.MidNight:
+                    mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfMidNight, (mRotaryBody.Angle - 90f) / 90f);
+                    break;
             }
             yield return null;
         }

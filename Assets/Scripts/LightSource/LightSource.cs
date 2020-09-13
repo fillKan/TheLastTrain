@@ -29,56 +29,54 @@ public class LightSource : MonoBehaviour
 
         if (mIsSun)
         {
-            // Dawn -> Noon
-            if (mRotaryBody.Angle <= 90)
+            switch (mRotaryBody.GetTimeOfDay())
             {
-                targetColor = ColorOfNoon;
-                tracerColor = ColorOfDawn;
+                case TimeOfDay.Dawn:
+                    targetColor = ColorOfNoon;
+                    tracerColor = ColorOfDawn;
 
-                lerpAmount = mRotaryBody.Angle / 90f;                
-            }
-            // Noon -> Duty
-            else if (mRotaryBody.Angle <= 360 && mRotaryBody.Angle > 270)
-            {
-                targetColor = ColorOfDusk;
-                tracerColor = ColorOfNoon;
+                    lerpAmount = mRotaryBody.Angle / 90f;
+                    break;
 
-                lerpAmount = (mRotaryBody.Angle - 270f) / 90f;
-            }
-            // Duty -> Dawn
-            else if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
-            {
-                targetColor = ColorOfDawn;
-                tracerColor = ColorOfDusk;
+                case TimeOfDay.Noon:
+                    targetColor = ColorOfDusk;
+                    tracerColor = ColorOfNoon;
 
-                lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
+                    lerpAmount = (mRotaryBody.Angle - 270f) / 90f;
+                    break;
+
+                case TimeOfDay.Dusk:
+                    targetColor = ColorOfDawn;
+                    tracerColor = ColorOfDusk;
+
+                    lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
+                    break;
             }
         }
         else
         {
-            // Dawn -> Noon
-            if (mRotaryBody.Angle <= 270 && mRotaryBody.Angle > 180)
+            switch (mRotaryBody.GetTimeOfDay())
             {
-                targetColor = ColorOfNoon;
-                tracerColor = ColorOfDawn;
+                case TimeOfDay.Dawn:
+                    targetColor = ColorOfDawn;
+                    tracerColor = ColorOfDusk;
 
-                lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
-            }
-            // Noon -> Duty
-            else if (mRotaryBody.Angle <= 180 && mRotaryBody.Angle > 90)
-            {
-                targetColor = ColorOfDusk;
-                tracerColor = ColorOfNoon;
+                    lerpAmount = mRotaryBody.Angle / 90f;
+                    break;
 
-                lerpAmount = (mRotaryBody.Angle - 90f) / 90f;
-            }
-            // Duty -> Dawn
-            else if (mRotaryBody.Angle <= 90)
-            {
-                targetColor = ColorOfDawn;
-                tracerColor = ColorOfDusk;
+                case TimeOfDay.Dusk:
+                    targetColor = ColorOfNoon;
+                    tracerColor = ColorOfDawn;
 
-                lerpAmount = mRotaryBody.Angle / 90f;
+                    lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
+                    break;
+
+                case TimeOfDay.MidNight:
+                    targetColor = ColorOfDusk;
+                    tracerColor = ColorOfNoon;
+
+                    lerpAmount = (mRotaryBody.Angle - 90f) / 90f;
+                    break;
             }
         }
         if (!targetColor.Equals(Color.clear) && !tracerColor.Equals(Color.clear))

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TimeOfDay
+{
+    Dawn, Noon, Dusk, MidNight
+}
+
 public class RotaryBody : MonoBehaviour
 {
     public float Angle
@@ -14,6 +19,22 @@ public class RotaryBody : MonoBehaviour
     private float Speed;
 
     private IEnumerator mEUpdate;
+
+    public TimeOfDay GetTimeOfDay()
+    {
+        if (Angle <= 90) {
+            return TimeOfDay.Dawn;
+        }
+        else if (Angle <= 360 && Angle > 270) {
+            return TimeOfDay.Noon;
+        }
+        else if (Angle <= 270 && Angle > 180) {
+            return TimeOfDay.Dusk;
+        }
+        else {
+            return TimeOfDay.MidNight;
+        }        
+    }
 
     private void OnEnable()
     {
