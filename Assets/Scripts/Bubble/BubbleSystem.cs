@@ -61,47 +61,6 @@ namespace InGame.Bubble
         {
             return Camera.main.WorldToScreenPoint(vector3);
         }
-        // 각 열차칸 마다 일전 시간이 지나면 자원을 생산해야됨
-        IEnumerator BubbleCycle()
-        {
-            GameObject poolObject;
-            while (true)
-            {
-                
-                for (int i = 0; i < bubbles.Length; i++)
-                {
-                    Bubble bubble = bubbles[i];
-                    IBubble ibubble = (IBubble)bubble;
-                    int index = i % BubbleTables.Length;
-                    BubbleTables[index].bubble = bubble;
-                    BubbleTables[index].ibubble = ibubble;
-
-                    switch (bubble.GetVehicles())
-                    {
-                        case Vehicles.GUESTROOM:
-                            poolObject = m_PopulationPool.pop();
-                            poolObject.transform.position = ConvertWorldToScreenPoint(bubble.transform.position);
-                            poolObject.GetComponent<Button>().onClick.AddListener(
-                                    () => { ibubble._BubbleClicked(); });
-                            BubbleTables[index].gameobject = poolObject;
-                            break;
-                        case Vehicles.CULTIVATION:
-                            poolObject = m_FoodPool.pop();
-
-                            m_FoodPool.push(poolObject);
-                            break;
-                        case Vehicles.EDUCATION:
-                            poolObject = m_LeaderShipPool.pop();
-
-                            m_LeaderShipPool.push(poolObject);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                yield return null;
-            }
-        }
     }
 
 }
