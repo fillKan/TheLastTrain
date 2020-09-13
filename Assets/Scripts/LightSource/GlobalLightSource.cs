@@ -41,22 +41,24 @@ public class GlobalLightSource : MonoBehaviour
     {
         while (gameObject.activeSelf)
         {
+            float lerpAmount = mRotaryBody.GetPrcentOfNextTime();
+
             switch (mRotaryBody.GetTimeOfDay())
             {
                 case TimeOfDay.Dawn:
-                    mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDawn, mRotaryBody.Angle / 90f);
+                    mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfNoon, lerpAmount);
                     break;
 
                 case TimeOfDay.Noon:
-                    mLight2D.color = Color.Lerp(ColorOfDusk, ColorOfNoon, (mRotaryBody.Angle - 270f) / 90f);
+                    mLight2D.color = Color.Lerp(ColorOfNoon, ColorOfDusk, lerpAmount);
                     break;
 
                 case TimeOfDay.Dusk:
-                    mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDusk, (mRotaryBody.Angle - 180f) / 90f);
+                    mLight2D.color = Color.Lerp(ColorOfDusk, ColorOfMidNight, lerpAmount);
                     break;
 
                 case TimeOfDay.MidNight:
-                    mLight2D.color = Color.Lerp(ColorOfDawn, ColorOfMidNight, (mRotaryBody.Angle - 90f) / 90f);
+                    mLight2D.color = Color.Lerp(ColorOfMidNight, ColorOfDawn, lerpAmount);
                     break;
             }
             yield return null;

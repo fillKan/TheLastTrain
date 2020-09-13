@@ -25,15 +25,30 @@ public class RotaryBody : MonoBehaviour
         if (Angle <= 90) {
             return TimeOfDay.Dawn;
         }
-        else if (Angle <= 360 && Angle > 270) {
+        else if (Angle <= 360 && Angle >= 270) {
             return TimeOfDay.Noon;
         }
-        else if (Angle <= 270 && Angle > 180) {
+        else if (Angle <= 270 && Angle >= 180) {
             return TimeOfDay.Dusk;
         }
         else {
             return TimeOfDay.MidNight;
         }        
+    }
+    public float GetPrcentOfNextTime()
+    {
+        switch (GetTimeOfDay())
+        {
+            case TimeOfDay.Dawn:
+                return ( 90f - Angle) /  90f;
+            case TimeOfDay.Noon:
+                return (180f - (Angle - 180f)) / 90f;
+            case TimeOfDay.Dusk:
+                return (180f - (Angle -  90f)) / 90f;
+            case TimeOfDay.MidNight:
+                return ( 90f - (Angle -  90f)) / 90f;
+        }
+        return 0f;
     }
 
     private void OnEnable()

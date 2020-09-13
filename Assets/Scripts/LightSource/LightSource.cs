@@ -22,8 +22,6 @@ public class LightSource : MonoBehaviour
     }
     private void Update()
     {
-        float lerpAmount = 0f;
-
         Color targetColor = Color.clear;
         Color tracerColor = Color.clear;
 
@@ -32,24 +30,18 @@ public class LightSource : MonoBehaviour
             switch (mRotaryBody.GetTimeOfDay())
             {
                 case TimeOfDay.Dawn:
-                    targetColor = ColorOfNoon;
-                    tracerColor = ColorOfDawn;
-
-                    lerpAmount = mRotaryBody.Angle / 90f;
+                    targetColor = ColorOfDawn;
+                    tracerColor = ColorOfNoon;
                     break;
 
                 case TimeOfDay.Noon:
-                    targetColor = ColorOfDusk;
-                    tracerColor = ColorOfNoon;
-
-                    lerpAmount = (mRotaryBody.Angle - 270f) / 90f;
+                    targetColor = ColorOfNoon;
+                    tracerColor = ColorOfDusk;
                     break;
 
                 case TimeOfDay.Dusk:
-                    targetColor = ColorOfDawn;
-                    tracerColor = ColorOfDusk;
-
-                    lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
+                    targetColor = ColorOfDusk;
+                    tracerColor = ColorOfDawn;
                     break;
             }
         }
@@ -58,30 +50,24 @@ public class LightSource : MonoBehaviour
             switch (mRotaryBody.GetTimeOfDay())
             {
                 case TimeOfDay.Dawn:
-                    targetColor = ColorOfDawn;
-                    tracerColor = ColorOfDusk;
-
-                    lerpAmount = mRotaryBody.Angle / 90f;
+                    targetColor = ColorOfDusk;
+                    tracerColor = ColorOfDawn;
                     break;
 
                 case TimeOfDay.Dusk:
-                    targetColor = ColorOfNoon;
-                    tracerColor = ColorOfDawn;
-
-                    lerpAmount = (mRotaryBody.Angle - 180f) / 90f;
+                    targetColor = ColorOfDawn;
+                    tracerColor = ColorOfNoon;
                     break;
 
                 case TimeOfDay.MidNight:
-                    targetColor = ColorOfDusk;
-                    tracerColor = ColorOfNoon;
-
-                    lerpAmount = (mRotaryBody.Angle - 90f) / 90f;
+                    targetColor = ColorOfNoon;
+                    tracerColor = ColorOfDusk;
                     break;
             }
         }
         if (!targetColor.Equals(Color.clear) && !tracerColor.Equals(Color.clear))
         {
-            mLight2D.color = Color.Lerp(targetColor, tracerColor, lerpAmount);
+            mLight2D.color = Color.Lerp(targetColor, tracerColor, mRotaryBody.GetPrcentOfNextTime());
         }       
     }
 }
