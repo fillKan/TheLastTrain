@@ -44,5 +44,10 @@ public class ChoiceEvent : MonoBehaviour
             }
             // add compartment . . .
         }
+
+        if (IsEnforcementPolicy)
+        {
+            EnforcePolicy.Invoke();
+        }
     }
 }
