@@ -19,6 +19,10 @@ using InGame.UI.Resource;
  *  GameEvent.Instance.SetDayEvent(() => { Debug.Log("10일, 20일 마다 실행되는 이벤트"); });
  *  GameEvent.Instance.SetDayEvent(action);
  *  
+ *  //Set Bubble Event
+ *  GameEvent.Instance.SetBubbleEvent(() => {});
+ *  GameEvent.Instance.SetBubbleEvent(() => { Debug.Log("버블 생성 이벤트"); });
+ *  GameEvent.Instance.SetBubbleEvent(action);
  *  
  *  //Get Resource Table
  *  GameEvent.Instance.GetResource.something();
@@ -62,7 +66,7 @@ public class ResourceTable
 {
     public Table populationTable;
     public Table foodTable;
-    public Table supportResourceTable;
+    public Table leaderShipTable;
 }
 
 [System.Serializable]
@@ -92,17 +96,22 @@ public class GameEvent : MonoSingleton<GameEvent>
         }
     }
 
+    // Week Upload Time
     [Range(0.1f, 1.0f)] 
-    public float WeekUploadTime = 1.0f;
+    [SerializeField] float WeekUploadTime = 1.0f;
+    public float GetWeekUploadTime() => WeekUploadTime;
+
+    // Initialization
     public WeekTable InitWeekTable;
     public ResourceTable InitResourceTable;
 
-
+    // UI
     public UnityEngine.UI.Text WeekText;
+    public UnityEngine.UI.Text AccumulateText;
     [Space]
-    public GazeTable populationUITable;
+    public GazeTable PopulationUITable;
     public GazeTable FoodUITable;
-    public GazeTable SurpportResourceUITable;
+    public GazeTable LeaderShipUITable;
 
     
 
@@ -113,6 +122,10 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void SubscribeDayEvent(Action action) => GetWeek.OnDayEvent += action;
     public void DescribeDayEvent(Action action) => GetWeek.OnDayEvent -= action;
     public void SetDayEvent(Action action) => GetWeek.OnDayEvent = action;
+
+    public void SubscribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent += action;
+    public void DescribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent -= action;
+    public void SetBubbleEvent(Action action) => GetWeek.OnBubbleEvent = action;
 
     void Awake()
     {

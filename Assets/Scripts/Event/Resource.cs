@@ -57,9 +57,9 @@ namespace InGame.UI.Resource
             _resourceTable.foodTable.Now += amount;
         }
 
-        public void ApplySupportResource(uint amount = 1)
+        public void ApplyLeaderShip(uint amount = 1)
         {
-            _resourceTable.supportResourceTable.Now += amount;
+            _resourceTable.leaderShipTable.Now += amount;
         }
 
         #region Debug Check : Resource
@@ -70,7 +70,7 @@ namespace InGame.UI.Resource
         void Food() => ApplyFood();
 
         [ContextMenu("ApplySupportResource")]
-        void SupportResource() => ApplySupportResource();
+        void SupportResource() => ApplyLeaderShip();
 
         #endregion
 
@@ -98,9 +98,9 @@ namespace InGame.UI.Resource
         {
             while (true)
             {
-                ApplyResource(evt.populationUITable, GetResourceTable.populationTable);
+                ApplyResource(evt.PopulationUITable, GetResourceTable.populationTable);
                 ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
-                ApplyResource(evt.SurpportResourceUITable, GetResourceTable.supportResourceTable);
+                ApplyResource(evt.LeaderShipUITable, GetResourceTable.leaderShipTable);
                 yield return null;
             }
         }

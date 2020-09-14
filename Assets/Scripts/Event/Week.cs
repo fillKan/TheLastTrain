@@ -28,8 +28,19 @@ namespace InGame.UI.Week
                 return _weekTable;
             }
         }
+
+        private uint AccumulateDate = 0;
+        public uint GetAccumulateDate
+        {
+            get
+            {
+                return AccumulateDate;
+            }
+        }
+
         public System.Action OnDayEvent = delegate { };
         public System.Action OnMonthEvent = delegate { };
+        public System.Action OnBubbleEvent = delegate { };
 
         private GameEvent evt;
         //Constructor
@@ -140,20 +151,23 @@ namespace InGame.UI.Week
         void ApplyWeekText()
         {
             evt.WeekText.text = $"{_weekTable.day} - {_weekTable.month} - {_weekTable.years}";
+            evt.AccumulateText.text = GetAccumulateDate.ToString();
         }
         public IEnumerator EWeekProcess()
         {
             while (true)
             {
-                ++(_weekTable.day);
+                ++_weekTable.day;
+                ++AccumulateDate;
                 Calendar(ref (_weekTable.day), ref _weekTable.month, ref _weekTable.years);
                 if (IsDayEvent(_weekTable.day))
                     OnDayEvent();
                 if (IsMonthEvent(_weekTable.month))
                     OnMonthEvent();
 
+                OnBubbleEvent();
                 ApplyWeekText();
-                yield return new WaitForSeconds(evt.WeekUploadTime);
+                yield return new WaitForSeconds(evt.GetWeekUploadTime());
             }
         }
 
