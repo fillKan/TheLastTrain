@@ -16,7 +16,7 @@ public class ChoiceEvent : MonoBehaviour
 
     [Header("Add Compartment")]
     [SerializeField] private ResourceType AddResourceType;
-    [SerializeField] private int          AddResourceAmount;
+    [SerializeField] private uint         AddResourceAmount;
     [SerializeField] private GameObject   AddCompartment;
 
     [Header("Policy Enforcement")]
@@ -24,6 +24,25 @@ public class ChoiceEvent : MonoBehaviour
 
     public void ChooseThis()
     {
-        // To do ...
+        if (IsAdditionCompartment)
+        {
+            Resource resource = GameEvent.Instance.GetResource;
+
+            switch (AddResourceType)
+            {
+                case ResourceType.Population:
+                    resource.ApplyPopulation(AddResourceAmount);
+                    break;
+
+                case ResourceType.Food:
+                    resource.ApplyFood(AddResourceAmount);
+                    break;
+
+                case ResourceType.Support:
+                    resource.ApplySupportResource(AddResourceAmount);
+                    break;
+            }
+            // add compartment . . .
+        }
     }
 }
