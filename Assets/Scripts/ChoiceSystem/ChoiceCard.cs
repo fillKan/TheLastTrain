@@ -9,7 +9,7 @@ public enum ResourceType
     None, Population, Food, Support
 }
 
-public class ChoiceEvent : MonoBehaviour
+public class ChoiceCard : MonoBehaviour
 {
     private Resource mTrainResource;
 
