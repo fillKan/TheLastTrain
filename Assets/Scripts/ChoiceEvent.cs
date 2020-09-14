@@ -11,6 +11,8 @@ public enum ResourceType
 
 public class ChoiceEvent : MonoBehaviour
 {
+    private Resource mTrainResource;
+
     [SerializeField] private bool IsAdditionCompartment;
     [SerializeField] private bool IsEnforcementPolicy;
 
@@ -26,20 +28,21 @@ public class ChoiceEvent : MonoBehaviour
     {
         if (IsAdditionCompartment)
         {
-            Resource resource = GameEvent.Instance.GetResource;
-
+            if (mTrainResource == null) {
+                mTrainResource = GameEvent.Instance.GetResource;
+            }
             switch (AddResourceType)
             {
                 case ResourceType.Population:
-                    resource.ApplyPopulation(AddResourceAmount);
+                    mTrainResource.ApplyPopulation(AddResourceAmount);
                     break;
 
                 case ResourceType.Food:
-                    resource.ApplyFood(AddResourceAmount);
+                    mTrainResource.ApplyFood(AddResourceAmount);
                     break;
 
                 case ResourceType.Support:
-                    resource.ApplySupportResource(AddResourceAmount);
+                    mTrainResource.ApplySupportResource(AddResourceAmount);
                     break;
             }
             // add compartment . . .
