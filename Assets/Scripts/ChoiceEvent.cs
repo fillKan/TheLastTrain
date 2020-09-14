@@ -13,6 +13,11 @@ public class ChoiceEvent : MonoBehaviour
 {
     private Resource mTrainResource;
 
+    [Range(0f, 1f)]
+    [SerializeField] private float Probability;
+    public float GetProbability => Probability;
+    
+    [Space]
     [SerializeField] private bool IsAdditionCompartment;
     [SerializeField] private bool IsEnforcementPolicy;
 
