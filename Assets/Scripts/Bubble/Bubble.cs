@@ -17,40 +17,79 @@ namespace InGame.Bubble
         public int lastBubbleTime = 0;
 
         private GameObject PoolObject;
+
+        private bool IsReward { get; set; } = true;
+
+        void Reward()
+        {
+            IncreaseResourceInBubble(vehicles);
+            lastBubbleTime = 0;
+            
+            IsReward = false;
+        }
+        
+
         bool IsCompleteTimer(float currentTime, float TargetTime)
         {
             if (currentTime >= TargetTime)
                 return true;
             return false;
         }
-        private void Start()
+        private GameObject popGameObjectInPool(Vehicles vehicles)
         {
-            bubbleSystem = BubbleSystem.Instance;
-            GameEvent.Instance.SubscribeBubbleEvent(() => { BubbleTiming(); });
+            GameObject @object = null;
             switch (vehicles)
             {
                 case Vehicles.GUESTROOM:
-                    PoolObject = bubbleSystem.m_PopulationPool.pop();
+                    @object = bubbleSystem.m_PopulationPool.pop();
                     break;
                 case Vehicles.CULTIVATION:
-                    PoolObject = bubbleSystem.m_FoodPool.pop();
+                    @object = bubbleSystem.m_FoodPool.pop();
                     break;
                 case Vehicles.EDUCATION:
-                    PoolObject = bubbleSystem.m_LeaderShipPool.pop();
+                    @object = bubbleSystem.m_LeaderShipPool.pop();
                     break;
                 default:
                     break;
             }
-            PoolObject.transform.position = bubbleSystem.ConvertWorldToScreenPoint(transform.position);
-            BubbleSystem.SetActive(PoolObject, true);
-            PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => {
-                    lastBubbleTime = 0;
-                    IncreaseResourceInBubble(vehicles);
-                    PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
-                });
+            return @object;
         }
+        private void pushGameObjectInPool(Vehicles vehicles, GameObject pushObject)
+        {
+            switch (vehicles)
+            {
+                case Vehicles.GUESTROOM:
+                    bubbleSystem.m_PopulationPool.push(pushObject);
+                    break;
+                case Vehicles.CULTIVATION:
+                    bubbleSystem.m_FoodPool.push(pushObject);
+                    break;
+                case Vehicles.EDUCATION:
+                    bubbleSystem.m_LeaderShipPool.push(pushObject);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void Start()
+        {
+            bubbleSystem = BubbleSystem.Instance;
+            StartCoroutine(EInit());
+        }
+        IEnumerator EInit()
+        {
+            yield return new WaitForSeconds(bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime);
+            PoolObject = popGameObjectInPool(vehicles);
+            PoolObject.transform.position = bubbleSystem.ConvertWorldToScreenPoint(transform.position);
+            PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
+            PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
+            {
+                Reward();
+                pushGameObjectInPool(vehicles, PoolObject);
+            });
 
-        bool IsReward = true;
+            GameEvent.Instance.SubscribeBubbleEvent(() => { BubbleTiming(); });
+        }
         public void BubbleTiming()
         {
             lastBubbleTime++;
@@ -59,13 +98,19 @@ namespace InGame.Bubble
                 BubbleSystem.SetActive(PoolObject, false);
                 if (IsReward)
                 {
-                    IncreaseResourceInBubble(vehicles);
-                    lastBubbleTime = 0;
-                    IsReward = false;
+                    Reward();
+                    pushGameObjectInPool(vehicles, PoolObject);
                 }
             }
             if (IsCompleteTimer(lastBubbleTime, bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime))
             {
+                PoolObject = popGameObjectInPool(vehicles);
+                PoolObject.transform.position = bubbleSystem.ConvertWorldToScreenPoint(transform.position);
+                PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
+                PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => {
+                    Reward();
+                    pushGameObjectInPool(vehicles, PoolObject);
+                });
                 BubbleSystem.SetActive(PoolObject, true);
                 lastBubbleTime = 0;
                 IsReward = true;

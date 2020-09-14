@@ -52,6 +52,13 @@ public class objectPool
         obj.SetActive(true);
         return obj;
     }
+    public GameObject peek()
+    {
+        if (queue.Count <= 0)
+            Initalize(this.count);
+        GameObject obj = queue.Peek();
+        return obj;
+    }
     public bool IsExist(GameObject obj)
     {
         if (queue.Contains(obj))

@@ -46,9 +46,9 @@ namespace InGame.Bubble
                 , $"<color=red>GameObject '{BubbleTables[i].gameobject.name}' is Wrong</color>");
             }
 
-            m_PopulationPool = new objectPool(BubbleTables[(int)Vehicles.GUESTROOM].gameobject, 1, objectPoolParent);
-            m_FoodPool = new objectPool(BubbleTables[(int)Vehicles.CULTIVATION].gameobject, 1, objectPoolParent);
-            m_LeaderShipPool = new objectPool(BubbleTables[(int)Vehicles.EDUCATION].gameobject, 1, objectPoolParent);
+            m_PopulationPool = new objectPool(BubbleTables[(int)Vehicles.GUESTROOM].gameobject, 2, objectPoolParent);
+            m_FoodPool = new objectPool(BubbleTables[(int)Vehicles.CULTIVATION].gameobject, 5, objectPoolParent);
+            m_LeaderShipPool = new objectPool(BubbleTables[(int)Vehicles.EDUCATION].gameobject, 2, objectPoolParent);
         }
         public static bool SetActive(GameObject @object, bool active)
         {
