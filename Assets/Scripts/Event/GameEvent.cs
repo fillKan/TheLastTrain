@@ -107,6 +107,7 @@ public class GameEvent : MonoSingleton<GameEvent>
 
     // UI
     public UnityEngine.UI.Text WeekText;
+    public UnityEngine.UI.Text AccumulateText;
     [Space]
     public GazeTable PopulationUITable;
     public GazeTable FoodUITable;
