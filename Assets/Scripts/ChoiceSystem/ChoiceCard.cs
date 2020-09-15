@@ -9,6 +9,30 @@ public enum ResourceType
     None, Population, Food, LeaderShip
 }
 
+public enum Policy
+{
+    /// <summary>
+    /// 포교
+    /// </summary>
+    MissionaryWork,
+    /// <summary>
+    /// 식량 절약
+    /// </summary>
+    FoodSaving,
+    /// <summary>
+    /// 인구 감축
+    /// </summary>
+    PopulationDownSize,
+    /// <summary>
+    /// 의료 산업
+    /// </summary>
+    MedicalIndustry,
+    /// <summary>
+    /// 야간 노동
+    /// </summary>
+    ExtraWork
+}
+
 public class ChoiceCard : MonoBehaviour
 {
     private Resource mTrainResource;
