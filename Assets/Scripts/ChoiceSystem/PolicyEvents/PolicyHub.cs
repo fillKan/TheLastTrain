@@ -3,6 +3,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+public enum Policy
+{
+    /// <summary>
+    /// 포교
+    /// </summary>
+    MissionaryWork,
+    /// <summary>
+    /// 식량 절약
+    /// </summary>
+    FoodSaving,
+    /// <summary>
+    /// 인구 감축
+    /// </summary>
+    PopulationDownSize,
+    /// <summary>
+    /// 의료 산업
+    /// </summary>
+    MedicalIndustry,
+    /// <summary>
+    /// 야간 노동
+    /// </summary>
+    ExtraWork
+}
+
+
 public class PolicyHub : MonoSingleton<PolicyHub>
 {
     private Dictionary<Policy, IEnforcementable> mPolicy;
