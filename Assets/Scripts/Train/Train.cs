@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InGame.Bubble;
+using InGame.INPUT.Scroll;
+using InGameBubble = InGame.Bubble;
 
 namespace InGame.Train
 {
-    public class ScrollTrain : MonoBehaviour
+    public class Train : MonoBehaviour
     {
-        [SerializeField] private UnityEngine.UI.ScrollRect scrollRect;
+        [SerializeField] private TrainScroller trainScroller;
+
         [SerializeField] private Transform InitPos;
         [SerializeField] private GameObject GuestRoomPrefabs;
         [SerializeField] private GameObject CultivationPrefabs;
@@ -19,20 +21,22 @@ namespace InGame.Train
 
         public List<GameObject> Trains;
 
-        [SerializeField] float SpawnSpacing = 1.0f;
+        [SerializeField] float SpawnSpacing = -4;
+        [SerializeField] float ExpendMinAmount = -2.0f;
+        [SerializeField] float ExpendMaxAmount = 2.0f;
 
-        Bubble.Bubble[] bubbles;
+        InGameBubble.Bubble[] bubbles;
         private void Start()
         {
             m_GuestRoomPool = new objectPool(GuestRoomPrefabs, 4, this.transform);
             m_CultivationPool = new objectPool(CultivationPrefabs, 4, this.transform);
             m_EducationPool = new objectPool(EducationPrefabs, 4, this.transform);
 
-            bubbles = FindObjectsOfType<Bubble.Bubble>();
+            bubbles = FindObjectsOfType<InGameBubble.Bubble>();
 
 
-            SpawnTrain(Vehicles.GUESTROOM);
-            SpawnTrain(Vehicles.CULTIVATION);
+            SpawnTrain(Vehicles.GUESTROOM, true);
+            SpawnTrain(Vehicles.CULTIVATION, true);
 
         }
         float LastTrainTailPosition()
@@ -48,7 +52,20 @@ namespace InGame.Train
         }
         public void SpawnTrain(Vehicles vehicles)
         {
-            ContentsSizeUp();
+            trainScroller.ExpendLimitMinValue(ExpendMinAmount);
+            trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
+            GameObject pool = InstantiateTrain(vehicles);
+            float lastTail = LastTrainTailPosition();
+            pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
+            Trains.Add(pool);
+        }
+        public void SpawnTrain(Vehicles vehicles, bool IsInit)
+        {
+            if (!IsInit)
+            {
+                trainScroller.ExpendLimitMinValue(ExpendMinAmount);
+                trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
+            }
             GameObject pool = InstantiateTrain(vehicles);
             float lastTail = LastTrainTailPosition();
             pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
@@ -72,11 +89,6 @@ namespace InGame.Train
                     break;
             }
             return @object;
-        }
-        void ContentsSizeUp()
-        {
-            Vector2 sizeDelta = scrollRect.content.sizeDelta;
-            scrollRect.content.sizeDelta = new Vector2(sizeDelta.x + 5, sizeDelta.y);
         }
 
         [ContextMenu("TEST_SPAWN_GUESTROOM")]

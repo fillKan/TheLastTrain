@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-namespace InGame.Touch
+namespace InGame.INPUT
 {
     public enum TouchState
     {
@@ -37,7 +37,6 @@ namespace InGame.Touch
         #region InputFunctions class : TouchController
         void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("OnPointerDown");
             _inputVector = Input.mousePosition;
             _inputVector = Camera.main.ScreenToWorldPoint(_inputVector);
 
@@ -45,7 +44,6 @@ namespace InGame.Touch
         }
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
-            Debug.Log("OnDrag");
             _nextInputVector = Input.mousePosition;
             _nextInputVector = Camera.main.ScreenToWorldPoint(_nextInputVector);
 
@@ -53,7 +51,6 @@ namespace InGame.Touch
         }
         void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log("OnPointerUp");
             touchState = TouchState.Up;
         }
         #endregion
