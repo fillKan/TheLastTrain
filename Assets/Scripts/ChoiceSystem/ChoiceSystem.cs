@@ -31,19 +31,14 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     }
     private void ShowUpChoiceCards()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            if (UnityEngine.Random.value <= TrainCardProbability && TrainCards.Length > 0)
-            {
-                EnableCard(i, TrainCards);
-            }
-            else if (PolicyCards.Length > 0)
-            {
-                EnableCard(i, PolicyCards);
-            }
+        if (UnityEngine.Random.value <= TrainCardProbability && TrainCards.Length > 0) {
+            EnableCard(TrainCards);
+        }
+        else if (PolicyCards.Length > 0) {
+            EnableCard(PolicyCards);
         }
     }
-    private void EnableCard(int index, ChoiceCard[] cards)
+    private void EnableCard(ChoiceCard[] cards)
     {
         if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years > 0)
         {
@@ -57,25 +52,33 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
                 SortCardArray(TrainCards, mDayCondition = 1);
             }
         }
-        int selectIndex = 0;
-
-        float closestValue = float.MaxValue;
-
         float probability = UnityEngine.Random.value;
-        
-        for (int i = 0; i < cards.Length; i++)
+
+        int[] selectIndexes = new int[3] { int.MaxValue, int.MaxValue, int.MaxValue };
+
+        for (int i = 0; i < 3; i++)
         {
-            float close = probability - cards[i].GetProbabilities[mDayCondition];
+            float closestValue = float.MaxValue;
 
-            if (close < closestValue) {
-                selectIndex = i;
+            for (int j = 0; j < cards.Length; j++)
+            {
+                if (j == selectIndexes[Mathf.Max(0, i - 2)] || 
+                    j == selectIndexes[Mathf.Max(0, i - 1)] || 
+                    j == selectIndexes[0]) continue;
 
-                closestValue = close;
+                float close = probability - cards[j].GetProbabilities[mDayCondition];
+
+                if (close < closestValue)
+                {
+                    selectIndexes[i] = j;
+
+                    closestValue = close;
+                }
             }
-        }
-        cards[selectIndex].transform.localPosition = CadrPositions[index];
+            cards[selectIndexes[i]].transform.localPosition = CadrPositions[i];
 
-        cards[selectIndex].gameObject.SetActive(true);
+            cards[selectIndexes[i]].gameObject.SetActive(true);
+        }
     }
 
     private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
