@@ -18,9 +18,9 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
     private WeekTable mStartByWeekTable;
 
-    private void Awake()
+    private void Start()
     {
-        GameEvent.Instance.DescribeMonthEvent(ShowUpChoiceCards);
+        GameEvent.Instance.SubscribeMonthEvent(ShowUpChoiceCards);
 
         mStartByWeekTable = GameEvent.Instance.GetWeek.GetWeekTable;
     }
