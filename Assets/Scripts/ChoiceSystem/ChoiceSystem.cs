@@ -66,7 +66,7 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
                     j == selectIndexes[Mathf.Max(0, i - 1)] || 
                     j == selectIndexes[0]) continue;
 
-                float close = probability - cards[j].GetProbabilities[mDayCondition];
+                float close = Mathf.Abs(cards[j].GetProbabilities[mDayCondition] - probability);
 
                 if (close < closestValue)
                 {
@@ -74,6 +74,9 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
                     closestValue = close;
                 }
+                // 배열이 이미 정렬되어 있기 때문에, 
+                // 근사치가 더 작지 않다면 더이상 뒤의 값을 확인할 필요가 없다.
+                else break;
             }
             cards[selectIndexes[i]].transform.localPosition = CadrPositions[i];
 
