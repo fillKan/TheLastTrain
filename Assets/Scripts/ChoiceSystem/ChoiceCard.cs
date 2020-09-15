@@ -9,10 +9,15 @@ public enum ResourceType
     None, Population, Food, Support
 }
 
-public class ChoiceEvent : MonoBehaviour
+public class ChoiceCard : MonoBehaviour
 {
     private Resource mTrainResource;
 
+    [Range(0f, 1f)]
+    [SerializeField] private float[] Probabilities;
+    public float[] GetProbabilities => Probabilities;
+
+    [Space]
     [SerializeField] private bool IsAdditionCompartment;
     [SerializeField] private bool IsEnforcementPolicy;
 
@@ -47,10 +52,10 @@ public class ChoiceEvent : MonoBehaviour
             }
             // add compartment . . .
         }
-
         if (IsEnforcementPolicy)
         {
             EnforcePolicy.Invoke();
         }
+        ChoiceSystem.Instance.NotifyChooseOne();
     }
 }
