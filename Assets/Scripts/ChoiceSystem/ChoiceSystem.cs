@@ -45,7 +45,7 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     }
     private void EnableCard(int index, ChoiceCard[] cards)
     {
-        if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years >= 0)
+        if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years > 0)
         {
             if (mDayCondition != 2) {
                 SortCardArray(TrainCards, mDayCondition = 2);
@@ -80,6 +80,8 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
     private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
     {
+        Debug.Log($"Sorting : {sortingIndex}");
+
         ChoiceCard[] tempArray = new ChoiceCard[sortingArray.Length];
 
         MergeSort(sortingArray, 0, sortingArray.Length - 1, tempArray,
