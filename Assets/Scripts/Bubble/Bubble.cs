@@ -80,25 +80,15 @@ namespace InGame.Bubble
         {
             yield return new WaitForSeconds(bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime);
             PoolObject = popGameObjectInPool(vehicles);
-            PoolObject.transform.position = BubbleSystem.ConvertWorldToScreenPoint(transform.position);
+            PoolObject.transform.position = bubbleSystem.ConvertWorldToScreenPoint(transform.position);
             PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
             PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
             {
                 Reward();
                 pushGameObjectInPool(vehicles, PoolObject);
             });
-            StartCoroutine(EUpdate());
 
             GameEvent.Instance.SubscribeBubbleEvent(() => { BubbleTiming(); });
-        }
-        IEnumerator EUpdate()
-        {
-            while (true)
-            {
-                PoolObject.transform.position 
-                    = BubbleSystem.ConvertWorldToScreenPoint(transform.position);
-                yield return null;
-            }
         }
         public void BubbleTiming()
         {
@@ -115,7 +105,7 @@ namespace InGame.Bubble
             if (IsCompleteTimer(lastBubbleTime, bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime))
             {
                 PoolObject = popGameObjectInPool(vehicles);
-                PoolObject.transform.position = BubbleSystem.ConvertWorldToScreenPoint(transform.position);
+                PoolObject.transform.position = bubbleSystem.ConvertWorldToScreenPoint(transform.position);
                 PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
                 PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => {
                     Reward();
