@@ -19,8 +19,6 @@ namespace InGame.Train
         private objectPool m_CultivationPool;
         private objectPool m_EducationPool;
 
-        public List<GameObject> Trains;
-
         [SerializeField] float SpawnSpacing = -4;
         [SerializeField] float ExpendMinAmount = -2.0f;
         [SerializeField] float ExpendMaxAmount = 2.0f;
@@ -57,7 +55,6 @@ namespace InGame.Train
             GameObject pool = InstantiateTrain(vehicles);
             float lastTail = LastTrainTailPosition();
             pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
-            Trains.Add(pool);
         }
         public void SpawnTrain(Vehicles vehicles, bool IsInit)
         {
@@ -69,7 +66,6 @@ namespace InGame.Train
             GameObject pool = InstantiateTrain(vehicles);
             float lastTail = LastTrainTailPosition();
             pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
-            Trains.Add(pool);
         }
         public GameObject InstantiateTrain(Vehicles vehicles)
         {
