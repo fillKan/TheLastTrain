@@ -40,12 +40,16 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
         float probability = Random.value;
 
-        float closestValue = 0f;
+        float closestValue = float.MaxValue;
 
         for (int i = 0; i < cards.Length; i++)
         {
-            if (Mathf.Abs(cards[i].GetProbability - probability) < closestValue) {
-                closestValue = Mathf.Abs(cards[selectIndex = i].GetProbability - probability);
+            float close = probability - cards[i].GetProbability;
+
+            if (close < closestValue) {
+                selectIndex = i;
+
+                closestValue = close;
             }
         }
         cards[selectIndex].transform.localPosition = CadrPositions[index];
