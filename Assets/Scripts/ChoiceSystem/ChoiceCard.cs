@@ -6,9 +6,8 @@ using InGame.UI.Resource;
 
 public enum ResourceType
 {
-    None, Population, Food, Support
+    None, Population, Food, LeaderShip
 }
-
 public class ChoiceCard : MonoBehaviour
 {
     private Resource mTrainResource;
@@ -46,8 +45,8 @@ public class ChoiceCard : MonoBehaviour
                     mTrainResource.ApplyFood(AddResourceAmount);
                     break;
 
-                case ResourceType.Support:
-                    mTrainResource.ApplySupportResource(AddResourceAmount);
+                case ResourceType.LeaderShip:
+                    mTrainResource.ApplyLeaderShip(AddResourceAmount);
                     break;
             }
             // add compartment . . .
