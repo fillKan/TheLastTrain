@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace InGame.Bubble
+namespace InGame
 {
     public enum Vehicles
     {
@@ -11,7 +11,10 @@ namespace InGame.Bubble
         CULTIVATION,       // 재배실(FOOD)
         EDUCATION        // 교육실 (LeaderShip)
     }
+}
 
+namespace InGame.Bubble
+{
     [System.Serializable]
     public class BubbleTable
     {
@@ -57,7 +60,7 @@ namespace InGame.Bubble
                 return true;
             return false;
         }
-        public Vector3 ConvertWorldToScreenPoint(Vector3 vector3)
+        public static Vector3 ConvertWorldToScreenPoint(Vector3 vector3)
         {
             return Camera.main.WorldToScreenPoint(vector3);
         }
