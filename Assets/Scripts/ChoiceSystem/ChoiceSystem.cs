@@ -17,12 +17,25 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     [SerializeField]
     private ChoiceCard[] PolicyCards;
 
+    private ChoiceCard[] mChooseCards;
+
     private WeekTable mStartByWeekTable;
 
     private int mDayCondition;
 
+    public void NotifyChooseOne()
+    {
+        for (int i = 0; i < mChooseCards.Length; i++)
+        {
+            mChooseCards[i].gameObject.SetActive(false);
+
+            mChooseCards[i] = null;
+        }
+    }
     private void Start()
     {
+        mChooseCards = new ChoiceCard[3];
+
         GameEvent.Instance.SubscribeMonthEvent(ShowUpChoiceCards);
 
         mStartByWeekTable = GameEvent.Instance.GetWeek.GetWeekTable;
@@ -78,9 +91,11 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
                 // 근사치가 더 작지 않다면 더이상 뒤의 값을 확인할 필요가 없다.
                 else break;
             }
-            cards[selectIndexes[i]].transform.localPosition = CadrPositions[i];
+            mChooseCards[i] = cards[selectIndexes[i]];
 
-            cards[selectIndexes[i]].gameObject.SetActive(true);
+            mChooseCards[i].transform.localPosition = CadrPositions[i];
+
+            mChooseCards[i].gameObject.SetActive(true);
         }
     }
 

@@ -52,10 +52,10 @@ public class ChoiceCard : MonoBehaviour
             }
             // add compartment . . .
         }
-
         if (IsEnforcementPolicy)
         {
             EnforcePolicy.Invoke();
         }
+        ChoiceSystem.Instance.NotifyChooseOne();
     }
 }
