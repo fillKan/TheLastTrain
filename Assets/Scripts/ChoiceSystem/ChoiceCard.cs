@@ -47,7 +47,7 @@ public class ChoiceCard : MonoBehaviour
 
     [Header("Add Compartment")]
     [SerializeField] private ResourceType AddResourceType;
-    [SerializeField] private uint         AddResourceAmount;
+    [SerializeField] private int          AddResourceAmount;
     [SerializeField] private GameObject   AddCompartment;
 
     [Header("Policy Enforcement")]
