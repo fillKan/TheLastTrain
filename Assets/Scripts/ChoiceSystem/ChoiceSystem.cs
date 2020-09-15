@@ -19,15 +19,15 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
     private WeekTable mStartByWeekTable;
 
+    private int mDayCondition;
+
     private void Start()
     {
         GameEvent.Instance.SubscribeMonthEvent(ShowUpChoiceCards);
 
         mStartByWeekTable = GameEvent.Instance.GetWeek.GetWeekTable;
 
-        ChoiceCard[] tempArray = new ChoiceCard[TrainCards.Length];
-
-        MergeSort(TrainCards, 0, TrainCards.Length - 1, tempArray, (A, B) => A.GetProbabilities[0] < B.GetProbabilities[0]);
+        SortCardArray(TrainCards, mDayCondition = 0);
     }
     private void ShowUpChoiceCards()
     {
@@ -45,23 +45,27 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     }
     private void EnableCard(int index, ChoiceCard[] cards)
     {
+        if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years >= 0)
+        {
+            if (mDayCondition != 2) {
+                SortCardArray(TrainCards, mDayCondition = 2);
+            }
+        }
+        else if (GameEvent.Instance.GetWeek.GetWeekTable.month - mStartByWeekTable.month >= 6)
+        {
+            if (mDayCondition != 1) {
+                SortCardArray(TrainCards, mDayCondition = 1);
+            }
+        }
         int selectIndex = 0;
-
-        float probability = UnityEngine.Random.value;
 
         float closestValue = float.MaxValue;
 
-        int dayCondition = 0;
-
-        if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years >= 0)
-        { dayCondition = 2; }
-        else 
-        if (GameEvent.Instance.GetWeek.GetWeekTable.month - mStartByWeekTable.month >= 6)
-        { dayCondition = 1; }
-
+        float probability = UnityEngine.Random.value;
+        
         for (int i = 0; i < cards.Length; i++)
         {
-            float close = probability - cards[i].GetProbabilities[dayCondition];
+            float close = probability - cards[i].GetProbabilities[mDayCondition];
 
             if (close < closestValue) {
                 selectIndex = i;
@@ -72,6 +76,14 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
         cards[selectIndex].transform.localPosition = CadrPositions[index];
 
         cards[selectIndex].gameObject.SetActive(true);
+    }
+
+    private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
+    {
+        ChoiceCard[] tempArray = new ChoiceCard[sortingArray.Length];
+
+        MergeSort(sortingArray, 0, sortingArray.Length - 1, tempArray,
+            (A, B) => A.GetProbabilities[sortingIndex] < B.GetProbabilities[sortingIndex]);
     }
 
     void MergeSort<T>(T []sortingArray, int lowIndex, int highIndex, T []tempArray, Func<T,T,bool> isRValueBigger)
