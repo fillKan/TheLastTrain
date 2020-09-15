@@ -16,9 +16,13 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     [SerializeField]
     private ChoiceCard[] PolicyCards;
 
+    private WeekTable mStartByWeekTable;
+
     private void Awake()
     {
         GameEvent.Instance.DescribeMonthEvent(ShowUpChoiceCards);
+
+        mStartByWeekTable = GameEvent.Instance.GetWeek.GetWeekTable;
     }
     private void ShowUpChoiceCards()
     {
@@ -42,9 +46,17 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
         float closestValue = float.MaxValue;
 
+        int dayCondition = 0;
+
+        if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years >= 0)
+        { dayCondition = 2; }
+        else 
+        if (GameEvent.Instance.GetWeek.GetWeekTable.month - mStartByWeekTable.month >= 6)
+        { dayCondition = 1; }
+
         for (int i = 0; i < cards.Length; i++)
         {
-            float close = probability - cards[i].GetProbability;
+            float close = probability - cards[i].GetProbabilities[dayCondition];
 
             if (close < closestValue) {
                 selectIndex = i;

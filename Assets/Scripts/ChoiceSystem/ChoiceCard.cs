@@ -14,9 +14,9 @@ public class ChoiceCard : MonoBehaviour
     private Resource mTrainResource;
 
     [Range(0f, 1f)]
-    [SerializeField] private float Probability;
-    public float GetProbability => Probability;
-    
+    [SerializeField] private float[] Probabilities;
+    public float[] GetProbabilities => Probabilities;
+
     [Space]
     [SerializeField] private bool IsAdditionCompartment;
     [SerializeField] private bool IsEnforcementPolicy;
