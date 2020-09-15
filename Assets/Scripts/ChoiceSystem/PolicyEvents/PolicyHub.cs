@@ -1,9 +1,41 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
-public class PolicyData : MonoSingleton<PolicyData>
+public class PolicyHub : MonoSingleton<PolicyHub>
 {
+    private Dictionary<Policy, IEnforcementable> mPolicy;
 
+    public bool Enforce(Policy policy)
+    {
+        bool canEnforce;
+
+        if (canEnforce = mPolicy.ContainsKey(policy)) {
+            mPolicy[policy].Enforce();
+        }
+        return canEnforce;
+    }
+
+    private void Awake()
+    {
+        mPolicy = new Dictionary<Policy, IEnforcementable>();
+
+        mPolicy.Add(Policy.MissionaryWork, 
+                       new MissionaryWork());
+
+        mPolicy.Add(Policy.FoodSaving, 
+                       new FoodSaving());
+
+        mPolicy.Add(Policy.PopulationDownSize, 
+                       new PopulationDownSize());
+
+        mPolicy.Add(Policy.MedicalIndustry, 
+                       new MedicalIndustry());
+
+        mPolicy.Add(Policy.ExtraWork, 
+                       new ExtraWork());
+    }
 }
 public interface IEnforcementable
 {
