@@ -822,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475210159e058874e9f6ddc0e9103e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirectAnimation: {fileID: 832345665}
   TrainCardProbability: 0.8
   CadrPositions:
   - {x: -250, y: 0}
@@ -1153,7 +1154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &832345664
 RectTransform:
   m_ObjectHideFlags: 0
