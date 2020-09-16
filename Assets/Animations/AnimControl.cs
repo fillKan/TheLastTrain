@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class AnimControl : MonoBehaviour
 {
+    public string PlaySpeed;
+
+    private Animator mAnimator;
+
+    private void Caching()
+    {
+        if (mAnimator == null) {
+            Debug.Assert(TryGetComponent(out mAnimator));
+        }
+    }
     public void Disable()
     {
-        if (gameObject.TryGetComponent(out Animator animator)) {
-            if (animator.GetFloat("PlaySpeed") == -1)
-            {
-                
-                gameObject.SetActive(false);
-            }
+        Caching();
+
+        if (mAnimator.GetFloat(PlaySpeed.GetHashCode()) < 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
