@@ -31,6 +31,12 @@ public enum Policy
 
 public class PolicyHub : MonoSingleton<PolicyHub>
 {
+    [SerializeField] private Sprite IConMissionaryWork;
+    [SerializeField] private Sprite IConFoodSaving;
+    [SerializeField] private Sprite IConPopulationDownSize;
+    [SerializeField] private Sprite IConMedicalIndustry;
+    [SerializeField] private Sprite IConExtraWork;
+
     private Dictionary<Policy, IEnforcementable> mPolicy;
 
     public bool Enforce(Policy policy)
@@ -41,6 +47,28 @@ public class PolicyHub : MonoSingleton<PolicyHub>
             mPolicy[policy].Enforce();
         }
         return canEnforce;
+    }
+
+    public Sprite GetPolicyICon(Policy policy)
+    {
+        switch (policy)
+        {
+            case Policy.MissionaryWork:
+                return IConMissionaryWork;
+
+            case Policy.FoodSaving:
+                return IConFoodSaving;
+
+            case Policy.PopulationDownSize:
+                return IConPopulationDownSize;
+
+            case Policy.MedicalIndustry:
+                return IConMedicalIndustry;
+
+            case Policy.ExtraWork:
+                return IConExtraWork;
+        }
+        return null;
     }
 
     private void Awake()
