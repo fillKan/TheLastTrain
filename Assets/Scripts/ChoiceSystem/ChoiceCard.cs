@@ -8,6 +8,10 @@ public enum ResourceType
 {
     None, Population, Food, LeaderShip
 }
+public enum WhatToAdd
+{
+    Max, Now
+}
 public class ChoiceCard : MonoBehaviour
 {
     private Resource mTrainResource;
@@ -22,11 +26,12 @@ public class ChoiceCard : MonoBehaviour
 
     [Header("Add Compartment")]
     [SerializeField] private ResourceType AddResourceType;
-    [SerializeField] private uint         AddResourceAmount;
+    [SerializeField] private int          AddResourceAmount;
+    [SerializeField] private WhatToAdd    AddResourceWhatTo;
     [SerializeField] private GameObject   AddCompartment;
 
     [Header("Policy Enforcement")]
-    [SerializeField] private UnityEvent EnforcePolicy;
+    [SerializeField] private Policy EnforcePolicy;
 
     public void ChooseThis()
     {
@@ -35,25 +40,49 @@ public class ChoiceCard : MonoBehaviour
             if (mTrainResource == null) {
                 mTrainResource = GameEvent.Instance.GetResource;
             }
-            switch (AddResourceType)
+            switch (AddResourceWhatTo)
             {
-                case ResourceType.Population:
-                    mTrainResource.ApplyPopulation(AddResourceAmount);
-                    break;
+                case WhatToAdd.Max:
+                    switch (AddResourceType)
+                    {
+                        case ResourceType.Population:
+                            GameEvent.Instance.InitResourceTable.populationTable.Max = 
+                            (uint)Mathf.Max(0, GameEvent.Instance.InitResourceTable.populationTable.Max + AddResourceAmount);
+                            break;
 
-                case ResourceType.Food:
-                    mTrainResource.ApplyFood(AddResourceAmount);
-                    break;
+                        case ResourceType.Food:
+                            GameEvent.Instance.InitResourceTable.foodTable.Max =
+                            (uint)Mathf.Max(0, GameEvent.Instance.InitResourceTable.foodTable.Max + AddResourceAmount);
+                            break;
 
-                case ResourceType.LeaderShip:
-                    mTrainResource.ApplyLeaderShip(AddResourceAmount);
+                        case ResourceType.LeaderShip:
+                            GameEvent.Instance.InitResourceTable.leaderShipTable.Max =
+                            (uint)Mathf.Max(0, GameEvent.Instance.InitResourceTable.leaderShipTable.Max + AddResourceAmount);
+                            break;
+                    }
+                    break;
+                case WhatToAdd.Now:
+                    switch (AddResourceType)
+                    {
+                        case ResourceType.Population:
+                            mTrainResource.ApplyPopulation(AddResourceAmount);
+                            break;
+
+                        case ResourceType.Food:
+                            mTrainResource.ApplyFood(AddResourceAmount);
+                            break;
+
+                        case ResourceType.LeaderShip:
+                            mTrainResource.ApplyLeaderShip(AddResourceAmount);
+                            break;
+                    }
                     break;
             }
             // add compartment . . .
         }
         if (IsEnforcementPolicy)
         {
-            EnforcePolicy.Invoke();
+            PolicyHub.Instance.Enforce(EnforcePolicy);
         }
         ChoiceSystem.Instance.NotifyChooseOne();
     }
