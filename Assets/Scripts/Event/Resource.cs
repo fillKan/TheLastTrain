@@ -49,19 +49,22 @@ namespace InGame.UI.Resource
             _foodController = new FoodControl(this);
         }
 
-        public void ApplyPopulation(uint amount = 1)
+        public void ApplyPopulation(int amount = 1)
         {
-            _resourceTable.populationTable.Now += amount;
+            _resourceTable.populationTable.Now =
+            (uint)Mathf.Max(0, _resourceTable.populationTable.Now + amount);
         }
 
-        public void ApplyFood(uint amount = 1)
+        public void ApplyFood(int amount = 1)
         {
-            _resourceTable.foodTable.Now += amount;
+            _resourceTable.foodTable.Now =
+            (uint)Mathf.Max(0, _resourceTable.foodTable.Now + amount);
         }
 
-        public void ApplyLeaderShip(uint amount = 1)
+        public void ApplyLeaderShip(int amount = 1)
         {
-            _resourceTable.leaderShipTable.Now += amount;
+            _resourceTable.leaderShipTable.Now =
+            (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Now + amount);
         }
 
         #region Debug Check : Resource
