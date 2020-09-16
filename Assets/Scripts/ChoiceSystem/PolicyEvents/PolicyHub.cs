@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public enum Policy
 {
+    None,
     /// <summary>
     /// 포교
     /// </summary>
