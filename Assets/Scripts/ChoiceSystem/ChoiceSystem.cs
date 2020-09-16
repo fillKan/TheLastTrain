@@ -97,6 +97,7 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
             mChooseCards[i].gameObject.SetActive(true);
         }
+
     }
 
     private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
