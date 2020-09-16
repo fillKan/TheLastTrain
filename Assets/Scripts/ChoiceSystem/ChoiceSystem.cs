@@ -5,6 +5,9 @@ using System;
 
 public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 {
+    [SerializeField]
+    private Animator DirectAnimation;
+
     [SerializeField] [Range(0f, 1f)]
     private float TrainCardProbability;
 
@@ -22,15 +25,18 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     private WeekTable mStartByWeekTable;
 
     private int mDayCondition;
-
     public void NotifyChooseOne()
     {
+        DirectAnimation.SetFloat("PlaySpeed", -1.0f);
+
         for (int i = 0; i < mChooseCards.Length; i++)
         {
-            mChooseCards[i].gameObject.SetActive(false);
-
+            if (mChooseCards[i].TryGetComponent(out Animator animator)) {
+                animator.SetFloat("PlaySpeed", -1.0f);
+            }
             mChooseCards[i] = null;
         }
+        Time.timeScale = 1f;
     }
     private void Start()
     {
@@ -53,6 +59,9 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     }
     private void EnableCard(ChoiceCard[] cards)
     {
+        DirectAnimation.gameObject.SetActive(true);
+        DirectAnimation.SetFloat("PlaySpeed", 1.0f);
+
         if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years > 0)
         {
             if (mDayCondition != 2) {
@@ -97,8 +106,8 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
             mChooseCards[i].gameObject.SetActive(true);
         }
-    }
 
+    }
     private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
     {
         Debug.Log($"Sorting : {sortingIndex}");
