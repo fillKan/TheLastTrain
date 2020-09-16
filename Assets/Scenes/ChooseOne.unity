@@ -1154,7 +1154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &832345664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3424,6 +3424,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_TrainGuestRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158824814864509723, guid: 61853a0c557ffd449999c2fc1f83fbdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158824814864509727, guid: 61853a0c557ffd449999c2fc1f83fbdc,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61853a0c557ffd449999c2fc1f83fbdc, type: 3}

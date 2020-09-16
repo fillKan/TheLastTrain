@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1461434024046465901}
   - component: {fileID: 1461434024046465900}
   - component: {fileID: 1461434024046465903}
+  - component: {fileID: -1415847015156909693}
   m_Layer: 5
   m_Name: CHOICE_Policy
   m_TagString: Untagged
@@ -142,3 +143,22 @@ MonoBehaviour:
   AddResourceWhatTo: 0
   AddCompartment: {fileID: 0}
   EnforcePolicy: 0
+--- !u!95 &-1415847015156909693
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461434024046465905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6084bb34e0c6b684795b70b7361cee45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
