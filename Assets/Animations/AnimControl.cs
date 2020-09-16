@@ -18,7 +18,7 @@ public class AnimControl : MonoBehaviour
     {
         Caching();
 
-        if (mAnimator.GetFloat(PlaySpeed.GetHashCode()) < 0)
+        if (mAnimator.GetFloat(PlaySpeed) < 0)
         {
             gameObject.SetActive(false);
         }
