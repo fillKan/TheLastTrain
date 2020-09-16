@@ -115,7 +115,7 @@ namespace InGame.UI.Resource
         // Show Table State In InGame Scene
         void ApplyResource(GazeTable gazeTable, Table table)
         {
-            gazeTable.GazeText.text = $"{table.Now}/{table.Max}";
+            gazeTable.GazeText.text = $"{table.Now} / {table.Max}";
             gazeTable.GazeImage.fillAmount = ConvertPercentToPoint(ConvertPercent(table.Now, table.Max), 2);
         }
         
