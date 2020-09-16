@@ -31,8 +31,9 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
 
         for (int i = 0; i < mChooseCards.Length; i++)
         {
-            mChooseCards[i].gameObject.SetActive(false);
-
+            if (mChooseCards[i].TryGetComponent(out Animator animator)) {
+                animator.SetFloat("PlaySpeed", -1.0f);
+            }
             mChooseCards[i] = null;
         }
     }
