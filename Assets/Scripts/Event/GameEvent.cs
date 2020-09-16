@@ -123,6 +123,8 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void DescribeDayEvent(Action action) => GetWeek.OnDayEvent -= action;
     public void SetDayEvent(Action action) => GetWeek.OnDayEvent = action;
 
+    public void SetSixDayEvent(Action action) => GetWeek.OnSixDayEvent = action;
+
     public void SubscribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent += action;
     public void DescribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent -= action;
     public void SetBubbleEvent(Action action) => GetWeek.OnBubbleEvent = action;

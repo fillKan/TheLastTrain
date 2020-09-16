@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,9 +39,10 @@ namespace InGame.UI.Week
             }
         }
 
-        public System.Action OnDayEvent = delegate { };
-        public System.Action OnMonthEvent = delegate { };
-        public System.Action OnBubbleEvent = delegate { };
+        public Action OnDayEvent = delegate { };
+        public Action OnSixDayEvent = delegate { };
+        public Action OnMonthEvent = delegate { };
+        public Action OnBubbleEvent = delegate { };
 
         private GameEvent evt;
         //Constructor
@@ -153,6 +155,28 @@ namespace InGame.UI.Week
             evt.WeekText.text = $"{_weekTable.day} - {_weekTable.month} - {_weekTable.years}";
             evt.AccumulateText.text = GetAccumulateDate.ToString();
         }
+
+        bool SetSpecificDayEvent(uint specificDay, uint currentDay)
+        {
+            if (currentDay % specificDay == 0)
+                return true;
+            return false;
+        }
+
+        bool OnEvent()
+        {
+            if (IsDayEvent(_weekTable.day))
+                OnDayEvent();
+            if (IsMonthEvent(_weekTable.month))
+                OnMonthEvent();
+
+            if (SetSpecificDayEvent(6, _weekTable.day))
+                OnSixDayEvent();
+
+            OnBubbleEvent();
+            return true;
+        }
+
         public IEnumerator EWeekProcess()
         {
             while (true)
@@ -160,12 +184,9 @@ namespace InGame.UI.Week
                 ++_weekTable.day;
                 ++AccumulateDate;
                 Calendar(ref (_weekTable.day), ref _weekTable.month, ref _weekTable.years);
-                if (IsDayEvent(_weekTable.day))
-                    OnDayEvent();
-                if (IsMonthEvent(_weekTable.month))
-                    OnMonthEvent();
 
-                OnBubbleEvent();
+                OnEvent();
+
                 ApplyWeekText();
                 yield return new WaitForSeconds(evt.GetWeekUploadTime());
             }

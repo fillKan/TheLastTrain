@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using InGame.UI.Resource.Control;
 
 /*
  * 
@@ -41,10 +41,15 @@ namespace InGame.UI.Resource
             this.evt = evt;
         }
 
+        FoodControl _foodController;
         //override
         public void Initialize()
         {
             _resourceTable = evt.InitResourceTable;
+
+            _foodController = new FoodControl(this);
+
+            evt.SetSixDayEvent(_foodController.FoodBalance);
         }
 
         public void ApplyPopulation(int amount = 1)
@@ -65,6 +70,24 @@ namespace InGame.UI.Resource
             (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Now + amount);
         }
 
+        public void ApplyMaxPopulation(int amount = 1)
+        {
+            _resourceTable.populationTable.Max =
+            (uint)Mathf.Max(0, _resourceTable.populationTable.Max + amount);
+        }
+
+        public void ApplyMaxFood(int amount = 1)
+        {
+            _resourceTable.foodTable.Max =
+            (uint)Mathf.Max(0, _resourceTable.foodTable.Max + amount);
+        }
+
+        public void ApplyMaxLeaderShip(int amount = 1)
+        {
+            _resourceTable.leaderShipTable.Max =
+            (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Max + amount);
+        }
+
         #region Debug Check : Resource
         [ContextMenu("ApplyPopulation")]
         void Population() => ApplyPopulation();
@@ -78,7 +101,7 @@ namespace InGame.UI.Resource
         #endregion
 
         //Convert Percent To Resource Table
-        short ConvertPercent(uint now, uint max)
+        public short ConvertPercent(uint now, uint max)
         {
             return (short)(((float)now / max) * 100);
         }
@@ -92,7 +115,7 @@ namespace InGame.UI.Resource
         // Show Table State In InGame Scene
         void ApplyResource(GazeTable gazeTable, Table table)
         {
-            gazeTable.GazeText.text = $"{table.Now}/{table.Max}";
+            gazeTable.GazeText.text = $"{table.Now} / {table.Max}";
             gazeTable.GazeImage.fillAmount = ConvertPercentToPoint(ConvertPercent(table.Now, table.Max), 2);
         }
         
