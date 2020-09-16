@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using InGame.UI.Resource.Control;
 
 /*
  * 
@@ -41,10 +41,12 @@ namespace InGame.UI.Resource
             this.evt = evt;
         }
 
+        FoodControl _foodController;
         //override
         public void Initialize()
         {
             _resourceTable = evt.InitResourceTable;
+            _foodController = new FoodControl(this);
         }
 
         public void ApplyPopulation(uint amount = 1)
@@ -75,7 +77,7 @@ namespace InGame.UI.Resource
         #endregion
 
         //Convert Percent To Resource Table
-        short ConvertPercent(uint now, uint max)
+        public short ConvertPercent(uint now, uint max)
         {
             return (short)(((float)now / max) * 100);
         }
@@ -101,6 +103,8 @@ namespace InGame.UI.Resource
                 ApplyResource(evt.PopulationUITable, GetResourceTable.populationTable);
                 ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
                 ApplyResource(evt.LeaderShipUITable, GetResourceTable.leaderShipTable);
+
+                _foodController.FoodBalance();
                 yield return null;
             }
         }

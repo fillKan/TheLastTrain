@@ -292,6 +292,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Engine Vehicle
       objectReference: {fileID: 0}
+    - target: {fileID: 6308101585312661826, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308101585312661826, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d08e562d72f5d44b4b0c0ba5436e62, type: 3}
 --- !u!1 &273603792
@@ -516,7 +526,6 @@ MonoBehaviour:
     type: 3}
   EducationPrefabs: {fileID: 1437273658961823039, guid: f8cbda7ccde428f4b8a459a1226eff63,
     type: 3}
-  Trains: []
   SpawnSpacing: -4
   ExpendMinAmount: -0.5
   ExpendMaxAmount: 5
