@@ -23,4 +23,14 @@ public class AnimControl : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    public void Pause()
+    {
+        Caching();
+
+        if (mAnimator.GetFloat(PlaySpeed) > 0)
+        {
+            Time.timeScale = 0f;
+        }
+    }
 }

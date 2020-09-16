@@ -36,6 +36,7 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
             }
             mChooseCards[i] = null;
         }
+        Time.timeScale = 1f;
     }
     private void Start()
     {
