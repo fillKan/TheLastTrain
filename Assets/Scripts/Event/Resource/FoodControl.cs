@@ -25,7 +25,6 @@ namespace InGame.UI.Resource.Control
         P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P,       // 26 ~ 50%
         P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P,       // 51 ~ 75%
         P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P,      // 76 ~ 100%
-        P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_EX_100_P          // 100% < N
     }
 
     public class FoodControl : MonoBehaviour
@@ -59,16 +58,13 @@ namespace InGame.UI.Resource.Control
         {
             if (population_Val < foodCnt)
                 return -1;
+            Debug.Log(res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt)));
             return res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt));
         }
 
         bool CheckFoodDiffToPercent(short percent)
         {
             return (FoodDiffToPercent() != EXCEPTION_KEY && FoodDiffToPercent() <= percent);
-        }
-        bool CheckEXFoodDiffToPercent(short percent)
-        {
-            return (FoodDiffToPercent() != EXCEPTION_KEY && FoodDiffToPercent() > percent);
         }
         public void FoodBalance()
         {
@@ -84,23 +80,36 @@ namespace InGame.UI.Resource.Control
             {
                 foodBalanceType = FoodBalanceType.P_HIGHER_THAN_BV;
                 if (CheckFoodDiffToPercent(25))
-                    foodBalanceType 
+                    foodBalanceType
                         = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P;
                 else if (CheckFoodDiffToPercent(50))
-                    foodBalanceType 
+                    foodBalanceType
                         = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P;
                 else if (CheckFoodDiffToPercent(75))
-                    foodBalanceType 
+                    foodBalanceType
                         = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P;
                 else if (CheckFoodDiffToPercent(100))
-                    foodBalanceType 
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P;
-                else if (CheckEXFoodDiffToPercent(100)) 
                     foodBalanceType
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_EX_100_P;
+                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P;
             }
 
-            Debug.Log(foodBalanceType);
+            switch (foodBalanceType)
+            {
+                case FoodBalanceType.NORMAL:
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV:
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P:
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P:
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P:
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
