@@ -25,7 +25,6 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
     private WeekTable mStartByWeekTable;
 
     private int mDayCondition;
-
     public void NotifyChooseOne()
     {
         DirectAnimation.SetFloat("PlaySpeed", -1.0f);
@@ -107,7 +106,6 @@ public class ChoiceSystem : MonoSingleton<ChoiceSystem>
         }
 
     }
-
     private void SortCardArray(ChoiceCard[] sortingArray, int sortingIndex)
     {
         Debug.Log($"Sorting : {sortingIndex}");
