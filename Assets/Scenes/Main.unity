@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 6308101584250397916, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308101584250397916, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
         type: 3}
@@ -291,16 +291,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Engine Vehicle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6308101585312661826, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 6308101585312661826, guid: 32d08e562d72f5d44b4b0c0ba5436e62,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d08e562d72f5d44b4b0c0ba5436e62, type: 3}
@@ -337,9 +327,9 @@ RectTransform:
   m_Father: {fileID: 1732917975}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -319.6, y: 159.56}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.399994, y: -45.440002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &308171048
@@ -524,7 +514,7 @@ MonoBehaviour:
     type: 3}
   CultivationPrefabs: {fileID: 6893731148709510031, guid: d957b8be88c58c94d8a6fb2063c0ace8,
     type: 3}
-  EducationPrefabs: {fileID: 1437273658961823039, guid: f8cbda7ccde428f4b8a459a1226eff63,
+  EducationPrefabs: {fileID: 8688743024970852424, guid: f8cbda7ccde428f4b8a459a1226eff63,
     type: 3}
   SpawnSpacing: -4
   ExpendMinAmount: -0.5
@@ -628,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527257364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6499952, y: -1.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -732,7 +722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830542616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6499952, y: -1.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -847,9 +837,9 @@ RectTransform:
   m_Father: {fileID: 1732917975}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 281.4, y: 177.4}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -82.600006, y: -27.600006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1050650997
@@ -1527,7 +1517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

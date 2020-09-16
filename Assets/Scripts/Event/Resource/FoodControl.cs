@@ -27,7 +27,7 @@ namespace InGame.UI.Resource.Control
         P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P,      // 76 ~ 100%
     }
 
-    public class FoodControl : MonoBehaviour
+    public class FoodControl
     {
         private Resource res;
 
@@ -58,13 +58,67 @@ namespace InGame.UI.Resource.Control
         {
             if (population_Val < foodCnt)
                 return -1;
-            Debug.Log(res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt)));
+
             return res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt));
         }
 
         bool CheckFoodDiffToPercent(short percent)
         {
             return (FoodDiffToPercent() != EXCEPTION_KEY && FoodDiffToPercent() <= percent);
+        }
+        FoodBalanceType FoodBalanceStatus()
+        {
+            FoodBalanceType type = FoodBalanceType.NORMAL;
+            if (IsNormal())
+                type = FoodBalanceType.NORMAL;
+            else if (IsOverPopulationBaseValue())
+            {
+                type = FoodBalanceType.P_HIGHER_THAN_BV;
+
+                if (CheckFoodDiffToPercent(25))
+                    type
+                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P;
+                else if (CheckFoodDiffToPercent(50))
+                    type
+                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P;
+                else if (CheckFoodDiffToPercent(75))
+                    type
+                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P;
+                else if (CheckFoodDiffToPercent(100))
+                    type
+                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P;
+            }
+            return type;
+        }
+        float CalculateFoodBalance(uint population_BaseValue)
+        {
+            float offset = 0.0f;
+
+            switch (foodBalanceType)
+            {
+                case FoodBalanceType.NORMAL:
+                    offset = -0.1f;
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV:
+                    offset = -0.2f;
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P:
+                    offset = -0.3f;
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P:
+                    offset = -0.4f;
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P:
+                    offset = -0.5f;
+                    break;
+                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P:
+                    offset = -0.6f;
+                    break;
+                default:
+                    offset = 0.0f;
+                    break;
+            }
+            return offset * population_BaseValue;
         }
         public void FoodBalance()
         {
@@ -73,43 +127,11 @@ namespace InGame.UI.Resource.Control
             foodCnt = res.GetResourceTable.foodTable.Now; // 식량 개수
             MaxFoodCnt = res.GetResourceTable.foodTable.Max;  // 최대 식량 개수
 
+            
 
-            if (IsNormal())
-                foodBalanceType = FoodBalanceType.NORMAL;
-            else if (IsOverPopulationBaseValue())
-            {
-                foodBalanceType = FoodBalanceType.P_HIGHER_THAN_BV;
-                if (CheckFoodDiffToPercent(25))
-                    foodBalanceType
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P;
-                else if (CheckFoodDiffToPercent(50))
-                    foodBalanceType
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P;
-                else if (CheckFoodDiffToPercent(75))
-                    foodBalanceType
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P;
-                else if (CheckFoodDiffToPercent(100))
-                    foodBalanceType
-                        = FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P;
-            }
-
-            switch (foodBalanceType)
-            {
-                case FoodBalanceType.NORMAL:
-                    break;
-                case FoodBalanceType.P_HIGHER_THAN_BV:
-                    break;
-                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_0_TO_25_P:
-                    break;
-                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_26_TO_50_P:
-                    break;
-                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_51_TO_75_P:
-                    break;
-                case FoodBalanceType.P_HIGHER_THAN_BV__AND__WHEN_DIFF_F_IS_76_TO_100_P:
-                    break;
-                default:
-                    break;
-            }
+            foodBalanceType = FoodBalanceStatus();
+            int result = (int)CalculateFoodBalance(population_baseVal);
+            res.ApplyFood(result);
         }
     }
 }

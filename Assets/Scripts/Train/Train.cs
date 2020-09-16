@@ -52,6 +52,9 @@ namespace InGame.Train
         {
             trainScroller.ExpendLimitMinValue(ExpendMinAmount);
             trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
+
+            IncreaseReourceInTrain(vehicles);
+
             GameObject pool = InstantiateTrain(vehicles);
             float lastTail = LastTrainTailPosition();
             pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
@@ -63,9 +66,32 @@ namespace InGame.Train
                 trainScroller.ExpendLimitMinValue(ExpendMinAmount);
                 trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
             }
+
             GameObject pool = InstantiateTrain(vehicles);
             float lastTail = LastTrainTailPosition();
             pool.transform.position = new Vector3(lastTail + SpawnSpacing, InitPos.position.y, InitPos.position.z);
+        }
+
+        /// <summary>
+        /// 열차에 따른 자원 지금
+        /// </summary>
+        /// <param name="vehicles"></param>
+        public void IncreaseReourceInTrain(Vehicles vehicles)
+        {
+            switch (vehicles)
+            {
+                case Vehicles.GUESTROOM:
+                    GameEvent.Instance.GetResource.ApplyMaxPopulation(1);
+                    break;
+                case Vehicles.CULTIVATION:
+                    GameEvent.Instance.GetResource.ApplyMaxFood(1);
+                    break;
+                case Vehicles.EDUCATION:
+                    GameEvent.Instance.GetResource.ApplyMaxLeaderShip(1);
+                    break;
+                default:
+                    break;
+            }
         }
         public GameObject InstantiateTrain(Vehicles vehicles)
         {
