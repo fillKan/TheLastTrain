@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c95fa830ece92d4db3a3bc483f583c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeekUploadTime: 0.1
+  WeekUploadTime: 1
   InitWeekTable:
     years: 2050
     month: 1
@@ -821,9 +821,9 @@ MonoBehaviour:
   DirectAnimation: {fileID: 832345665}
   TrainCardProbability: 0.8
   CadrPositions:
-  - {x: -250, y: 0}
+  - {x: -215, y: 0}
   - {x: 0, y: 0}
-  - {x: 250, y: 0}
+  - {x: 215, y: 0}
   TrainCards:
   - {fileID: 378291687}
   - {fileID: 1226901983}
