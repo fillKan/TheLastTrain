@@ -389,11 +389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_PolicyFoodSaving
       objectReference: {fileID: 0}
-    - target: {fileID: 4062124570042799102, guid: 587ad243e72e5df4bac4e7fba2569a99,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587ad243e72e5df4bac4e7fba2569a99, type: 3}
 --- !u!224 &97511857 stripped
@@ -499,11 +494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_TrainCultivateRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 562608922213839080, guid: b1882c6341c0b5c46978943aff6e6d52,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 562608922213839081, guid: b1882c6341c0b5c46978943aff6e6d52,
         type: 3}
@@ -776,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c95fa830ece92d4db3a3bc483f583c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeekUploadTime: 1
+  WeekUploadTime: 0.1
   InitWeekTable:
     years: 2050
     month: 1
@@ -958,11 +948,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_PolicyMedical
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315501184813172007, guid: 2c098bd1cc014a14c96964bfe2da9c12,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315501184813172024, guid: 2c098bd1cc014a14c96964bfe2da9c12,
         type: 3}
@@ -1401,10 +1386,6 @@ PrefabInstance:
     - target: {fileID: 9221475128983909, guid: 7abd233a0112aad45aed4a90f2213884, type: 3}
       propertyPath: m_Name
       value: CHOICE_PolicyUnPopulous
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221475128983909, guid: 7abd233a0112aad45aed4a90f2213884, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9221475128983930, guid: 7abd233a0112aad45aed4a90f2213884, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,11 +1982,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_TrainEducateRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 484362670250859697, guid: 9e4d2e6a6cc866242a90445f6941331d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4d2e6a6cc866242a90445f6941331d, type: 3}
 --- !u!224 &1226901982 stripped
@@ -2142,11 +2118,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_PolicyExtraWork
-      objectReference: {fileID: 0}
-    - target: {fileID: 984906405125972223, guid: 0ad2731657004a842adafe4d50d06065,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad2731657004a842adafe4d50d06065, type: 3}
@@ -2966,11 +2937,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_PolicyMissionary
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356865413906530882, guid: 73a28e4ad7de3714eaea162c56926029,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6356865413906530909, guid: 73a28e4ad7de3714eaea162c56926029,
         type: 3}
@@ -3841,16 +3807,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_TrainGuestRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158824814864509723, guid: 61853a0c557ffd449999c2fc1f83fbdc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158824814864509727, guid: 61853a0c557ffd449999c2fc1f83fbdc,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61853a0c557ffd449999c2fc1f83fbdc, type: 3}
