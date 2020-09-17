@@ -1697,7 +1697,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a68224900c7bc943bdccfaa491dd3c2, type: 3}
+  m_Sprite: {fileID: 9180251791023625898, guid: caa54265af35378428e64689ca0b7e59,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2315,7 +2316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6653994858678897968, guid: e8dfb68b717f053449233819f8c4a61c,
+  m_Sprite: {fileID: 9180251791023625898, guid: caa54265af35378428e64689ca0b7e59,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3244,7 +3245,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b84e73c9cb35e9b488ba23c6cbf3d651, type: 3}
+  m_Sprite: {fileID: 9180251791023625898, guid: caa54265af35378428e64689ca0b7e59,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3403,9 +3405,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   policyICons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1343786309}
+  - {fileID: 1719091336}
+  - {fileID: 1113564976}
 --- !u!1 &1809025334
 GameObject:
   m_ObjectHideFlags: 0
