@@ -9,6 +9,9 @@ public class Scroller : MonoBehaviour
 
     private Renderer mRenderer;
 
+    [SerializeField]
+    private Vector2 mDirection = Vector2.right;
+
     [SerializeField] 
     private float mSpeed;
     private float mOffset;
@@ -21,8 +24,8 @@ public class Scroller : MonoBehaviour
     }
     private void Update()
     {
-        mOffset += mSpeed * DeltaTime;
+        mOffset += (mSpeed * DeltaTime) * 0.1f;
 
-        mRenderer.material.SetTextureOffset("_MainTex", Vector2.right * mOffset);
+        mRenderer.material.SetTextureOffset("_MainTex", mDirection * mOffset);
     }
 }
