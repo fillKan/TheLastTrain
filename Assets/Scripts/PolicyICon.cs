@@ -8,7 +8,7 @@ public enum PolicyAniState
     OnPolicy,DisPolicy,LeftMove
 }
 
-public class PolicyICon : MonoBehaviour
+public class PolicyIcon : MonoBehaviour
 {
     [SerializeField] private    Image mImage;
     [SerializeField] private Animator mAnimator;

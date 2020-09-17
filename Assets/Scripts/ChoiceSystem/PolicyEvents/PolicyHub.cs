@@ -32,7 +32,7 @@ public enum Policy
 public class PolicyHub : MonoSingleton<PolicyHub>
 {
     [Header("Policy ICon Objects")]
-    [SerializeField] private PolicyICon[] mPolicyICons;
+    [SerializeField] private PolicyIcon[] mPolicyIcons;
     
     [Header("Policy ICon Images")]
     [SerializeField] private Sprite IConMissionaryWork;
@@ -104,11 +104,11 @@ public class PolicyHub : MonoSingleton<PolicyHub>
     }
     private void AddEnforcementPolicy(Policy policy)
     {
-        mPolicyICons[RIndex].SetAniStste(PolicyAniState.LeftMove);
-        mPolicyICons[LIndex].SetAniStste(PolicyAniState.OnPolicy);
-        mPolicyICons[MIndex].SetAniStste(PolicyAniState.DisPolicy);
+        mPolicyIcons[RIndex].SetAniStste(PolicyAniState.LeftMove);
+        mPolicyIcons[LIndex].SetAniStste(PolicyAniState.OnPolicy);
+        mPolicyIcons[MIndex].SetAniStste(PolicyAniState.DisPolicy);
 
-        mPolicyICons[LIndex].SetSprite(GetPolicyICon(policy));
+        mPolicyIcons[LIndex].SetSprite(GetPolicyICon(policy));
 
         MIndex = (MIndex + 1) > 2 ? 0 : (MIndex + 1);
     }
