@@ -31,22 +31,44 @@ public enum Policy
 
 public class PolicyHub : MonoSingleton<PolicyHub>
 {
+    [Header("Policy ICon Objects")]
+    [SerializeField] private PolicyIcon[] mPolicyIcons;
+    
+    [Header("Policy ICon Images")]
     [SerializeField] private Sprite IConMissionaryWork;
     [SerializeField] private Sprite IConFoodSaving;
     [SerializeField] private Sprite IConPopulationDownSize;
     [SerializeField] private Sprite IConMedicalIndustry;
     [SerializeField] private Sprite IConExtraWork;
 
+    private int MIndex;
+    private int RIndex
+    { get => (MIndex + 1) > 2 ? 0 : (MIndex + 1); }
+    private int LIndex
+    { get => (MIndex - 1) < 0 ? 2 : (MIndex - 1); }
+
     private Dictionary<Policy, IEnforcementable> mPolicy;
 
-    public bool Enforce(Policy policy)
+    private void Awake()
     {
-        bool canEnforce;
+        MIndex = 1;
 
-        if (canEnforce = mPolicy.ContainsKey(policy)) {
-            mPolicy[policy].Enforce();
-        }
-        return canEnforce;
+        mPolicy = new Dictionary<Policy, IEnforcementable>();
+
+        mPolicy.Add(Policy.MissionaryWork,
+                       new MissionaryWork());
+
+        mPolicy.Add(Policy.FoodSaving,
+                       new FoodSaving());
+
+        mPolicy.Add(Policy.PopulationDownSize,
+                       new PopulationDownSize());
+
+        mPolicy.Add(Policy.MedicalIndustry,
+                       new MedicalIndustry());
+
+        mPolicy.Add(Policy.ExtraWork,
+                       new ExtraWork());
     }
 
     public Sprite GetPolicyICon(Policy policy)
@@ -71,24 +93,24 @@ public class PolicyHub : MonoSingleton<PolicyHub>
         return null;
     }
 
-    private void Awake()
+    public void Enforce(Policy policy)
     {
-        mPolicy = new Dictionary<Policy, IEnforcementable>();
+        if (mPolicy.ContainsKey(policy)) 
+        {
+            mPolicy[policy].Enforce();
 
-        mPolicy.Add(Policy.MissionaryWork, 
-                       new MissionaryWork());
+            AddEnforcementPolicy(policy);
+        }
+    }
+    private void AddEnforcementPolicy(Policy policy)
+    {
+        mPolicyIcons[RIndex].SetAniStste(PolicyAniState.LeftMove);
+        mPolicyIcons[LIndex].SetAniStste(PolicyAniState.OnPolicy);
+        mPolicyIcons[MIndex].SetAniStste(PolicyAniState.DisPolicy);
 
-        mPolicy.Add(Policy.FoodSaving, 
-                       new FoodSaving());
+        mPolicyIcons[LIndex].SetSprite(GetPolicyICon(policy));
 
-        mPolicy.Add(Policy.PopulationDownSize, 
-                       new PopulationDownSize());
-
-        mPolicy.Add(Policy.MedicalIndustry, 
-                       new MedicalIndustry());
-
-        mPolicy.Add(Policy.ExtraWork, 
-                       new ExtraWork());
+        MIndex = (MIndex + 1) > 2 ? 0 : (MIndex + 1);
     }
 }
 public interface IEnforcementable
