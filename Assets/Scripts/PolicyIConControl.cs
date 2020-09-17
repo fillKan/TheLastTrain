@@ -22,13 +22,16 @@ public class PolicyIConControl : MonoBehaviour
             }
         }
     }
-    private void Update()
-    {
-        if (Input.anyKeyDown)
-        {
-            AddPolicy((Policy)Random.Range(1, 6));
-        }
-    }
+
+    #region UI animation test
+    //private void Update()
+    //{
+    //    if (Input.anyKeyDown)
+    //    {
+    //        AddPolicy((Policy)Random.Range(1, 6));
+    //    }
+    //}
+    #endregion
     public void AddPolicy(Policy policy)
     {
         policyICons[mRightIndex].SetAniStste(PolicyAniState.LeftMove);

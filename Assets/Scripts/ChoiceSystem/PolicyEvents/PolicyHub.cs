@@ -31,6 +31,8 @@ public enum Policy
 
 public class PolicyHub : MonoSingleton<PolicyHub>
 {
+    [SerializeField] private PolicyIConControl PolicyContoler;
+
     [SerializeField] private Sprite IConMissionaryWork;
     [SerializeField] private Sprite IConFoodSaving;
     [SerializeField] private Sprite IConPopulationDownSize;
@@ -45,6 +47,8 @@ public class PolicyHub : MonoSingleton<PolicyHub>
 
         if (canEnforce = mPolicy.ContainsKey(policy)) {
             mPolicy[policy].Enforce();
+
+            PolicyContoler.AddPolicy(policy);
         }
         return canEnforce;
     }
