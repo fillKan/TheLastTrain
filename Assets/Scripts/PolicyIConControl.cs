@@ -9,9 +9,11 @@ public class PolicyIConControl : MonoBehaviour
 
     [SerializeField] private PolicyICon[] policyICons = new PolicyICon[ICON_COUNT];
 
-    private int mEmptyIndex = 0;
-    private int mRightIndex = 2;
-    private int  mLeftIndex = 1;
+    private int MIndex = 1;
+    private int RIndex
+    { get => (MIndex + 1) > 2 ? 0 : (MIndex + 1); }
+    private int LIndex
+    { get => (MIndex - 1) < 0 ? 2 : (MIndex - 1); }
 
     private void Reset()
     {
@@ -22,7 +24,6 @@ public class PolicyIConControl : MonoBehaviour
             }
         }
     }
-
     #region UI animation test
     //private void Update()
     //{
@@ -34,14 +35,11 @@ public class PolicyIConControl : MonoBehaviour
     #endregion
     public void AddPolicy(Policy policy)
     {
-        policyICons[mRightIndex].SetAniStste(PolicyAniState.LeftMove);
-        policyICons[mEmptyIndex].SetAniStste(PolicyAniState.OnPolicy);
-        policyICons[ mLeftIndex].SetAniStste(PolicyAniState.DisPolicy);
+        policyICons[RIndex].SetAniStste(PolicyAniState.LeftMove);
+        policyICons[LIndex].SetAniStste(PolicyAniState.OnPolicy);
+        policyICons[MIndex].SetAniStste(PolicyAniState.DisPolicy);
+        policyICons[LIndex].GetImage.sprite = PolicyHub.Instance.GetPolicyICon(policy);
 
-        policyICons[mEmptyIndex].GetImage.sprite = PolicyHub.Instance.GetPolicyICon(policy);
-
-        mRightIndex = (mRightIndex + 1) > 2 ? 0 : (mRightIndex + 1);
-        mEmptyIndex = (mEmptyIndex + 1) > 2 ? 0 : (mEmptyIndex + 1);
-         mLeftIndex = ( mLeftIndex + 1) > 2 ? 0 : ( mLeftIndex + 1);
+        MIndex = (MIndex + 1) > 2 ? 0 : (MIndex + 1);
     }
 }
