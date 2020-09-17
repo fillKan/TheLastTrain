@@ -10,20 +10,18 @@ public enum PolicyAniState
 
 public class PolicyICon : MonoBehaviour
 {
-    public Animator GetAnimator;
-    public Image GetImage;
+    [SerializeField] private    Image mImage;
+    [SerializeField] private Animator mAnimator;
 
     private void Reset()
     {
-        Debug.Assert(TryGetComponent(out GetImage));
-        Debug.Assert(TryGetComponent(out GetAnimator));
+        Debug.Assert(TryGetComponent(out mImage));
+        Debug.Assert(TryGetComponent(out mAnimator));
     }
-    public PolicyAniState GetAniState()
-    {
-        return (PolicyAniState)GetAnimator.GetInteger("AniStste");
+    public void SetSprite(Sprite sprite) {
+        mImage.sprite = sprite;
     }
-    public void SetAniStste(PolicyAniState aniState)
-    {
-        GetAnimator.SetInteger("AniStste", (int)aniState);
+    public void SetAniStste(PolicyAniState aniState) {
+        mAnimator.SetInteger("AniStste", (int)aniState);
     }
 }

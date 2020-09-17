@@ -38,7 +38,8 @@ public class PolicyIConControl : MonoBehaviour
         policyICons[RIndex].SetAniStste(PolicyAniState.LeftMove);
         policyICons[LIndex].SetAniStste(PolicyAniState.OnPolicy);
         policyICons[MIndex].SetAniStste(PolicyAniState.DisPolicy);
-        policyICons[LIndex].GetImage.sprite = PolicyHub.Instance.GetPolicyICon(policy);
+
+        policyICons[LIndex].SetSprite(PolicyHub.Instance.GetPolicyICon(policy));
 
         MIndex = (MIndex + 1) > 2 ? 0 : (MIndex + 1);
     }
