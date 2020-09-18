@@ -389,11 +389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_PolicyFoodSaving
       objectReference: {fileID: 0}
-    - target: {fileID: 4062124570042799102, guid: 587ad243e72e5df4bac4e7fba2569a99,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587ad243e72e5df4bac4e7fba2569a99, type: 3}
 --- !u!224 &97511857 stripped
@@ -499,11 +494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_TrainCultivateRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 562608922213839080, guid: b1882c6341c0b5c46978943aff6e6d52,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 562608922213839081, guid: b1882c6341c0b5c46978943aff6e6d52,
         type: 3}
@@ -831,9 +821,9 @@ MonoBehaviour:
   DirectAnimation: {fileID: 832345665}
   TrainCardProbability: 0.8
   CadrPositions:
-  - {x: -250, y: 0}
+  - {x: -215, y: 0}
   - {x: 0, y: 0}
-  - {x: 250, y: 0}
+  - {x: 215, y: 0}
   TrainCards:
   - {fileID: 378291687}
   - {fileID: 1226901983}
@@ -862,13 +852,13 @@ MonoBehaviour:
   - {fileID: 1343786309}
   - {fileID: 1719091336}
   - {fileID: 1113564976}
-  IConMissionaryWork: {fileID: 21300000, guid: 4a68224900c7bc943bdccfaa491dd3c2, type: 3}
-  IConFoodSaving: {fileID: 21300000, guid: b84e73c9cb35e9b488ba23c6cbf3d651, type: 3}
-  IConPopulationDownSize: {fileID: 21300000, guid: 7bc7170e9cc19d04192d1977014bf9ff,
+  IConMissionaryWork: {fileID: 21300000, guid: 1b0fe6c1789e47841a83f30a5f236ffa, type: 3}
+  IConFoodSaving: {fileID: 21300000, guid: fe72913f045776c42a7cfe39a9d23aaf, type: 3}
+  IConPopulationDownSize: {fileID: 21300000, guid: 9126f360e48a0db4f9220e8b386c8a27,
     type: 3}
-  IConMedicalIndustry: {fileID: 21300000, guid: 7bc7170e9cc19d04192d1977014bf9ff,
+  IConMedicalIndustry: {fileID: 21300000, guid: 657dcd179ef62894b96602706cfabc38,
     type: 3}
-  IConExtraWork: {fileID: 21300000, guid: 4a68224900c7bc943bdccfaa491dd3c2, type: 3}
+  IConExtraWork: {fileID: 21300000, guid: 1dec76f91283dd6488f324a6e989e658, type: 3}
 --- !u!1 &673644418
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,11 +948,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_PolicyMedical
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315501184813172007, guid: 2c098bd1cc014a14c96964bfe2da9c12,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315501184813172024, guid: 2c098bd1cc014a14c96964bfe2da9c12,
         type: 3}
@@ -1402,10 +1387,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_PolicyUnPopulous
       objectReference: {fileID: 0}
-    - target: {fileID: 9221475128983909, guid: 7abd233a0112aad45aed4a90f2213884, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9221475128983930, guid: 7abd233a0112aad45aed4a90f2213884, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1661,7 +1642,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 55.2, y: 72.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1113564973
 Animator:
@@ -2001,11 +1982,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_TrainEducateRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 484362670250859697, guid: 9e4d2e6a6cc866242a90445f6941331d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4d2e6a6cc866242a90445f6941331d, type: 3}
 --- !u!224 &1226901982 stripped
@@ -2143,11 +2119,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_PolicyExtraWork
       objectReference: {fileID: 0}
-    - target: {fileID: 984906405125972223, guid: 0ad2731657004a842adafe4d50d06065,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad2731657004a842adafe4d50d06065, type: 3}
 --- !u!224 &1277706960 stripped
@@ -2280,7 +2251,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 55.2, y: 72.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1343786306
 Animator:
@@ -2967,11 +2938,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOICE_PolicyMissionary
       objectReference: {fileID: 0}
-    - target: {fileID: 6356865413906530882, guid: 73a28e4ad7de3714eaea162c56926029,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6356865413906530909, guid: 73a28e4ad7de3714eaea162c56926029,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3209,7 +3175,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 55.2, y: 72.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1719091333
 Animator:
@@ -3841,16 +3807,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHOICE_TrainGuestRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158824814864509723, guid: 61853a0c557ffd449999c2fc1f83fbdc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158824814864509727, guid: 61853a0c557ffd449999c2fc1f83fbdc,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61853a0c557ffd449999c2fc1f83fbdc, type: 3}
