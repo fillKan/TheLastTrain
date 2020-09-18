@@ -4,6 +4,8 @@ using System;
 using UnityEngine;
 using InGame.UI.Week;
 using InGame.UI.Resource;
+using InGame.Event;
+using InGame.Train;
 
 /*
  * 
@@ -76,10 +78,12 @@ public struct GazeTable
     public UnityEngine.UI.Text GazeText;
 }
 
+
 public class GameEvent : MonoSingleton<GameEvent>
 {
     private Resource _resource;
     private Week _week;
+    private EventControl _eventControl;
 
     public Resource GetResource
     {
@@ -95,9 +99,28 @@ public class GameEvent : MonoSingleton<GameEvent>
             return _week;
         }
     }
+    public EventControl EventControl
+    {
+        get
+        {
+            return _eventControl;
+        }
+    }
+    [SerializeField] private Train train;
+    public Train GetTrain
+    {
+        get
+        {
+            if(train != null)
+            {
+                return train;
+            }
+            return null;
+        }
+    }
 
     // Week Upload Time
-    [Range(0.1f, 1.0f)] 
+    [Range(0.1f, 1.0f)]
     [SerializeField] float WeekUploadTime = 1.0f;
     public float GetWeekUploadTime() => WeekUploadTime;
 
@@ -113,7 +136,8 @@ public class GameEvent : MonoSingleton<GameEvent>
     public GazeTable FoodUITable;
     public GazeTable LeaderShipUITable;
 
-    
+    public EventEffect eventEffect;
+    public SwitchCondition switchCondition;
 
     public void SubscribeMonthEvent(Action action) => GetWeek.OnMonthEvent += action;
     public void DescribeMonthEvent(Action action) => GetWeek.OnMonthEvent -= action;
@@ -129,10 +153,14 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void DescribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent -= action;
     public void SetBubbleEvent(Action action) => GetWeek.OnBubbleEvent = action;
 
+    public void SubscribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent += action; } }
+    public void DescribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent -= action; } }
+
     void Awake()
     {
         _resource = new Resource(this);
         _week = new Week(this);
+        _eventControl = new EventControl(this, eventEffect);
     }
     void OnEnable()
     {
@@ -140,9 +168,10 @@ public class GameEvent : MonoSingleton<GameEvent>
         {
             GetWeek.Initialize();
             GetResource.Initialize();
+            _eventControl.Initialize();
         }
         else throw new NullReferenceException($"_resource, _week NullRerenceException");
-            
+
         StartCoroutine(GetWeek.EWeekProcess());
         StartCoroutine(GetResource.EResourceProcess());
     }

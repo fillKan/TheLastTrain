@@ -6,6 +6,13 @@ using InGameBubble = InGame.Bubble;
 
 namespace InGame.Train
 {
+    public struct TrainAmount
+    {
+        public uint GuestRoom;
+        public uint Cultivation;
+        public uint Education;
+    }
+
     public class Train : MonoBehaviour
     {
         [SerializeField] private TrainScroller trainScroller;
@@ -24,6 +31,13 @@ namespace InGame.Train
         [SerializeField] float ExpendMaxAmount = 2.0f;
 
         InGameBubble.Bubble[] bubbles;
+
+        private TrainAmount trainAmount;
+        public TrainAmount GetTrainAmount() => trainAmount;
+        public void ApplyGuestRoomAmount(int Amount) => trainAmount.GuestRoom = (uint)Mathf.Max(0, trainAmount.GuestRoom + Amount);
+        public void ApplyCultivationAmount(int Amount) => trainAmount.Cultivation = (uint)Mathf.Max(0, trainAmount.Cultivation + Amount);
+        public void ApplyEducationAmount(int Amount) => trainAmount.Education = (uint)Mathf.Max(0, trainAmount.Education + Amount);
+
         private void Start()
         {
             m_GuestRoomPool = new objectPool(GuestRoomPrefabs, 4, this.transform);
@@ -100,12 +114,15 @@ namespace InGame.Train
             {
                 case Vehicles.GUESTROOM:
                     @object = m_GuestRoomPool.pop();
+                    ApplyGuestRoomAmount(1);
                     break;
                 case Vehicles.CULTIVATION:
                     @object = m_CultivationPool.pop();
+                    ApplyCultivationAmount(1);
                     break;
                 case Vehicles.EDUCATION:
                     @object = m_EducationPool.pop();
+                    ApplyEducationAmount(1);
                     break;
                 default:
                     break;

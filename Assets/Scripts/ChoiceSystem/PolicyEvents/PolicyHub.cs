@@ -48,6 +48,15 @@ public class PolicyHub : MonoSingleton<PolicyHub>
     { get => (MIndex - 1) < 0 ? 2 : (MIndex - 1); }
 
     private Dictionary<Policy, IEnforcementable> mPolicy;
+    public Dictionary<Policy, IEnforcementable> GetPolicy 
+    {
+        get
+        {
+            if (mPolicy != null)
+                return mPolicy;
+            return null;
+        }
+    }
 
     private void Awake()
     {
