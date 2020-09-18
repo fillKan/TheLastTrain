@@ -36,12 +36,12 @@ MonoBehaviour:
       additive: 0
   - enabled: 0
     name: Blend Style 2
-    maskTextureChannel: 0
+    maskTextureChannel: 1
     renderTextureScale: 1
-    blendMode: 1
+    blendMode: 99
     customBlendFactors:
       multiplicative: 0
-      additive: 0
+      additive: 1.15
   - enabled: 0
     name: Blend Style 3
     maskTextureChannel: 0
