@@ -41,6 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Cloud
+  - name: Background
     uniqueID: 2993524471
+    locked: 0
+  - name: Sun
+    uniqueID: 1094845789
+    locked: 0
+  - name: GroundBack
+    uniqueID: 92990687
+    locked: 0
+  - name: Ground
+    uniqueID: 1359619989
+    locked: 0
+  - name: GroundFront
+    uniqueID: 2782392409
+    locked: 0
+  - name: Front
+    uniqueID: 2096539039
     locked: 0
