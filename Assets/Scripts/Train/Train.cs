@@ -22,10 +22,14 @@ namespace InGame.Train
         [SerializeField] private GameObject GuestRoomPrefabs;
         [SerializeField] private GameObject CultivationPrefabs;
         [SerializeField] private GameObject EducationPrefabs;
+        [SerializeField] private GameObject PreservationPrefabs;
+        [SerializeField] private GameObject StoragePrefabs;
 
         private objectPool m_GuestRoomPool;
         private objectPool m_CultivationPool;
         private objectPool m_EducationPool;
+        private objectPool m_PreservationPool;
+        private objectPool m_StoragePool;
 
         [SerializeField] float SpawnSpacing = -4;
         [SerializeField] float ExpendMinAmount = -2.0f;
