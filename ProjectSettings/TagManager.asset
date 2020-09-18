@@ -47,6 +47,12 @@ TagManager:
   - name: Sun
     uniqueID: 1094845789
     locked: 0
+  - name: Cloud
+    uniqueID: 1149581651
+    locked: 0
+  - name: GroundLast
+    uniqueID: 1840249801
+    locked: 0
   - name: GroundBack
     uniqueID: 92990687
     locked: 0
