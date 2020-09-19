@@ -164,6 +164,10 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void SubscribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent += action; } }
     public void DescribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent -= action; } }
 
+    public void SubscribeSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent += action; } }
+    public void SetSevenDayEvent(Action action) => GetWeek.OnSevenDayEvent = action;
+    public void DescribeSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent -= action; } }
+
     public static void Pause() => Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
 
     void Awake()
