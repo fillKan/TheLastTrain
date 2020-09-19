@@ -49,7 +49,7 @@ namespace InGame.UI.Resource
 
             _foodController = new FoodControl(this);
 
-            evt.SetSixDayEvent(_foodController.FoodBalance);
+            evt.SetSevenDayEvent(_foodController.FoodBalance);
         }
 
         public void ApplyPopulation(int amount = 1)

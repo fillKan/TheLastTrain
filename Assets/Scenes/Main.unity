@@ -2749,7 +2749,7 @@ MonoBehaviour:
   BubbleTables:
   - gameobject: {fileID: 6711313359739525094, guid: 6c58ee42c05a0354aa28987c08e00b14,
       type: 3}
-    bubbleUpTime: 7
+    bubbleUpTime: 10
     isTimeup: 1
   - gameobject: {fileID: 3293799871589688808, guid: 1484c66f7a048574c908cd7befab50a2,
       type: 3}
