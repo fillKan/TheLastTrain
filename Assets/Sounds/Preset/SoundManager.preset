@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SoundManager
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 175910a3c802b784e88030da72baebc6,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.size
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[0].name
+    value: GameOver
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[0].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: 048e6dd2fa8183c4686dc707aa069086, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[1].name
+    value: BGM
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[1].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: 469d780c9c52a544392cdbecb0754914, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[2].name
+    value: BubbleUp
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[2].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: fb3a4f4de311a284293526decd9ee997, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[3].name
+    value: BubbleTouch
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[3].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: 6977b1c59768dad4fb8fe97f79dfb9ab, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[4].name
+    value: SelectCardUp
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[4].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: 71cbb73a218948f4b95cfe19e2a20de7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[5].name
+    value: EventUpAlarm
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[5].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: b5a20a94b1999f742a0c6388c231da62, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[6].name
+    value: ArrowTouch
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioList.Array.data[6].sound
+    value: 
+    objectReference: {fileID: 8300000, guid: 95e50305501662e4bbd39fad26e013f5, type: 3}
+  - target: {fileID: 0}
+    propertyPath: BGMVolume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: FXVolume
+    value: 1
+    objectReference: {fileID: 0}
