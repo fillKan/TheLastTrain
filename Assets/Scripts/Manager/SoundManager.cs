@@ -16,7 +16,7 @@ public enum SoundType
 }
 
 [RequireComponent(typeof(AudioSource))]
-public class SoundManager : MonoSingleton<SoundManager>
+public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] private List<Audio> audioList;
 
