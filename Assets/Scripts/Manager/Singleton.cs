@@ -3,41 +3,27 @@ using System.Reflection;
 using UnityEngine;
 
 // Thread Safe Singleton
-public class Singleton<T> where T : class
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private static object _syncobj = new object();
-    private static volatile T _instance = null;
-
     public static T Instance
     {
         get
         {
-            if (_instance == null)
+            if (mInstnace == null)
             {
-                CreateInstance();
-            }
-            return _instance;
-        }
-    }
-    private static void CreateInstance()
-    {
-        lock (_syncobj)
-        {
-            if (_instance == null)
-            {
-                Type t = typeof(T);
+                mInstnace = FindObjectOfType<T>() as T;
 
-                ConstructorInfo[] ctors = t.GetConstructors();
-                if (ctors.Length > 0)
+                if (mInstnace == null)
                 {
-                    throw new InvalidOperationException($"{t.Name} : impossible to enforce singleton behaviour");
+                    mInstnace = new GameObject(typeof(T).ToString(), typeof(T)) as T;
                 }
-                _instance = (T)Activator.CreateInstance(t, true);
+                //DontDestroyOnLoad(mInstnace);
             }
+            return mInstnace;
         }
     }
+    private static T mInstnace;
 }
-
 //MonoBehavior Singleton
 /// <summary>
 /// Inherit from this base class to create a singleton.
