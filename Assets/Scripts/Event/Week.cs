@@ -186,8 +186,10 @@ namespace InGame.UI.Week
             if (SetSpecificDayEvent(2, _weekTable.day) && OnTwoDayEvent != null)
                 OnTwoDayEvent();
 
-            if (SetSpecificDayEvent(7, _weekTable.day) && OnTwoDayEvent != null)
+            if (SetSpecificDayEvent(7, _weekTable.day) && OnSevenDayEvent != null)
+            {
                 OnSevenDayEvent();
+            }
 
             if (OnBubbleEvent != null)
                 OnBubbleEvent();

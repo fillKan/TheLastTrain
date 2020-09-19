@@ -111,7 +111,7 @@ public class GameEvent : MonoSingleton<GameEvent>
     {
         get
         {
-            if(train != null)
+            if (train != null)
             {
                 return train;
             }
@@ -157,15 +157,15 @@ public class GameEvent : MonoSingleton<GameEvent>
 
     public void SubscribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent += action; } }
     public void DescribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent -= action; } }
-    
+
     public void SubscribeFourDayEvent(Action action) { if (action != null) { GetWeek.OnFourDayEvent += action; } }
-    public void DescribeFourDayEvent(Action action) { if (action != null) { GetWeek.OnFourDayEvent -= action; } } 
+    public void DescribeFourDayEvent(Action action) { if (action != null) { GetWeek.OnFourDayEvent -= action; } }
 
     public void SubscribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent += action; } }
     public void DescribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent -= action; } }
 
     public void SubscribeSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent += action; } }
-    public void SetSevenDayEvent(Action action) => GetWeek.OnSevenDayEvent = action;
+    public void SetSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent = action; } }
     public void DescribeSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent -= action; } }
 
     public static void Pause() => Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
