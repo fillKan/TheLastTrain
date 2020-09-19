@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ChoiceSystem : MonoSingleton<ChoiceSystem>
+public class ChoiceSystem : Singleton<ChoiceSystem>
 {
     [SerializeField]
     private Animator DirectAnimation;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using InGame.UI.Week;
 
-public class GameObserver : MonoSingleton<GameObserver>
+public class GameObserver : Singleton<GameObserver>
 {
     public int EndingIndex;
 
