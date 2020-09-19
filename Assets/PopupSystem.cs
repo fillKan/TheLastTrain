@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopupSystem : MonoSingleton<PopupSystem>
+public class PopupSystem : Singleton<PopupSystem>
 {
     public Transform parent;
 

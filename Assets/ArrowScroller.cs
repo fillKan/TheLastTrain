@@ -26,7 +26,9 @@ public class ArrowScroller : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         if (eventData.pointerEnter)
+        {
             SoundManager.Instance.PlayOneShot("ArrowTouch");
+        }
         mIsSelect = true;
     }
     public void OnPointerUp  (PointerEventData eventData) => mIsSelect = false;

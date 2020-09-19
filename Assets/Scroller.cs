@@ -24,9 +24,6 @@ public class Scroller : MonoBehaviour
     }
     private void Update()
     {
-        // mOffset += (mSpeed * DeltaTime) * 0.06f;
-    
-        //mRenderer.material.SetTextureOffset("_MainTex", mDirection * mOffset);
         mRenderer.material.mainTextureOffset += mDirection * (mSpeed * DeltaTime) * 0.12f;
     }
 }

@@ -16,7 +16,7 @@ public enum SoundType
 }
 
 [RequireComponent(typeof(AudioSource))]
-public class SoundManager : MonoSingleton<SoundManager>
+public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] private List<Audio> audioList;
 
@@ -30,10 +30,7 @@ public class SoundManager : MonoSingleton<SoundManager>
     public float BGMVolume;
     public float FXVolume;
 
-    private void Awake()
-    {
-    }
-    private void Start()
+    private void OnEnable()
     {
         if (audioList.Count > 0)
         {

@@ -21,13 +21,9 @@ public class EndingObserver : MonoBehaviour
     public void LoadTitle()
     {
         SceneManager.LoadScene(TitleSeceneIndex);
-
-        GameObserver.Instance.InfoReset();
     }
     public void LoadMainGame()
     {
-        GameObserver.Instance.InfoReset();
-
         SceneManager.LoadScene(MainGameSeceneIndex);
     }
     private void Start()

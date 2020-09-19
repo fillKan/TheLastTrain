@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: MainGameSeceneIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2775253769933868757, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2775253770401530869, guid: 617d83de707ea1f4a908d8ec21e61793,
         type: 3}
       propertyPath: m_Name
@@ -381,12 +386,57 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2775253770515757029, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2775253771163351681, guid: 617d83de707ea1f4a908d8ec21e61793,
         type: 3}
       propertyPath: m_Text
       value: "\uB2F9\uC2E0\uC758 \uC5F4\uCC28\uB294 \uACB0\uAD6D \uCD5C\uD6C4\uB97C
         \uB9DE\uC774\uD588\uC2B5\uB2C8\uB2E4.\n\n\uB2F9\uC2E0\uC740 \uC5B4\uB5A4
         \uC9C0\uB3C4\uC790\uC600\uB098\uC694?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771163351681, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771163351806, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -112.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771415265401, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1251.923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771415265401, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 863.2475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771415265401, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771665167058, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771682140460, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 109.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253771682140463, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617d83de707ea1f4a908d8ec21e61793, type: 3}
