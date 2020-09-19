@@ -525,7 +525,7 @@ namespace InGame.Event
             GameEvent.Pause();
             if (resultTable != null)
             {
-                Debug.Log($"{resultTable.tagType} : {resultTable.name} : {resultTable.ID}");
+                //Debug.Log($"{resultTable.tagType} : {resultTable.name} : {resultTable.ID}");
                 switch (resultTable.tagType)
                 {
                     case TAG.NORMAL:
