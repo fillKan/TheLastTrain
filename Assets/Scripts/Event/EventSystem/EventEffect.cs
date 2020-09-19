@@ -403,9 +403,9 @@ namespace InGame.Event
         public static UI.Resource.Resource GetResource() => GetEvent().GetResource;
         public static ResourceTable GetResourceTable() => GetResource().GetResourceTable;
 
-        EventTable resultTable;
-
-        public Action LastEventTrigger;
+        private EventTable resultTable;
+        public static EventTable lastestResultTable = null;
+        
 
         public void ApplyEffect()
         {
@@ -417,13 +417,13 @@ namespace InGame.Event
             OnNormalEvt.Clear();
             resultTable = null;
 
-            GameEvent.Pause();
             EventUI.SetActive(true);
 
             // 이벤트 리스트 검사
             eventTable.ForEach(table =>
             {
                 table._nextEvent = true;
+                table.IsEventOn = false;
 
                 EventID eventID = ResourceCondition(table, table.ID, GetEvent());
                 if (eventID != EventID.None)
@@ -495,6 +495,29 @@ namespace InGame.Event
 
 
             }
+
+            if (lastestResultTable != resultTable)
+            {
+                if (lastestResultTable != null)
+                {
+                    switch (lastestResultTable.ID)
+                    {
+                        case EventID.NO2:
+                            evt.GetWeek.OnThreeDayEvent = null;
+                            break;
+                        case EventID.NO9:
+                            GameEvent.Instance.WeekUploadTime = 1.0f;
+                            break;
+                        case EventID.NO24:
+                            evt.GetWeek.OnThreeDayEvent = null;
+                            evt.GetWeek.OnTwoDayEvent = null;
+                            break;
+                    }
+                }
+                lastestResultTable = resultTable;
+            }
+
+            GameEvent.Pause();
         }
 
         public void _OnClickExit()
@@ -715,24 +738,18 @@ namespace InGame.Event
                 case EventID.NO2:     // 식중독 발생
                     resource.ApplyLeaderShip(-3);
                     ApplyEventUI(table);
+                    evt.SubscribeThreeDayEvent(() => { resource.ApplyPopulation(-1); });
                     table._nextEvent = false;
                     break;
                 default:
                     break;
             }
 
-            if (!table._nextEvent && _eventId == EventID.NO2)
-                evt.SubscribeThreeDayEvent(() => { resource.ApplyPopulation(-1); });
-            else
-                evt.DescribeThreeDayEvent(() => { resource.ApplyPopulation(-1); });
-
         }
         void NormalEvts(EventTable table, EventID _eventId, GameEvent evt)
         {
             UI.Resource.Resource resource = evt.GetResource;
             ResourceTable resourceTable = resource.GetResourceTable;
-            int zeroPointOnefood = (int)resource.GetFoodResource(0.1d);
-            int zeroPointOnePopulation = (int)resource.GetPopulationResource(0.1d);
 
             switch (_eventId)
             {
@@ -741,20 +758,20 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO4:     // 식량 배분
-                    resource.ApplyFood(zeroPointOnefood);
+                    resource.ApplyFood((int)resource.GetFoodResource(0.1d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO5:     // 비상식량 발견
-                    resource.ApplyFood(zeroPointOnefood);
+                    resource.ApplyFood((int)resource.GetFoodResource(0.1d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO6:     // 사고 발생
-                    resource.ApplyPopulation(-zeroPointOnePopulation);
+                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.1d));
                     evt.switchCondition.SwitchON(SwitchID.NO2);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO7:         // 톱니바퀴 개발
-                    resource.ApplyFood(zeroPointOnefood);
+                    resource.ApplyFood((int)resource.GetFoodResource(0.1d));
                     evt.switchCondition.SwitchON(SwitchID.NO1);
                     ApplyEventUI(table);
                     break;
@@ -808,10 +825,6 @@ namespace InGame.Event
                 default:
                     break;
             }
-            if (!table._nextEvent && _eventId == EventID.NO9)
-            {
-                GameEvent.Instance.WeekUploadTime = 1.0f;
-            }
 
         }
         void SpecialEvts(EventTable table, EventID _eventId, GameEvent evt)
@@ -851,25 +864,13 @@ namespace InGame.Event
                     break;
                 case EventID.NO24:        // 만성 피로
                     table._nextEvent = false;
+                    evt.SubscribeThreeDayEvent(() => { resource.ApplyLeaderShip(-1); });
+                    evt.SubscribeTwoDayEvent(() => { resource.ApplyPopulation(-1); });
                     ApplyEventUI(table);
                     break;
                 default:
                     break;
             }
-            if (!table._nextEvent && _eventId == EventID.NO24)
-            {
-                evt.DescribeThreeDayEvent(() => { resource.ApplyLeaderShip(-1); });
-                evt.DescribeTwoDayEvent(() => { resource.ApplyPopulation(-1); });
-
-                evt.SubscribeThreeDayEvent(() => { resource.ApplyLeaderShip(-1); });
-                evt.SubscribeTwoDayEvent(() => { resource.ApplyPopulation(-1); });
-            }
-            else
-            {
-                evt.DescribeThreeDayEvent(() => { resource.ApplyLeaderShip(-1); });
-                evt.DescribeTwoDayEvent(() => { resource.ApplyPopulation(-1); });
-            }
-
         }
 
         public void PrintAllTable()

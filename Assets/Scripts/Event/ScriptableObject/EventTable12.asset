@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9edebb0ceaf760747ab1320374ff3b78, type: 3}
   m_Name: EventTable12
   m_EditorClassIdentifier: 
-  ID: 0
-  IsEventOn: 0
+  ID: 11
+  IsEventOn: 1
   tagType: 0
-  name: 
-  icon: {fileID: 0}
-  description: 
+  name: "\uC2DD\uB7C9 \uBD84\uC7C1"
+  icon: {fileID: 21300000, guid: c4773685e7cfc824887546cab4dd9c84, type: 3}
+  description: "\uC2DD\uB7C9\uC744 \uB450\uACE0 \uC0AC\uB78C\uB4E4 \uC0AC\uC774\uC5D0\uC11C
+    \uBD84\uC7C1\uC774 \uC77C\uC5B4\uB0AC\uC2B5\uB2C8\uB2E4!\r\n\uC778\uAD6C\uC640
+    \uC2DD\uB7C9\uC758 \uCC28\uC774\uAC00 \uADF8 \uBB38\uC81C\uC778 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4.\r\n\uC2DD\uB7C9\uC774
+    \uAC10\uC18C\uD569\uB2C8\uB2E4.\r"
   _nextEvent: 1

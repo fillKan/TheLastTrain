@@ -168,24 +168,25 @@ namespace InGame.UI.Week
 
         bool OnEvent()
         {
-            if (IsDayEvent(_weekTable.day))
+            if (IsDayEvent(_weekTable.day) && OnDayEvent != null)
                 OnDayEvent();
-            if (IsMonthEvent(_weekTable.month))
+            if (IsMonthEvent(_weekTable.month) && OnMonthEvent != null)
                 OnMonthEvent();
 
-            if (SetSpecificDayEvent(6, _weekTable.day))
+            if (SetSpecificDayEvent(6, _weekTable.day) && OnSixDayEvent != null)
                 OnSixDayEvent();
 
-            if (SetSpecificDayEvent(3, _weekTable.day))
+            if (SetSpecificDayEvent(3, _weekTable.day) && OnThreeDayEvent != null)
                 OnThreeDayEvent();
 
-            if (SetSpecificDayEvent(4, _weekTable.day))
+            if (SetSpecificDayEvent(4, _weekTable.day) && OnFourDayEvent != null)
                 OnFourDayEvent();
 
-            if (SetSpecificDayEvent(2, _weekTable.day))
+            if (SetSpecificDayEvent(2, _weekTable.day) && OnTwoDayEvent != null)
                 OnTwoDayEvent();
 
-            OnBubbleEvent();
+            if (OnBubbleEvent != null)
+                OnBubbleEvent();
             return true;
         }
 

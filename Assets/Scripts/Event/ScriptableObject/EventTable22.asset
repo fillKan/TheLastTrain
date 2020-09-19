@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9edebb0ceaf760747ab1320374ff3b78, type: 3}
   m_Name: EventTable22
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 21
   IsEventOn: 0
-  tagType: 0
-  name: 
-  icon: {fileID: 0}
-  description: 
+  tagType: 2
+  name: "\uC54C \uC218 \uC5C6\uB294 \uC885\uAD50"
+  icon: {fileID: 21300000, guid: 9f56acb2122457d4aabe4c1eaf7bff76, type: 3}
+  description: "\uC758\uBB38\uC758 \uC9C0\uB3C4\uC790\uAC00 \uC5F4\uCC28 \uB0B4\uC5D0\uC11C
+    \uC0C8\uB85C\uC6B4 \uC885\uAD50\uB97C \uB9CC\uB4E4\uC5C8\uC2B5\uB2C8\uB2E4!\r\n\uADF8\uB4E4\uC740
+    \uC9C0\uB3C4\uC790\uB2D8 \uB300\uC2E0 \uC758\uBB38\uC758 \uC9C0\uB3C4\uC790\uB97C
+    \uC12C\uAE41\uB2C8\uB2E4.\r\n\uC9C0\uB3C4\uC790\uB2D8\uC758 \uC9C0\uC9C0\uAC00
+    \uB5A8\uC5B4\uC9C0\uACE0 \uC0AC\uC774\uBE44\uAC00 \uBC1C\uC0DD\uD569\uB2C8\uB2E4.\r"
   _nextEvent: 1

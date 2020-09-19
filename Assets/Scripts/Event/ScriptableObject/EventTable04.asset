@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: EventTable04
   m_EditorClassIdentifier: 
   ID: 3
-  IsEventOn: 0
+  IsEventOn: 1
   tagType: 0
   name: "\uC2DD\uB7C9 \uBC30\uBD84"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4bf89986f47acf346942d3aa956eee39, type: 3}
   description: "\uC2DD\uB7C9\uC744 \uD6A8\uC728\uC801\uC73C\uB85C \uBC30\uBD84\uD558\uC600\uC2B5\uB2C8\uB2E4!\r\n\uC77C\uC2DC\uC801\uC73C\uB85C
     \uC2DD\uB7C9\uC5D0 \uC5EC\uC720\uAC00 \uC0DD\uACBC\uC2B5\uB2C8\uB2E4.\r\n\uC2DD\uB7C9\uC774
     \uC99D\uAC00\uD569\uB2C8\uB2E4.\r"
