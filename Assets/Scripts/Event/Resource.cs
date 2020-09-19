@@ -125,6 +125,11 @@ namespace InGame.UI.Resource
         // Show Table State In InGame Scene
         void ApplyResource(GazeTable gazeTable, Table table)
         {
+            if (table.Now == table.Max)
+                gazeTable.GazeText.color = Color.yellow;
+            else if (table.Now > table.Max)
+                gazeTable.GazeText.color = new Color32(255, 161, 161, 255);
+            else gazeTable.GazeText.color = Color.white;
             gazeTable.GazeText.text = $"{table.Now} / {table.Max}";
             gazeTable.GazeImage.fillAmount = ConvertPercentToPoint(ConvertPercent(table.Now, table.Max), 2);
         }
