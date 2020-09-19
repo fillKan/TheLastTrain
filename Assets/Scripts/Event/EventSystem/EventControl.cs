@@ -29,7 +29,10 @@ namespace InGame.Event
         public void OnEventListener()
         {
             //evtEffect.PrintAllTable();
-            evtEffect.ApplyEffect();
+            if(evtEffect != null)
+            {
+                evtEffect.ApplyEffect();
+            }
         }
     }
 }

@@ -22,10 +22,14 @@ namespace InGame.Train
         [SerializeField] private GameObject GuestRoomPrefabs;
         [SerializeField] private GameObject CultivationPrefabs;
         [SerializeField] private GameObject EducationPrefabs;
+        [SerializeField] private GameObject PreservationPrefabs;
+        [SerializeField] private GameObject StoragePrefabs;
 
         private objectPool m_GuestRoomPool;
         private objectPool m_CultivationPool;
         private objectPool m_EducationPool;
+        private objectPool m_PreservationPool;
+        private objectPool m_StoragePool;
 
         [SerializeField] float SpawnSpacing = -4;
         [SerializeField] float ExpendMinAmount = -2.0f;
@@ -44,6 +48,8 @@ namespace InGame.Train
             m_GuestRoomPool = new objectPool(GuestRoomPrefabs, 4, this.transform);
             m_CultivationPool = new objectPool(CultivationPrefabs, 4, this.transform);
             m_EducationPool = new objectPool(EducationPrefabs, 4, this.transform);
+            m_PreservationPool = new objectPool(PreservationPrefabs, 4, this.transform);
+            m_StoragePool = new objectPool(StoragePrefabs, 4, this.transform);
 
             bubbles = FindObjectsOfType<InGameBubble.Bubble>();
 
@@ -131,6 +137,12 @@ namespace InGame.Train
                     @object = m_EducationPool.pop();
                     ApplyEducationAmount(1);
                     break;
+                case Vehicles.PRESERVE:
+                    @object = m_PreservationPool.pop();
+                    break;
+                case Vehicles.STORAGE:
+                    @object = m_StoragePool.pop();
+                    break;
                 default:
                     break;
             }
@@ -153,6 +165,18 @@ namespace InGame.Train
         void TEST_SPAWN_EDUCATION()
         {
             SpawnTrain(Vehicles.EDUCATION);
+        }
+
+        [ContextMenu("TEST_SPAWN_PRESERVE")]
+        void TEST_SPAWN_PRESERVE()
+        {
+            SpawnTrain(Vehicles.PRESERVE);
+        }
+
+        [ContextMenu("TEST_SPAWN_STORAGE")]
+        void TEST_SPAWN_STORAGE()
+        {
+            SpawnTrain(Vehicles.STORAGE);
         }
     }
 }
