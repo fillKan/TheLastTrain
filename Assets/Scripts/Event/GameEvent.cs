@@ -79,7 +79,7 @@ public struct GazeTable
 }
 
 
-public class GameEvent : MonoSingleton<GameEvent>
+public class GameEvent : Singleton<GameEvent>
 {
     private Resource _resource;
     private Week _week;

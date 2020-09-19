@@ -29,7 +29,7 @@ namespace InGame.Bubble
     }
 
 
-    internal class BubbleSystem : MonoSingleton<BubbleSystem>
+    internal class BubbleSystem : Singleton<BubbleSystem>
     {
         
         [SerializeField] Transform objectPoolParent;
