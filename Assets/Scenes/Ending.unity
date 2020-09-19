@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: MainGameSeceneIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2775253769933868757, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2775253770401530869, guid: 617d83de707ea1f4a908d8ec21e61793,
         type: 3}
       propertyPath: m_Name
@@ -379,6 +384,11 @@ PrefabInstance:
     - target: {fileID: 2775253770401530873, guid: 617d83de707ea1f4a908d8ec21e61793,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775253770515757029, guid: 617d83de707ea1f4a908d8ec21e61793,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2775253771163351681, guid: 617d83de707ea1f4a908d8ec21e61793,

@@ -12,10 +12,15 @@ public class GameObserver : MonoSingleton<GameObserver>
 
     public WeekTable WeekTable;
 
+    [SerializeField]
+    private GameObject[] Themas = new GameObject[3];
+
     public void InfoReset()
     {
         SumDay = 0;
     }
+    private void Awake() => Themas[Random.Range(0, 3)].SetActive(true);
+
     private void Start()
     {
         GameEvent.Instance.SubscribeBubbleEvent(() => SumDay++);
