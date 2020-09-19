@@ -522,9 +522,10 @@ namespace InGame.Event
 
         public void _OnClickExit()
         {
-            GameEvent.Pause();
+            Debug.Log("클릭");
             if (resultTable != null)
             {
+                GameEvent.Pause();
                 //Debug.Log($"{resultTable.tagType} : {resultTable.name} : {resultTable.ID}");
                 switch (resultTable.tagType)
                 {
