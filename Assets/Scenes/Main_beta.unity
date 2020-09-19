@@ -669,7 +669,7 @@ MonoBehaviour:
     type: 3}
   SpawnSpacing: -3.65
   ExpendMinAmount: -0.5
-  ExpendMaxAmount: 5
+  ExpendMaxAmount: 3.65
 --- !u!1 &430854563
 GameObject:
   m_ObjectHideFlags: 0
