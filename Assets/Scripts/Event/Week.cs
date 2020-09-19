@@ -43,7 +43,9 @@ namespace InGame.UI.Week
         public Action OnSixDayEvent = delegate { };
         public Action OnMonthEvent = delegate { };
         public Action OnBubbleEvent = delegate { };
+        public Action OnTwoDayEvent = delegate { };
         public Action OnThreeDayEvent = delegate { };
+        public Action OnFourDayEvent = delegate { };
 
         private GameEvent evt;
         //Constructor
@@ -176,6 +178,12 @@ namespace InGame.UI.Week
 
             if (SetSpecificDayEvent(3, _weekTable.day))
                 OnThreeDayEvent();
+
+            if (SetSpecificDayEvent(4, _weekTable.day))
+                OnFourDayEvent();
+
+            if (SetSpecificDayEvent(2, _weekTable.day))
+                OnTwoDayEvent();
 
             OnBubbleEvent();
             return true;

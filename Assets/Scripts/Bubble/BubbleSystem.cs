@@ -34,6 +34,8 @@ namespace InGame.Bubble
         public BubbleTable[] BubbleTables;
 
         public float BubbleEndTime = 7.0f;
+        public bool IsAbleProduce = true;
+
 
         [HideInInspector] public Bubble[] bubbles;
         [HideInInspector] public objectPool m_PopulationPool;

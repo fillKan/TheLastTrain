@@ -16,7 +16,7 @@ MonoBehaviour:
   IsEventOn: 0
   tagType: 1
   name: "\uC2DD\uC911\uB3C5 \uBC1C\uC0DD"
-  icon: {fileID: 21300000, guid: 3f25cd3e52dd83848b7cb495aa28e2f8, type: 3}
+  icon: {fileID: 0}
   description: "\uC2DD\uB7C9 \uAD00\uB9AC\uAC00 \uB418\uC9C0 \uC54A\uC544 \uC2DD\uC911\uB3C5\uC774
     \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4!\r\n\uB2E4\uC74C \uC774\uBCA4\uD2B8\uAE4C\uC9C0,
     \uC778\uAD6C \uC218\uAC00 \uC11C\uC11C\uD788 \uAC10\uC18C\uD569\uB2C8\uB2E4.\r\n\uC9C0\uB3C4\uC790\uB2D8\uC758

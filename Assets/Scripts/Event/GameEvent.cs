@@ -121,7 +121,7 @@ public class GameEvent : MonoSingleton<GameEvent>
 
     // Week Upload Time
     [Range(0.1f, 1.0f)]
-    [SerializeField] float WeekUploadTime = 1.0f;
+    public float WeekUploadTime = 1.0f;
     public float GetWeekUploadTime() => WeekUploadTime;
 
     // Initialization
@@ -147,7 +147,9 @@ public class GameEvent : MonoSingleton<GameEvent>
     public void DescribeDayEvent(Action action) => GetWeek.OnDayEvent -= action;
     public void SetDayEvent(Action action) => GetWeek.OnDayEvent = action;
 
+    public void SubscribeSixDayEvent(Action action) => GetWeek.OnSixDayEvent += action;
     public void SetSixDayEvent(Action action) => GetWeek.OnSixDayEvent = action;
+    public void DescribeSixDayEvent(Action action) => GetWeek.OnSixDayEvent -= action;
 
     public void SubscribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent += action;
     public void DescribeBubbleEvent(Action action) => GetWeek.OnBubbleEvent -= action;
@@ -155,6 +157,14 @@ public class GameEvent : MonoSingleton<GameEvent>
 
     public void SubscribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent += action; } }
     public void DescribeThreeDayEvent(Action action) { if (action != null) { GetWeek.OnThreeDayEvent -= action; } }
+    
+    public void SubscribeFourDayEvent(Action action) { if (action != null) { GetWeek.OnFourDayEvent += action; } }
+    public void DescribeFourDayEvent(Action action) { if (action != null) { GetWeek.OnFourDayEvent -= action; } } 
+
+    public void SubscribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent += action; } }
+    public void DescribeTwoDayEvent(Action action) { if (action != null) { GetWeek.OnTwoDayEvent -= action; } }
+
+    public static void Pause() => Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
 
     void Awake()
     {

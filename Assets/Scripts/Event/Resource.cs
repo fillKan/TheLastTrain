@@ -100,6 +100,16 @@ namespace InGame.UI.Resource
 
         #endregion
 
+
+        public double GetFoodResource(double offset)
+        {
+            return (double)GetResourceTable.foodTable.Max * offset;
+        }
+        public double GetPopulationResource(double offset)
+        {
+            return (double)GetResourceTable.populationTable.Max * offset;
+        }
+
         //Convert Percent To Resource Table
         public short ConvertPercent(uint now, uint max)
         {

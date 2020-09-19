@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 225c2b7c449ea9149a42944ea7c73480
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6214122560222066471
+    second: Noisy_0
+  - first:
+      213: -3566691709234547430
+    second: Noisy_1
+  - first:
+      213: 6329570400395601001
+    second: Noisy_2
+  - first:
+      213: 4463887386491563744
+    second: Noisy_3
+  - first:
+      213: 9043202682360964059
+    second: Noisy_4
+  - first:
+      213: -4967921074528016151
+    second: Noisy_5
+  - first:
+      213: 8828383208495738922
+    second: Noisy_6
+  - first:
+      213: 819735021037680170
+    second: Noisy_7
+  - first:
+      213: -6663840434423346971
+    second: Noisy_8
+  - first:
+      213: -1105580054938580891
+    second: Noisy_9
+  - first:
+      213: 4911934692780607751
+    second: Noisy_10
+  - first:
+      213: -3870654362405657839
+    second: Noisy_11
+  - first:
+      213: -3598378169175781950
+    second: Noisy_12
+  - first:
+      213: -7882470581627636020
+    second: Noisy_13
+  - first:
+      213: -1698326612649412597
+    second: Noisy_14
+  - first:
+      213: 4795185734228163019
+    second: Noisy_15
+  - first:
+      213: 998251532309008989
+    second: Noisy_16
+  - first:
+      213: 3328566769944085348
+    second: Noisy_17
+  - first:
+      213: 2008385201056514888
+    second: Noisy_18
+  - first:
+      213: -6103020673891804014
+    second: Noisy_19
+  - first:
+      213: 6167524700724935183
+    second: Noisy_20
+  - first:
+      213: -3374138714896155103
+    second: Noisy_21
+  - first:
+      213: -1923068339320964021
+    second: Noisy_22
+  - first:
+      213: -8250787898249546481
+    second: Noisy_23
+  - first:
+      213: 7754418162991329342
+    second: Noisy_24
+  - first:
+      213: -4069415609688371319
+    second: Noisy_25
+  - first:
+      213: 8956339467416195643
+    second: Noisy_26
+  - first:
+      213: -5235140578709771613
+    second: Noisy_27
+  - first:
+      213: -9054044837394809116
+    second: Noisy_28
+  - first:
+      213: -6368473452527041189
+    second: Noisy_29
+  - first:
+      213: -8766525936863384865
+    second: Noisy_30
+  - first:
+      213: 5913447784356030493
+    second: Noisy_31
+  - first:
+      213: -1688807710385279300
+    second: Noisy_32
+  - first:
+      213: 4173240200605293449
+    second: Noisy_33
+  - first:
+      213: -4505004490304520449
+    second: Noisy_34
+  - first:
+      213: 8185165397596940999
+    second: Noisy_35
+  - first:
+      213: 5336055712513718389
+    second: Noisy_36
+  - first:
+      213: -5378537736541220893
+    second: Noisy_37
+  - first:
+      213: -4726020360980278005
+    second: Noisy_38
+  - first:
+      213: -3415566066035432390
+    second: Noisy_39
+  - first:
+      213: -940301489374528052
+    second: Noisy_40
+  - first:
+      213: -1345901798711840225
+    second: Noisy_41
+  - first:
+      213: 3039393303162985906
+    second: Noisy_42
+  - first:
+      213: -8776703687174245260
+    second: Noisy_43
+  - first:
+      213: 6404840632399529109
+    second: Noisy_44
+  - first:
+      213: -4982369439554558034
+    second: Noisy_45
+  - first:
+      213: 4206609055674826869
+    second: Noisy_46
+  - first:
+      213: 5731065114167016141
+    second: Noisy_47
+  - first:
+      213: 4975804487046184890
+    second: Noisy_48
+  - first:
+      213: 7155809448796446853
+    second: Noisy_49
+  - first:
+      213: -6355840626883915653
+    second: Noisy_50
+  - first:
+      213: -555182126498747531
+    second: Noisy_51
+  - first:
+      213: -3369018183975697819
+    second: Noisy_52
+  - first:
+      213: 4671144640764991840
+    second: Noisy_53
+  - first:
+      213: -6804773387016037764
+    second: Noisy_54
+  - first:
+      213: -8219960695893821858
+    second: Noisy_55
+  - first:
+      213: 3587009869669843480
+    second: Noisy_56
+  - first:
+      213: -2413698377136349593
+    second: Noisy_57
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Noisy_0
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 174
+        width: 761
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727f6c07b8ffc3650800000000000000
+      internalID: 6214122560222066471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Noisy_1
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 174
+        width: 759
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a157ebf99c0908ec0800000000000000
+      internalID: -3566691709234547430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Noisy_2
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 174
+        width: 732
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96428606eb627d750800000000000000
+      internalID: 6329570400395601001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
