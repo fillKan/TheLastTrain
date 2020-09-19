@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: Probabilities.Array.data[2]
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3824336726459984288, guid: a0a5d320fd8aadb44a8f1be5e4f33550,
+        type: 3}
+      propertyPath: AddCompartment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3824336726459984289, guid: a0a5d320fd8aadb44a8f1be5e4f33550,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

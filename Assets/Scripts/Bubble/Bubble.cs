@@ -78,6 +78,8 @@ namespace InGame.Bubble
         }
         IEnumerator EInit()
         {
+            if (this.vehicles == Vehicles.STORAGE) yield break;
+
             yield return new WaitForSeconds(bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime);
 
             PoolObject = popGameObjectInPool(vehicles);

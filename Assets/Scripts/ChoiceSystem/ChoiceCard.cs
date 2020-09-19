@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using InGame.UI.Resource;
+using InGame.Train;
 
 public enum ResourceType
 {
@@ -28,7 +29,8 @@ public class ChoiceCard : MonoBehaviour
     [SerializeField] private ResourceType AddResourceType;
     [SerializeField] private int          AddResourceAmount;
     [SerializeField] private WhatToAdd    AddResourceWhatTo;
-    [SerializeField] private GameObject   AddCompartment;
+    [SerializeField] private InGame.Vehicles AddCompartment;
+    [SerializeField] private Train HeadTrain;
 
     [Header("Policy Enforcement")]
     [SerializeField] private Policy EnforcePolicy;
@@ -78,7 +80,7 @@ public class ChoiceCard : MonoBehaviour
                     }
                     break;
             }
-            // add compartment . . .
+            HeadTrain.SpawnTrain(AddCompartment);
         }
         if (IsEnforcementPolicy)
         {

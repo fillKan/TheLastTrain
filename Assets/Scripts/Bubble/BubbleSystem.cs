@@ -9,7 +9,9 @@ namespace InGame
     {
         GUESTROOM,         // 객실 (Population)
         CULTIVATION,       // 재배실(FOOD)
-        EDUCATION        // 교육실 (LeaderShip)
+        EDUCATION,        // 교육실 (LeaderShip)
+        PRESERVE,
+        STORAGE
     }
 }
 
