@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edebb0ceaf760747ab1320374ff3b78, type: 3}
+  m_Name: EventTable10
+  m_EditorClassIdentifier: 
+  ID: 9
+  IsEventOn: 1
+  tagType: 0
+  name: "\uBD80\uC815 \uBD80\uD328"
+  icon: {fileID: 21300000, guid: 5025064e3a4089b488599822a9d09586, type: 3}
+  description: "\uBC30\uCE58\uD55C \uAC10\uB3C5\uAD00\uC758 \uBD80\uC815 \uBD80\uD328\uAC00
+    \uC801\uBC1C\uB418\uC5C8\uC2B5\uB2C8\uB2E4!\r\n\uADF8\uB140\uB294 \uC790\uC2E0\uC758
+    \uC9C0\uC704\uB97C \uC774\uC6A9\uD558\uC5EC \uC2DD\uB7C9\uC744 \uBE7C\uB3CC\uB838\uC2B5\uB2C8\uB2E4.\r\n\uC2DD\uB7C9\uC774
+    \uAC10\uC18C\uD558\uACE0 \uC9C0\uB3C4\uC790\uB2D8\uC758 \uC9C0\uC9C0\uAC00 \uB5A8\uC5B4\uC9D1\uB2C8\uB2E4.\r"
+  _nextEvent: 1
