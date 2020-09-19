@@ -32,7 +32,6 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
