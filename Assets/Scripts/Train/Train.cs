@@ -15,7 +15,8 @@ namespace InGame.Train
 
     public class Train : MonoBehaviour
     {
-        [SerializeField] private TrainScroller trainScroller;
+        [SerializeField] private ArrowScroller[] arrowScrollers = new ArrowScroller[2];
+        [Space]
 
         [SerializeField] private Transform InitPos;
         [SerializeField] private GameObject GuestRoomPrefabs;
@@ -64,8 +65,11 @@ namespace InGame.Train
         }
         public void SpawnTrain(Vehicles vehicles)
         {
-            trainScroller.ExpendLimitMinValue(ExpendMinAmount);
-            trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
+            arrowScrollers[0].ExpendLimitMinValue(ExpendMinAmount);
+            arrowScrollers[0].ExpendLimitMaxValue(ExpendMaxAmount);
+
+            arrowScrollers[1].ExpendLimitMinValue(ExpendMinAmount);
+            arrowScrollers[1].ExpendLimitMaxValue(ExpendMaxAmount);
 
             IncreaseReourceInTrain(vehicles);
 
@@ -77,8 +81,11 @@ namespace InGame.Train
         {
             if (!IsInit)
             {
-                trainScroller.ExpendLimitMinValue(ExpendMinAmount);
-                trainScroller.ExpendLimitMaxValue(ExpendMaxAmount);
+                arrowScrollers[0].ExpendLimitMinValue(ExpendMinAmount);
+                arrowScrollers[0].ExpendLimitMaxValue(ExpendMaxAmount);
+
+                arrowScrollers[1].ExpendLimitMinValue(ExpendMinAmount);
+                arrowScrollers[1].ExpendLimitMaxValue(ExpendMaxAmount);
             }
 
             GameObject pool = InstantiateTrain(vehicles);
