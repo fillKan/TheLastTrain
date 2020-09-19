@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BubbleMarkRectTransform
+  m_Name: SpecialBubbleRectTransform
   m_TargetType:
     m_NativeTypeID: 224
     m_ManagedTypePPtr: {fileID: 0}
@@ -90,15 +90,15 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AnchoredPosition.y
-    value: 6.51
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SizeDelta.x
-    value: 36.666668
+    value: 58.909092
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SizeDelta.y
-    value: 36.666668
+    value: 83.72727
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Pivot.x
@@ -106,5 +106,5 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Pivot.y
-    value: 0.5
+    value: 0
     objectReference: {fileID: 0}
