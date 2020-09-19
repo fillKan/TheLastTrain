@@ -148,14 +148,15 @@ namespace InGame.Bubble
             {
                 case Vehicles.GUESTROOM:
                     GameEvent.Instance.GetResource.ApplyPopulation(1);
-
+                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.Population);
                     break;
                 case Vehicles.CULTIVATION:
                     GameEvent.Instance.GetResource.ApplyFood(1);
-
+                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.Food);
                     break;
                 case Vehicles.EDUCATION:
                     GameEvent.Instance.GetResource.ApplyLeaderShip(1);
+                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.LeaderShip);
                     break;
                 default:
                     break;
