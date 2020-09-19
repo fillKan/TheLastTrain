@@ -23,7 +23,12 @@ public class ArrowScroller : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private float DeltaTime
     { get => Time.deltaTime * Time.timeScale * Accel; }
 
-    public void OnPointerDown(PointerEventData eventData) => mIsSelect = true;
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (eventData.pointerEnter)
+            SoundManager.Instance.PlayOneShot("ArrowTouch");
+        mIsSelect = true;
+    }
     public void OnPointerUp  (PointerEventData eventData) => mIsSelect = false;
 
     public float ExpendLimitMinValue(float amount) => LimitxMinScroll += amount;
@@ -57,7 +62,6 @@ public class ArrowScroller : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                             Vector3.Max(TrainTransform.localPosition, new Vector3(LimitxMinScroll, TrainTransform.localPosition.y, 0));
                         break;
                 }
-
             }
             else lerpAmount = 0f;
             

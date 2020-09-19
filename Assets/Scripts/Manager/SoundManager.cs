@@ -30,7 +30,10 @@ public class SoundManager : MonoSingleton<SoundManager>
     public float BGMVolume;
     public float FXVolume;
 
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
         if (audioList.Count > 0)
@@ -48,8 +51,8 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     void StartSound()
     {
-        SetVolume(1.0f, SoundType.BGM);
-        SetVolume(1.0f, SoundType.FX);
+        SetVolume(0.5f, SoundType.BGM);
+        SetVolume(0.5f, SoundType.FX);
 
         PlayLoopSound("BGM");
     }
@@ -72,6 +75,8 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     public void PlayOneShot(string name)
     {
+        if (!GetAudio().ContainsKey(name))
+            return;
         FXSource.volume = FXVolume;
         FXSource.PlayOneShot(GetAudio()[name]);
     }
