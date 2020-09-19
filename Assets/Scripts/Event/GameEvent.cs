@@ -168,6 +168,10 @@ public class GameEvent : Singleton<GameEvent>
     public void SetSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent = action; } }
     public void DescribeSevenDayEvent(Action action) { if (action != null) { GetWeek.OnSevenDayEvent -= action; } }
 
+    public void SubscribeElevenDayEvent(Action action) { if (action != null) { GetWeek.OnElevenDayEvent += action; } }
+    public void SetElevenDayEvent(Action action) { if (action != null) { GetWeek.OnElevenDayEvent = action; } }
+    public void DescribeElevenDayEvent(Action action) { if (action != null) { GetWeek.OnElevenDayEvent -= action; } }
+
     public static void Pause() => Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
 
     void Awake()
