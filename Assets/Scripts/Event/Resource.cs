@@ -56,36 +56,48 @@ namespace InGame.UI.Resource
         {
             _resourceTable.populationTable.Now =
             (uint)Mathf.Max(0, _resourceTable.populationTable.Now + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+                + amount.ToString() : amount.ToString(), ResourceType.Population);
         }
 
         public void ApplyFood(int amount = 1)
         {
             _resourceTable.foodTable.Now =
             (uint)Mathf.Max(0, _resourceTable.foodTable.Now + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+                + amount.ToString() : amount.ToString(), ResourceType.Food);
         }
 
         public void ApplyLeaderShip(int amount = 1)
         {
             _resourceTable.leaderShipTable.Now =
             (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Now + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+" 
+                + amount.ToString() : amount.ToString(), ResourceType.LeaderShip);
         }
 
         public void ApplyMaxPopulation(int amount = 1)
         {
             _resourceTable.populationTable.Max =
             (uint)Mathf.Max(0, _resourceTable.populationTable.Max + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+                + amount.ToString() : amount.ToString(), ResourceType.Population);
         }
 
         public void ApplyMaxFood(int amount = 1)
         {
             _resourceTable.foodTable.Max =
             (uint)Mathf.Max(0, _resourceTable.foodTable.Max + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+" 
+                + amount.ToString() : amount.ToString(), ResourceType.Food);
         }
 
         public void ApplyMaxLeaderShip(int amount = 1)
         {
             _resourceTable.leaderShipTable.Max =
             (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Max + amount);
+            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+                + amount.ToString() : amount.ToString(), ResourceType.LeaderShip);
         }
 
         #region Debug Check : Resource
