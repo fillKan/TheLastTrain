@@ -10,10 +10,6 @@ public class PopupSystem : MonoSingleton<PopupSystem>
     public GameObject FoodPopup;
     public GameObject LeadershipPopup;
 
-    public Transform population;
-    public Transform food;
-    public Transform leadership;
-
 
     public GameObject SpawnPopup(string number, ResourceType resourceType)
     {
