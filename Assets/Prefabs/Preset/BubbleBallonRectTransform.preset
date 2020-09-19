@@ -90,7 +90,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AnchoredPosition.y
-    value: 0
+    value: -1.1644403
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SizeDelta.x
@@ -106,5 +106,5 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Pivot.y
-    value: 0.5
+    value: 0
     objectReference: {fileID: 0}

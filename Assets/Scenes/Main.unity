@@ -1652,8 +1652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 64.51, y: 47.16}
+  m_SizeDelta: {x: 360.7463, y: 68.99856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266936235
 MonoBehaviour:
@@ -2875,15 +2875,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPoolParent: {fileID: 1491883353}
   BubbleTables:
-  - gameobject: {fileID: 2055384825461911479, guid: 6c58ee42c05a0354aa28987c08e00b14,
+  - gameobject: {fileID: 3995494353697098787, guid: 6c58ee42c05a0354aa28987c08e00b14,
       type: 3}
     bubbleUpTime: 7
     isTimeup: 1
-  - gameobject: {fileID: 1718591376324350981, guid: 1484c66f7a048574c908cd7befab50a2,
+  - gameobject: {fileID: 4993061507904555749, guid: 1484c66f7a048574c908cd7befab50a2,
       type: 3}
     bubbleUpTime: 10
     isTimeup: 1
-  - gameobject: {fileID: 2893390740551519967, guid: 1b5a2714e760d5149a91f938ba3b4795,
+  - gameobject: {fileID: 8677095204512134172, guid: 1b5a2714e760d5149a91f938ba3b4795,
       type: 3}
     bubbleUpTime: 30
     isTimeup: 1
