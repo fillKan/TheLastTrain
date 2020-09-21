@@ -3175,15 +3175,15 @@ MonoBehaviour:
   BubbleTables:
   - gameobject: {fileID: 6711313359739525094, guid: 6c58ee42c05a0354aa28987c08e00b14,
       type: 3}
-    bubbleUpTime: 10
+    bubbleUpTime: 11
     isTimeup: 1
   - gameobject: {fileID: 3293799871589688808, guid: 1484c66f7a048574c908cd7befab50a2,
       type: 3}
-    bubbleUpTime: 10
+    bubbleUpTime: 9
     isTimeup: 1
   - gameobject: {fileID: 1466977339486077066, guid: 1b5a2714e760d5149a91f938ba3b4795,
       type: 3}
-    bubbleUpTime: 30
+    bubbleUpTime: 18
     isTimeup: 1
   BubbleEndTime: 7
   IsAbleProduce: 1
