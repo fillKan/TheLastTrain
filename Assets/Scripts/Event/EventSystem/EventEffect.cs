@@ -588,7 +588,7 @@ namespace InGame.Event
                 case EventID.NO9:         // 장비를 정지합니다
                     if ((resource.GetResourceTable.populationTable.Now
                         <= (resource.GetResourceTable.populationTable.Max / 2))
-                        && evt.switchCondition.IsSwitchState(SwitchID.NO1) == false)
+                        && evt.switchCondition.IsSwitchState(SwitchID.NO1) == true)
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -674,8 +674,8 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO19:        // 인신 공양
-                    if (evt.switchCondition.IsSwitchState(SwitchID.NO5) == true
-                        && evt.switchCondition.IsSwitchState(SwitchID.NO6) == true)
+                    if (evt.switchCondition.IsSwitchState(SwitchID.NO5)
+                        && evt.switchCondition.IsSwitchState(SwitchID.NO6))
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -696,8 +696,8 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO22:        // 알 수 없는 종교
-                    if (evt.switchCondition.IsSwitchState(SwitchID.NO4) == true
-                        && evt.switchCondition.IsSwitchState(SwitchID.NO5) == true)
+                    if (evt.switchCondition.IsSwitchState(SwitchID.NO4)
+                        && evt.switchCondition.IsSwitchState(SwitchID.NO5))
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -804,7 +804,7 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO14:        // 어이쿠 손이 미끄러졌네
-                    resource.ApplyFood(-(int)resource.GetFoodResource(0.3d));
+                    resource.ApplyFood(-(int)resource.GetFoodResource(0.2d));
                     resource.ApplyLeaderShip(-1);
                     ApplyEventUI(table);
                     break;
@@ -835,15 +835,15 @@ namespace InGame.Event
             switch (_eventId)
             {
                 case EventID.NO18:        // 식인 사건
-                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.3d));
+                    resource.ApplyPopulation(-3);
                     resource.ApplyFood((int)resource.GetFoodResource(0.1d));
                     resource.ApplyLeaderShip(-4);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO19:        // 인신 공양
-                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.5d));
-                    resource.ApplyFood((int)resource.GetFoodResource(0.1d));
-                    resource.ApplyLeaderShip(-4);
+                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.4d));
+                    resource.ApplyFood((int)resource.GetFoodResource(0.2d));
+                    resource.ApplyLeaderShip(-3);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO20:        // 반란 발생
