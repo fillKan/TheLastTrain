@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InGame.INPUT.Scroll;
 using InGameBubble = InGame.Bubble;
 
 namespace InGame.Train
