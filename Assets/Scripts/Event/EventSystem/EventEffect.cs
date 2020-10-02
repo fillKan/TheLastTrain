@@ -647,7 +647,7 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO17:        // 의문의 지도자
-                    if (PolicyHub.Instance.GetPolicy.Count >= 1)
+                    if (PolicySystem.Instance.GetPolicy.Count >= 1)
                     {
                         table.IsEventOn = true;
                         return _eventId;

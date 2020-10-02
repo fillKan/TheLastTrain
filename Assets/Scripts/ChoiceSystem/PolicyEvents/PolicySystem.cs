@@ -29,7 +29,7 @@ public enum Policy
 }
 
 
-public class PolicyHub : Singleton<PolicyHub>
+public class PolicySystem : Singleton<PolicySystem>
 {
     [Header("Policy ICon Objects")]
     [SerializeField] private PolicyIcon[] mPolicyIcons;

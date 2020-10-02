@@ -80,31 +80,31 @@ namespace InGame.Event
                         break;
                     case SwitchID.NO5:
                         
-                        if (PolicyHub.Instance.GetPolicy.TryGetValue(Policy.MissionaryWork, out enforcementable))
+                        if (PolicySystem.Instance.GetPolicy.TryGetValue(Policy.MissionaryWork, out enforcementable))
                         {
                             table.IsOn = true;
                         }
                         break;
                     case SwitchID.NO6:
-                        if (PolicyHub.Instance.GetPolicy.TryGetValue(Policy.FoodSaving, out enforcementable))
+                        if (PolicySystem.Instance.GetPolicy.TryGetValue(Policy.FoodSaving, out enforcementable))
                         {
                             table.IsOn = true;
                         }
                         break;
                     case SwitchID.NO7:
-                        if (PolicyHub.Instance.GetPolicy.TryGetValue(Policy.PopulationDownSize, out enforcementable))
+                        if (PolicySystem.Instance.GetPolicy.TryGetValue(Policy.PopulationDownSize, out enforcementable))
                         {
                             table.IsOn = true;
                         }
                         break;
                     case SwitchID.NO8:
-                        if (PolicyHub.Instance.GetPolicy.TryGetValue(Policy.MedicalIndustry, out enforcementable))
+                        if (PolicySystem.Instance.GetPolicy.TryGetValue(Policy.MedicalIndustry, out enforcementable))
                         {
                             table.IsOn = true;
                         }
                         break;
                     case SwitchID.NO9:
-                        if (PolicyHub.Instance.GetPolicy.TryGetValue(Policy.ExtraWork, out enforcementable))
+                        if (PolicySystem.Instance.GetPolicy.TryGetValue(Policy.ExtraWork, out enforcementable))
                         {
                             table.IsOn = true;
                         }

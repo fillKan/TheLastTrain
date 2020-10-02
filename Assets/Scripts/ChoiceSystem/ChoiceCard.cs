@@ -84,7 +84,7 @@ public class ChoiceCard : MonoBehaviour
         }
         if (IsEnforcementPolicy)
         {
-            PolicyHub.Instance.Enforce(EnforcePolicy);
+            PolicySystem.Instance.Enforce(EnforcePolicy);
         }
         ChoiceSystem.Instance.NotifyChooseOne();
     }
