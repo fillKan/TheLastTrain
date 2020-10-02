@@ -24,11 +24,11 @@ namespace InGame.Train
         [SerializeField] private GameObject PreservationPrefabs;
         [SerializeField] private GameObject StoragePrefabs;
 
-        private objectPool m_GuestRoomPool;
-        private objectPool m_CultivationPool;
-        private objectPool m_EducationPool;
-        private objectPool m_PreservationPool;
-        private objectPool m_StoragePool;
+        private ObjectPool m_GuestRoomPool;
+        private ObjectPool m_CultivationPool;
+        private ObjectPool m_EducationPool;
+        private ObjectPool m_PreservationPool;
+        private ObjectPool m_StoragePool;
 
         [SerializeField] float SpawnSpacing = -4;
         [SerializeField] float ExpendMinAmount = -2.0f;
@@ -44,11 +44,11 @@ namespace InGame.Train
 
         private void Start()
         {
-            m_GuestRoomPool = new objectPool(GuestRoomPrefabs, 4, this.transform);
-            m_CultivationPool = new objectPool(CultivationPrefabs, 4, this.transform);
-            m_EducationPool = new objectPool(EducationPrefabs, 4, this.transform);
-            m_PreservationPool = new objectPool(PreservationPrefabs, 4, this.transform);
-            m_StoragePool = new objectPool(StoragePrefabs, 4, this.transform);
+            m_GuestRoomPool = new ObjectPool(GuestRoomPrefabs, 4, this.transform);
+            m_CultivationPool = new ObjectPool(CultivationPrefabs, 4, this.transform);
+            m_EducationPool = new ObjectPool(EducationPrefabs, 4, this.transform);
+            m_PreservationPool = new ObjectPool(PreservationPrefabs, 4, this.transform);
+            m_StoragePool = new ObjectPool(StoragePrefabs, 4, this.transform);
 
             bubbles = FindObjectsOfType<InGameBubble.Bubble>();
 

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objectPool
+public class ObjectPool
 {
     public Queue<GameObject> queue = new Queue<GameObject>();
     private int count = 0;
     private GameObject poolObject;
     private Transform parent;
-    public objectPool(GameObject poolObject, int count)
+    public ObjectPool(GameObject poolObject, int count)
     {
         this.poolObject = poolObject;
         this.count = count;
@@ -16,7 +16,7 @@ public class objectPool
         Initalize(this.count);
 
     }
-    public objectPool(GameObject poolObject, int count, Transform parent)
+    public ObjectPool(GameObject poolObject, int count, Transform parent)
     {
         this.poolObject = poolObject;
         this.count = count;

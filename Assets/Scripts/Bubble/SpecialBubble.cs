@@ -37,15 +37,15 @@ namespace InGame.Bubble
         public FalseReligionBubble falseReligionBubble;
 
 
-        [HideInInspector] public objectPool m_RebellionPool;
-        [HideInInspector] public objectPool m_DemonstratePool;
-        [HideInInspector] public objectPool m_FalseReligionPool;
+        [HideInInspector] public ObjectPool m_RebellionPool;
+        [HideInInspector] public ObjectPool m_DemonstratePool;
+        [HideInInspector] public ObjectPool m_FalseReligionPool;
 
         public void Start()
         {
-            m_RebellionPool = new objectPool(rebellionBubble.prefab, 2, parent);
-            m_DemonstratePool = new objectPool(demonstrateBubble.prefab, 2, parent);
-            m_FalseReligionPool = new objectPool(falseReligionBubble.prefab, 2, parent);
+            m_RebellionPool = new ObjectPool(rebellionBubble.prefab, 2, parent);
+            m_DemonstratePool = new ObjectPool(demonstrateBubble.prefab, 2, parent);
+            m_FalseReligionPool = new ObjectPool(falseReligionBubble.prefab, 2, parent);
         }
 
         public void SpawnSpecialBubble(SpecialBubbleType type)
