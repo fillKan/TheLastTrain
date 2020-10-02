@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using InGame.UI.Week;
 
-public class EndingObserver : MonoBehaviour
+public class EndingAction : MonoBehaviour
 {
     [SerializeField]
     private int TitleSeceneIndex;
