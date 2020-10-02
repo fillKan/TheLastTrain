@@ -29,7 +29,7 @@ namespace InGame.Bubble
         public GameObject prefab;
         internal UnityEngine.UI.Button Button;
     }
-    public class SpecialBubble : Singleton<SpecialBubble>
+    public class SpecialBubbleSystem : Singleton<SpecialBubbleSystem>
     {
         public Transform parent;
         public RebellionBubble rebellionBubble;
