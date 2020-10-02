@@ -32,7 +32,7 @@ namespace InGame.Event
             if(evtEffect != null)
             {
                 evtEffect.ApplyEffect();
-                SoundManager.Instance.PlayOneShot("EventUpAlarm");
+                SoundSystem.Instance.PlayOneShot("EventUpAlarm");
             }
         }
     }

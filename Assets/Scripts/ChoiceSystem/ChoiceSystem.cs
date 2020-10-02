@@ -56,7 +56,7 @@ public class ChoiceSystem : Singleton<ChoiceSystem>
         else if (PolicyCards.Length > 0) {
             EnableCard(PolicyCards);
         }
-        SoundManager.Instance.PlayOneShot("SelectCardUp");
+        SoundSystem.Instance.PlayOneShot("SelectCardUp");
     }
     private void EnableCard(ChoiceCard[] cards)
     {

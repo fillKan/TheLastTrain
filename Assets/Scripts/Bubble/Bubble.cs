@@ -27,7 +27,7 @@ namespace InGame.Bubble
             
             IsReward = false;
 
-            SoundManager.Instance.PlayOneShot("BubbleTouch");
+            SoundSystem.Instance.PlayOneShot("BubbleTouch");
         }
         
 
@@ -133,7 +133,7 @@ namespace InGame.Bubble
                     BubbleSystem.SetActive(PoolObject, true);
                     lastBubbleTime = 0;
                     IsReward = true;
-                    SoundManager.Instance.PlayOneShot("BubbleUp");
+                    SoundSystem.Instance.PlayOneShot("BubbleUp");
                 }
             }
         }
