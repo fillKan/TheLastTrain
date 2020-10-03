@@ -647,7 +647,7 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO17:        // 의문의 지도자
-                    if (PolicyHub.Instance.GetPolicy.Count >= 1)
+                    if (PolicySystem.Instance.GetPolicy.Count >= 1)
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -847,16 +847,16 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO20:        // 반란 발생
-                    SpecialBubble.Instance.SpawnSpecialBubble(SpecialBubbleType.REBELLION);
+                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.REBELLION);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO21:        // 집단 시위
-                    SpecialBubble.Instance.SpawnSpecialBubble(SpecialBubbleType.DEMONSTRATE);
+                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.DEMONSTRATE);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO22:        // 알 수 없는 종교
                     resource.ApplyLeaderShip(-1);
-                    SpecialBubble.Instance.SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION);
+                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION);
                     ApplyEventUI(table);
                     break;
                 case EventID.NO23:        // 만족하는 복지
