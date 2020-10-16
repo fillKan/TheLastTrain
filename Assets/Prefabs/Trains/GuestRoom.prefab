@@ -449,16 +449,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel
       objectReference: {fileID: 0}
-    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1359619989
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.x
