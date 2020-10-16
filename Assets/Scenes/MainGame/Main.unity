@@ -576,10 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8fcfcd84adfc144eb2e5152c5a19f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchController: {fileID: 0}
-  train: {fileID: 314796660}
-  LimitxMinScroll: 1
-  LimitxMaxScroll: 6
 --- !u!114 &314796660
 MonoBehaviour:
   m_ObjectHideFlags: 0
