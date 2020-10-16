@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1359619989
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 14a20e5a031b1b246b94d848c6398a0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a49b96934c0d4424cafcf5a5a12e0ce0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885721578465199458}
   m_Layer: 0
-  m_Name: Storage vehicle
+  m_Name: Storage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
@@ -487,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
