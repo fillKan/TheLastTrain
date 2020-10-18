@@ -10,33 +10,22 @@ public class Tutorial : MonoBehaviour
 
     public int CurSequence = 0;
 
-    private void Start()
+    private void OnEnable()
     {
-        GameEvent.Pause();
+        CurSequence = 0;
+        targetImage.sprite = sprites[CurSequence];
     }
 
-    [ContextMenu("RIGHT")]
-    public void OnRight()
+    [ContextMenu("NEXT")]
+    public void OnNext()
     {
         if (sprites.Length == CurSequence + 1)
-            Skip();
+            ClosePanel();
         if (sprites.Length <= CurSequence + 1)
             return;
         CurSequence += 1;
         targetImage.sprite = sprites[CurSequence];
     }
-    [ContextMenu("LEFT")]
-    public void OnLeft()
-    {
-        if (0 > CurSequence - 1)
-            return;
-        CurSequence -= 1;
-        targetImage.sprite = sprites[CurSequence];
-    }
-
-    public void Skip()
-    {
-        gameObject.SetActive(false);
-        GameEvent.Pause();
-    }
+    public void OnSkip() => ClosePanel();
+    public void ClosePanel() => gameObject.SetActive(false);
 }
