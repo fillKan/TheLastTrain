@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 2775253770401530868}
   - component: {fileID: 1434055441}
   m_Layer: 5
-  m_Name: EndingCanvas
+  m_Name: UI_Ending
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,9 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0ad3744a49c444f8a26c779edff5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TitleSeceneIndex: 0
-  MainGameSeceneIndex: 0
-  EndingSeceneIndex: 0
   SumDayText: {fileID: 2775253771682140463}
   EndDayText: {fileID: 2775253771665167061}
 --- !u!1 &2775253770496031141

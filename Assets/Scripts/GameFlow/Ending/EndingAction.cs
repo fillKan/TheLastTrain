@@ -7,33 +7,32 @@ using InGame.UI.Week;
 
 public class EndingAction : MonoBehaviour
 {
-    [SerializeField]
-    private int TitleSeceneIndex;
-    [SerializeField]
-    private int MainGameSeceneIndex;
-    [SerializeField]
-    private int EndingSeceneIndex;
-    [SerializeField]
-    private Text SumDayText;
-    [SerializeField]
-    private Text EndDayText;
+    [SerializeField] private Text SumDayText;
+    [SerializeField] private Text EndDayText;
 
-    public void LoadTitle()
+    private Transform mTitleAction;
+
+    public void LoadScene(int sceneIndex)
     {
-        Destroy((FindObjectOfType(typeof(TitleAction)) as TitleAction).gameObject);
+        Destroy(mTitleAction.gameObject);
 
-        SceneManager.LoadScene(TitleSeceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
-    public void LoadMainGame()
-    {
-        Destroy((FindObjectOfType(typeof(TitleAction)) as TitleAction).gameObject);
 
-        SceneManager.LoadScene(MainGameSeceneIndex);
-    }
     private void Start()
     {
-        DaySaver day = FindObjectOfType(typeof(DaySaver)) as DaySaver;
+        DaySaver day = 
+             FindObjectOfType(typeof(DaySaver)) as DaySaver;
 
+        mTitleAction =
+            (FindObjectOfType(typeof(TitleAction)) as TitleAction).transform;
+
+        for (int i = 0; i< mTitleAction.childCount; ++i) 
+        {
+            if (mTitleAction.GetChild(i).gameObject.activeSelf) {
+                mTitleAction.GetChild(i).parent = transform;
+            }
+        }
         SumDayText.text = day.SumDay();
         EndDayText.text = day.WeekDay();
 
