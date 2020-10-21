@@ -20,10 +20,14 @@ public class EndingAction : MonoBehaviour
 
     public void LoadTitle()
     {
+        Destroy((FindObjectOfType(typeof(TitleAction)) as TitleAction).gameObject);
+
         SceneManager.LoadScene(TitleSeceneIndex);
     }
     public void LoadMainGame()
     {
+        Destroy((FindObjectOfType(typeof(TitleAction)) as TitleAction).gameObject);
+
         SceneManager.LoadScene(MainGameSeceneIndex);
     }
     private void Start()
