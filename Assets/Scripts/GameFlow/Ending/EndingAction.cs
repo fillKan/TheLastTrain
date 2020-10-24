@@ -10,12 +10,8 @@ public class EndingAction : MonoBehaviour
     [SerializeField] private Text SumDayText;
     [SerializeField] private Text EndDayText;
 
-    private Transform mTitleAction;
-
     public void LoadScene(int sceneIndex)
     {
-        Destroy(mTitleAction.gameObject);
-
         SceneManager.LoadScene(sceneIndex);
     }
 
@@ -24,15 +20,8 @@ public class EndingAction : MonoBehaviour
         DaySaver day = 
              FindObjectOfType(typeof(DaySaver)) as DaySaver;
 
-        mTitleAction =
-            (FindObjectOfType(typeof(TitleAction)) as TitleAction).transform;
+        GameObject.FindGameObjectWithTag("Thema").transform.parent = transform;
 
-        for (int i = 0; i< mTitleAction.childCount; ++i) 
-        {
-            if (mTitleAction.GetChild(i).gameObject.activeSelf) {
-                mTitleAction.GetChild(i).parent = transform;
-            }
-        }
         SumDayText.text = day.SumDay();
         EndDayText.text = day.WeekDay();
 
