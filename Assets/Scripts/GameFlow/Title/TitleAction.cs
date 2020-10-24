@@ -1,23 +1,46 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleAction : MonoBehaviour
 {
     [SerializeField]
-    private int MainGameScenceIndex;
+    private int MainGameIndex;
 
-    [Space()][SerializeField]
-    private GameObject[] ThemaObjets;
-    
-    public void MainGameLoad() {
-        SceneManager.LoadScene(MainGameScenceIndex);
+    [Space()]
+    [SerializeField]
+    private Transform ThemaParent;
+
+    private AsyncOperation mAsnycSceneLoad;
+
+    public void MainGameLoad()
+    {
+        if (mAsnycSceneLoad?.progress >= 0.9f) 
+        {
+            mAsnycSceneLoad.allowSceneActivation = true;
+        }
     }
 
     private void Awake()
+    {        
+        Transform thema = ThemaParent.GetChild(Random.Range(0, ThemaParent.childCount));
+
+                          thema.parent = null;
+                          thema.gameObject.SetActive(true);
+        DontDestroyOnLoad(thema.gameObject);
+    }
+
+    private void Start() {
+        StartCoroutine(ESceneLoad());
+    }
+
+    private IEnumerator ESceneLoad()
     {
-        ThemaObjets[Random.Range(0, ThemaObjets.Length)].SetActive(true);
-        DontDestroyOnLoad(gameObject);
+        yield return new WaitForSeconds(0.1f);
+
+        mAsnycSceneLoad =
+           SceneManager.LoadSceneAsync(MainGameIndex, LoadSceneMode.Single);
+
+        mAsnycSceneLoad.allowSceneActivation = false;
     }
 }
