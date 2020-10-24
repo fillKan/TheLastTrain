@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7348036569173657550, guid: b97f1c63a52cbcf41af03f63aca30e6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Thema
+      objectReference: {fileID: 0}
     - target: {fileID: 7348036569173657551, guid: b97f1c63a52cbcf41af03f63aca30e6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094495448320558342, guid: d56c3a62e850d2947846523b391aec05,
+        type: 3}
+      propertyPath: m_TagString
+      value: Thema
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56c3a62e850d2947846523b391aec05, type: 3}
@@ -535,6 +545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100194444520918714, guid: 64b6abaa0d482ac42927b090b86d7e2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Thema
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b6abaa0d482ac42927b090b86d7e2d, type: 3}
