@@ -41,6 +41,12 @@ namespace InGame.Train
         public void ApplyGuestRoomAmount(int Amount) => trainAmount.GuestRoom = (uint)Mathf.Max(0, trainAmount.GuestRoom + Amount);
         public void ApplyCultivationAmount(int Amount) => trainAmount.Cultivation = (uint)Mathf.Max(0, trainAmount.Cultivation + Amount);
         public void ApplyEducationAmount(int Amount) => trainAmount.Education = (uint)Mathf.Max(0, trainAmount.Education + Amount);
+        public void DisableAnimation()
+        {
+            if (gameObject.TryGetComponent(out Animator animator)) {
+                animator.enabled = false;
+            }
+        }
 
         private void Start()
         {
