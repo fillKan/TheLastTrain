@@ -15,14 +15,6 @@ public class GameOverAction : MonoBehaviour
 
     private ResourceTable mResourceTable;
 
-    [SerializeField]
-    private GameObject[] Themas;
-
-    private void Awake()
-    {
-        Themas[Random.Range(0, Themas.Length)].SetActive(true);
-    }
-
     private void Start()
     {
         GameEvent.Instance.SubscribeBubbleEvent(() => mSurvivalDay++);
