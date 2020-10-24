@@ -11,14 +11,19 @@ public class TitleAction : MonoBehaviour
     [SerializeField]
     private Transform ThemaParent;
 
-    private AsyncOperation mAsnycSceneLoad;
+    [SerializeField]
+    private UnityEngine.UI.Image TitleImage;
+    [SerializeField]
+    private UnityEngine.UI.Image Tap2PlayImage;
+    
+    [SerializeField]
+    private Animator Tap2PlayAnim;
+
+    private AsyncOperation mAsyncSceneLoad;
 
     public void MainGameLoad()
     {
-        if (mAsnycSceneLoad?.progress >= 0.9f) 
-        {
-            mAsnycSceneLoad.allowSceneActivation = true;
-        }
+        StartCoroutine(ESceneLoad());
     }
 
     private void Awake()
@@ -30,17 +35,28 @@ public class TitleAction : MonoBehaviour
         DontDestroyOnLoad(thema.gameObject);
     }
 
-    private void Start() {
-        StartCoroutine(ESceneLoad());
-    }
-
     private IEnumerator ESceneLoad()
     {
-        yield return new WaitForSeconds(0.1f);
+        var async = 
+            SceneManager.LoadSceneAsync(MainGameIndex, LoadSceneMode.Single);
+            
+        async.allowSceneActivation = false;
 
-        mAsnycSceneLoad =
-           SceneManager.LoadSceneAsync(MainGameIndex, LoadSceneMode.Single);
+        while (async.progress < 0.9f)
+        {
+            yield return null;
+        }
+        Tap2PlayAnim.enabled = false;
 
-        mAsnycSceneLoad.allowSceneActivation = false;
+        while (TitleImage.color.a > 0)
+        {
+            yield return null;
+
+            float deltaTime = Time.deltaTime;
+
+               TitleImage.color -= Color.black * deltaTime * 0.3f;
+            Tap2PlayImage.color -= Color.black * deltaTime * 0.3f;
+        }
+        async.allowSceneActivation = true;
     }
 }
