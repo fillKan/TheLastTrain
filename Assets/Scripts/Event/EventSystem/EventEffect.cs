@@ -520,9 +520,9 @@ namespace InGame.Event
             GameEvent.Pause();
         }
 
+        // Call this Method, If Click Exit Button in Game
         public void _OnClickExit()
         {
-            Debug.Log("클릭");
             if (resultTable != null)
             {
                 GameEvent.Pause();
