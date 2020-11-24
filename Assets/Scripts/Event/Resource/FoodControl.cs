@@ -57,7 +57,7 @@ namespace InGame.UI.Resource.Control
         float FoodDiffToPercent()
         {
             if (population_Val < foodCnt)
-                return -1;
+                return EXCEPTION_KEY;
 
             return res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt));
         }

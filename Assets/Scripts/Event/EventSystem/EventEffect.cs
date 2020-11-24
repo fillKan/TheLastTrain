@@ -6,366 +6,113 @@ using UnityEngine.UI;
 using InGame.Bubble;
 
 using Random = UnityEngine.Random;
-
 namespace InGame.Event
 {
+    [Serializable]
     public enum EventID
     {
+        /// <summary>
+        /// 인구 급증 (RESOURCE)
+        /// </summary>
         NO1,
+        /// <summary>
+        /// 식중독 발생 (RESOURCE)
+        /// </summary>
         NO2,
+        /// <summary>
+        /// 단풍잎 이야기 (NORMAL)
+        /// </summary>
         NO3,
+        /// <summary>
+        /// 식량 배분 (NORMAL)
+        /// </summary>
         NO4,
+        /// <summary>
+        /// 비상식량 발견 (NORMAL)
+        /// </summary>
         NO5,
+        /// <summary>
+        /// 사고 발생 (NORMAL)
+        /// </summary>
         NO6,
+        /// <summary>
+        /// 톱니바퀴 개발 (NORMAL)
+        /// </summary>
         NO7,
+        /// <summary>
+        /// 감독관 배치 (NORMAL)
+        /// </summary>
         NO8,
+        /// <summary>
+        /// 장비를 정지합니다 (NORMAL)
+        /// </summary>
         NO9,
+        /// <summary>
+        /// 부정 부패 (NORMAL)
+        /// </summary>
         NO10,
+        /// <summary>
+        /// 노후 부품 발견 (NORMAL)
+        /// </summary>
         NO11,
+        /// <summary>
+        /// 식량 분쟁 (NORMAL)
+        /// </summary>
         NO12,
+        /// <summary>
+        /// 식량 창고 개선 (NORMAL)
+        /// </summary>
         NO13,
+        /// <summary>
+        /// 어이쿠 손이 미끄러졌네 (NORMAL)
+        /// </summary>
         NO14,
+        /// <summary>
+        /// 재배 시설 강화 (NORMAL)
+        /// </summary>
         NO15,
+        /// <summary>
+        /// 베이비 붐 시대 (NORMAL)
+        /// </summary>
         NO16,
+        /// <summary>
+        /// 의문의 지도자 (NORMAL)
+        /// </summary>
         NO17,
+        /// <summary>
+        /// 식인 사건 (SPECIAL)
+        /// </summary>
         NO18,
+        /// <summary>
+        /// 인신 공양 (SPECIAL)
+        /// </summary>
         NO19,
+        /// <summary>
+        /// 반란 발생 (SPECIAL)
+        /// </summary>
         NO20,
+        /// <summary>
+        /// 집단 시위 (SPECIAL)
+        /// </summary>
         NO21,
+        /// <summary>
+        /// 알 수 없는 종교 (SPECIAL)
+        /// </summary>
         NO22,
+        /// <summary>
+        /// 만족하는 복지 (SPECIAL)
+        /// </summary>
         NO23,
+        /// <summary>
+        /// 만성 피로 (SPECIAL)
+        /// </summary>
         NO24,
         None,
     }
 
-    #region TEST
-    public interface IEvent
-    {
-        EventID GetEventID { get; }
-        void OnEffect();
-        bool Condition();
-    }
-    public class NO1 : IEvent
-    {
-        public EventID GetEventID => EventID.NO1;
-
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO2 : IEvent
-    {
-        public EventID GetEventID => EventID.NO2;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO3 : IEvent
-    {
-        public EventID GetEventID => EventID.NO3;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO4 : IEvent
-    {
-        public EventID GetEventID => EventID.NO4;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO5 : IEvent
-    {
-        public EventID GetEventID => EventID.NO5;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO6 : IEvent
-    {
-        public EventID GetEventID => EventID.NO6;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO7 : IEvent
-    {
-        public EventID GetEventID => EventID.NO7;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO8 : IEvent
-    {
-        public EventID GetEventID => EventID.NO8;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO9 : IEvent
-    {
-        public EventID GetEventID => EventID.NO9;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO10 : IEvent
-    {
-        public EventID GetEventID => EventID.NO10;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO11 : IEvent
-    {
-        public EventID GetEventID => EventID.NO11;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO12 : IEvent
-    {
-        public EventID GetEventID => EventID.NO12;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO13 : IEvent
-    {
-        public EventID GetEventID => EventID.NO13;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO14 : IEvent
-    {
-        public EventID GetEventID => EventID.NO14;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO15 : IEvent
-    {
-        public EventID GetEventID => EventID.NO15;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO16 : IEvent
-    {
-        public EventID GetEventID => EventID.NO16;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO17 : IEvent
-    {
-        public EventID GetEventID => EventID.NO17;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO18 : IEvent
-    {
-        public EventID GetEventID => EventID.NO18;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO19 : IEvent
-    {
-        public EventID GetEventID => EventID.NO19;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO20 : IEvent
-    {
-        public EventID GetEventID => EventID.NO20;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO21 : IEvent
-    {
-        public EventID GetEventID => EventID.NO21;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO22 : IEvent
-    {
-        public EventID GetEventID => EventID.NO22;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO23 : IEvent
-    {
-        public EventID GetEventID => EventID.NO23;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    public class NO24 : IEvent
-    {
-        public EventID GetEventID => EventID.NO24;
-        public bool Condition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnEffect()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-    #endregion
     public class EventEffect : MonoBehaviour
     {
         public List<EventTable> eventTable;
-
-        public List<IEvent> resourceEvtList;
-        public List<IEvent> specialEvtList;
-        public List<IEvent> normalEvtList;
 
         public Image Icon = null;
         public Text EvtNameText = null;
@@ -374,9 +121,9 @@ namespace InGame.Event
         public GameObject EventUI;
 
         GameEvent evt;
-        List<EventID> OnResourceEvt;
-        List<EventID> OnSpecialEvt;
-        List<EventID> OnNormalEvt;
+        private List<EventID> OnResourceEvt;
+        private List<EventID> OnSpecialEvt;
+        private List<EventID> OnNormalEvt;
 
         void Start()
         {
@@ -406,20 +153,16 @@ namespace InGame.Event
         private EventTable resultTable;
         public static EventTable lastestResultTable = null;
         
-
-        public void ApplyEffect()
+        /// <summary>
+        /// 이벤트 리스트 검사 : VOID
+        /// </summary>
+        private void EventInspection()
         {
-            UI.Resource.Resource resource = evt.GetResource;
-            ResourceTable resourceTable = resource.GetResourceTable;
-
             OnResourceEvt.Clear();
             OnSpecialEvt.Clear();
             OnNormalEvt.Clear();
-            resultTable = null;
 
-            EventUI.SetActive(true);
-
-            // 이벤트 리스트 검사
+            
             eventTable.ForEach(table =>
             {
                 table._nextEvent = true;
@@ -427,55 +170,53 @@ namespace InGame.Event
 
                 EventID eventID = ResourceCondition(table, table.ID, GetEvent());
                 if (eventID != EventID.None)
+                {
                     OnResourceEvt.Add(eventID);
+                }
 
 
                 eventID = NormalCondition(table, table.ID, GetEvent());
                 if (eventID != EventID.None)
+                {
                     OnNormalEvt.Add(eventID);
+                }
 
 
                 eventID = SpecialCondition(table, table.ID, GetEvent());
                 if (eventID != EventID.None)
-                    OnSpecialEvt.Add(eventID);
-
-
-            });
-
-            if (OnResourceEvt.Count > 0)
-            {
-                int i = Random.Range(0, OnResourceEvt.Count);
-                if (eventTable[(int)OnResourceEvt[i]].IsEventOn == true)
                 {
-                    resultTable = eventTable[(int)OnResourceEvt[i]];
+                    OnSpecialEvt.Add(eventID);
+                }
+            });
+        }
+
+        /// <summary>
+        /// 이벤트 산출 : VOID
+        /// </summary>
+        private void EventProduction(bool isInspectionSpeical = true)
+        {
+            if (OnSpecialEvt.Count > 0 && isInspectionSpeical)
+            {
+                int i = Random.Range(0, OnSpecialEvt.Count);
+                if (eventTable[(int)OnSpecialEvt[i]].IsEventOn == true)
+                {
+                    resultTable = eventTable[(int)OnSpecialEvt[i]];
                     ApplyEventUI(resultTable);
                 }
             }
-            else
+            else // 특수 이벤트 및 일반 이벤트 On off 검사
             {
-                
+
                 bool IsCompare = (Random.Range(0, 2) == 0) ? true : false;
                 //Debug.Log(OnSpecialEvt.Count + " : " + IsCompare);
                 if (IsCompare)
                 {
-                    if (OnNormalEvt.Count > 0)
+                    if (OnResourceEvt.Count > 0)        // 자원 이벤트가 On인가 (하나라도 충족되는 조건이 있나)
                     {
-                        int i = Random.Range(0, OnNormalEvt.Count);
-                        if (eventTable[(int)OnNormalEvt[i]].IsEventOn == true)
+                        int i = Random.Range(0, OnResourceEvt.Count);
+                        if (eventTable[(int)OnResourceEvt[i]].IsEventOn == true) // 자원 이벤트 On Off 검사
                         {
-                            resultTable = eventTable[(int)OnNormalEvt[i]];
-                            ApplyEventUI(resultTable);
-                        }
-                    }
-                }
-                else
-                {
-                    if (OnSpecialEvt.Count > 0)
-                    {
-                        int i = Random.Range(0, OnSpecialEvt.Count);
-                        if (eventTable[(int)OnSpecialEvt[i]].IsEventOn == true)
-                        {
-                            resultTable = eventTable[(int)OnSpecialEvt[i]];
+                            resultTable = eventTable[(int)OnResourceEvt[i]];        // 자원 이벤트 중 하나 선택
                             ApplyEventUI(resultTable);
                         }
                     }
@@ -492,37 +233,143 @@ namespace InGame.Event
                         }
                     }
                 }
-
-
-            }
-
-            if (lastestResultTable != resultTable)
-            {
-                if (lastestResultTable != null)
+                else
                 {
-                    switch (lastestResultTable.ID)
+                    if (OnNormalEvt.Count > 0)
                     {
-                        case EventID.NO2:
-                            evt.GetWeek.OnThreeDayEvent = null;
-                            break;
-                        case EventID.NO9:
-                            GameEvent.Instance.WeekUploadTime = 1.0f;
-                            break;
-                        case EventID.NO24:
-                            evt.GetWeek.OnThreeDayEvent = null;
-                            evt.GetWeek.OnTwoDayEvent = null;
-                            break;
+                        int i = Random.Range(0, OnNormalEvt.Count);
+                        if (eventTable[(int)OnNormalEvt[i]].IsEventOn == true)
+                        {
+                            resultTable = eventTable[(int)OnNormalEvt[i]];
+                            ApplyEventUI(resultTable);
+                        }
+                    }
+                    else
+                    {
+                        if (OnResourceEvt.Count > 0)        // 자원 이벤트가 On인가 (하나라도 충족되는 조건이 있나)
+                        {
+                            int i = Random.Range(0, OnResourceEvt.Count);
+                            if (eventTable[(int)OnResourceEvt[i]].IsEventOn == true) // 자원 이벤트 On Off 검사
+                            {
+                                resultTable = eventTable[(int)OnResourceEvt[i]];        // 자원 이벤트 중 하나 선택
+                                ApplyEventUI(resultTable);
+                            }
+                        }
                     }
                 }
-                lastestResultTable = resultTable;
-            }
 
-            GameEvent.Pause();
+
+            }
         }
 
+        public void ApplyEffect()
+        {
+            StartCoroutine(EEventTableInspection());
+        }
+
+        IEnumerator EEventTableInspection()
+        {
+            UI.Resource.Resource resource = evt.GetResource;
+            ResourceTable resourceTable = resource.GetResourceTable;
+
+            resultTable = null;
+            EventUI.SetActive(true);
+            evt.switchCondition.SwitchCheck();
+
+
+            EventInspection();
+            EventProduction();
+
+
+
+            //if (OnResourceEvt.Count > 0)        // 자원 이벤트가 On인가 (하나라도 충족되는 조건이 있나)
+            //{
+            //    int i = Random.Range(0, OnResourceEvt.Count);
+            //    if (eventTable[(int)OnResourceEvt[i]].IsEventOn == true) // 자원 이벤트 On Off 검사
+            //    {
+            //        resultTable = eventTable[(int)OnResourceEvt[i]];        // 자원 이벤트 중 하나 선택
+            //        ApplyEventUI(resultTable);
+            //    }
+            //}
+            //else // 특수 이벤트 및 일반 이벤트 On off 검사
+            //{
+
+            //    bool IsCompare = (Random.Range(0, 2) == 0) ? true : false;
+            //    //Debug.Log(OnSpecialEvt.Count + " : " + IsCompare);
+            //    if (IsCompare)
+            //    {
+            //        if (OnNormalEvt.Count > 0)
+            //        {
+            //            int i = Random.Range(0, OnNormalEvt.Count);
+            //            if (eventTable[(int)OnNormalEvt[i]].IsEventOn == true)
+            //            {
+            //                resultTable = eventTable[(int)OnNormalEvt[i]];
+            //                ApplyEventUI(resultTable);
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (OnSpecialEvt.Count > 0)
+            //        {
+            //            int i = Random.Range(0, OnSpecialEvt.Count);
+            //            if (eventTable[(int)OnSpecialEvt[i]].IsEventOn == true)
+            //            {
+            //                resultTable = eventTable[(int)OnSpecialEvt[i]];
+            //                ApplyEventUI(resultTable);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            if (OnNormalEvt.Count > 0)
+            //            {
+            //                int i = Random.Range(0, OnNormalEvt.Count);
+            //                if (eventTable[(int)OnNormalEvt[i]].IsEventOn == true)
+            //                {
+            //                    resultTable = eventTable[(int)OnNormalEvt[i]];
+            //                    ApplyEventUI(resultTable);
+            //                }
+            //            }
+            //        }
+            //    }
+
+
+            //}
+
+            if (lastestResultTable == resultTable)
+            {
+                EventInspection();
+                EventProduction(false);
+            }
+
+
+            if (lastestResultTable != null)
+            {
+                switch (lastestResultTable.ID)
+                {
+                    case EventID.NO2:
+                        evt.GetWeek.OnThreeDayEvent = null;
+                        break;
+                    case EventID.NO9:
+                        GameEvent.Instance.WeekUploadTime = 1.0f;
+                        break;
+                    case EventID.NO24:
+                        evt.GetWeek.OnThreeDayEvent = null;
+                        evt.GetWeek.OnTwoDayEvent = null;
+                        break;
+                }
+            }
+            lastestResultTable = resultTable;
+
+            eventTable.ForEach(e => e.IsEventOn = false);
+            GameEvent.Pause();
+
+            yield return null;
+        }
+
+        // Call this Method, If Click Exit Button in Game
         public void _OnClickExit()
         {
-            Debug.Log("클릭");
             if (resultTable != null)
             {
                 GameEvent.Pause();
@@ -647,7 +494,7 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO17:        // 의문의 지도자
-                    if (PolicySystem.Instance.GetPolicy.Count >= 1)
+                    if (PolicySystem.Instance.GetAccumulatePolicy.Count >= 1)
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -847,17 +694,22 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO20:        // 반란 발생
-                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.REBELLION);
-                    ApplyEventUI(table);
+                    if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.REBELLION))
+                        ApplyEventUI(table);
+                    table.IsEventOn = false;
                     break;
                 case EventID.NO21:        // 집단 시위
-                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.DEMONSTRATE);
-                    ApplyEventUI(table);
+                    if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.DEMONSTRATE))
+                        ApplyEventUI(table);
+                    table.IsEventOn = false;
                     break;
                 case EventID.NO22:        // 알 수 없는 종교
-                    resource.ApplyLeaderShip(-1);
-                    SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION);
-                    ApplyEventUI(table);
+                    if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION))
+                    {
+                        resource.ApplyLeaderShip(-1);
+                        ApplyEventUI(table);
+                    }
+                    table.IsEventOn = false;
                     break;
                 case EventID.NO23:        // 만족하는 복지
                     resource.ApplyLeaderShip(2);

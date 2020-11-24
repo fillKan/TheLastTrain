@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EventTable01
   m_EditorClassIdentifier: 
   ID: 0
-  IsEventOn: 1
+  IsEventOn: 0
   tagType: 1
   name: "\uC778\uAD6C \uAE09\uC99D"
   icon: {fileID: 21300000, guid: fd32eee948064494fa7943ade474afff, type: 3}

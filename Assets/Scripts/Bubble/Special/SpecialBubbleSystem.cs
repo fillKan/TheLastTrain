@@ -48,12 +48,21 @@ namespace InGame.Bubble
             m_FalseReligionPool = new ObjectPool(falseReligionBubble.prefab, 2, parent);
         }
 
-        public void SpawnSpecialBubble(SpecialBubbleType type)
+        public bool SpawnSpecialBubble(SpecialBubbleType type)
         {
+            Policy policy = ConvertSpecialBubbleToPolicy(type);
+            if (!PolicySystem.Instance.IsExistAccumulatePolicy(policy))
+                return false;
+
             GameObject[] bubbleObjects = GameObject.FindGameObjectsWithTag("Bubble") as GameObject[];
             GameObject poolObject = InstantiateSpecialBubble(type);
             poolObject.GetComponent<SpecialBubbleButton>().SpecialBubbleUP();
+
+
+            PolicySystem.Instance.RemoveAccumulatePolicy(policy);
+
             StartCoroutine(EUpdate(poolObject, bubbleObjects[Random.Range(0, bubbleObjects.Length)]));
+            return true;
         }
 
         IEnumerator EUpdate(GameObject poolObject, GameObject bubble)
@@ -82,6 +91,21 @@ namespace InGame.Bubble
         void SpawnTEST03()
         {
             SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION);
+        }
+
+        public Policy ConvertSpecialBubbleToPolicy(SpecialBubbleType specialBubbleType)
+        {
+            switch (specialBubbleType)
+            {
+                case SpecialBubbleType.REBELLION:
+                    return Policy.PopulationDownSize;
+                case SpecialBubbleType.DEMONSTRATE:
+                    return Policy.ExtraWork;
+                case SpecialBubbleType.FALSE_RELIGION:
+                    return Policy.MissionaryWork;
+                default:
+                    return Policy.None;
+            }
         }
 
         public GameObject InstantiateSpecialBubble(SpecialBubbleType type)

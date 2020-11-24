@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public enum Policy
 {
@@ -57,9 +58,23 @@ public class PolicySystem : Singleton<PolicySystem>
             return null;
         }
     }
+    private List<Policy> mAccumulatePolicy;
+    public List<Policy> GetAccumulatePolicy
+    {
+        get
+        {
+            if (mAccumulatePolicy != null)
+                return mAccumulatePolicy;
+            return null;
+        }
+    }
+    public bool IsExistAccumulatePolicy(Policy policy) => GetAccumulatePolicy.Contains(policy);
+    public bool RemoveAccumulatePolicy(Policy policy) => GetAccumulatePolicy.Remove(policy);
 
     private void Awake()
     {
+        mAccumulatePolicy = new List<Policy>();
+
         MIndex = 1;
 
         mPolicy = new Dictionary<Policy, IEnforcementable>();
@@ -109,6 +124,9 @@ public class PolicySystem : Singleton<PolicySystem>
             mPolicy[policy].Enforce();
 
             AddEnforcementPolicy(policy);
+
+            if (!IsExistAccumulatePolicy(policy))
+                GetAccumulatePolicy.Add(policy);
         }
     }
     private void AddEnforcementPolicy(Policy policy)
