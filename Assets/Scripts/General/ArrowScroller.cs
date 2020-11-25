@@ -7,8 +7,10 @@ public enum Direction { Left, Right }
 
 public class ArrowScroller : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField]
-    private float Accel;
+    public float ScrollRangeMax => LimitxMaxScroll;
+    public float ScrollRangeMin => LimitxMinScroll;
+
+    [SerializeField] private float Accel;
 
     [SerializeField] float LimitxMinScroll = 1.0f;
     [SerializeField] float LimitxMaxScroll = 6.0f;
