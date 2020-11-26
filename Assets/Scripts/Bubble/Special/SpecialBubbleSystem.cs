@@ -53,13 +53,16 @@ namespace InGame.Bubble
             Policy policy = ConvertSpecialBubbleToPolicy(type);
             if (!PolicySystem.Instance.IsExistAccumulatePolicy(policy))
                 return false;
-
+            
             GameObject[] bubbleObjects = GameObject.FindGameObjectsWithTag("Bubble") as GameObject[];
             GameObject poolObject = InstantiateSpecialBubble(type);
             poolObject.GetComponent<SpecialBubbleButton>().SpecialBubbleUP();
 
 
             PolicySystem.Instance.RemoveAccumulatePolicy(policy);
+
+            Event.SwitchID ConvertedSwitch = ConvertSpecialBubbleToSwitch(type);
+            GameEvent.Instance.switchCondition.SwitchOff(ConvertedSwitch);
 
             StartCoroutine(EUpdate(poolObject, bubbleObjects[Random.Range(0, bubbleObjects.Length)]));
             return true;
@@ -100,13 +103,29 @@ namespace InGame.Bubble
                 case SpecialBubbleType.REBELLION:
                     return Policy.PopulationDownSize;
                 case SpecialBubbleType.DEMONSTRATE:
-                    return Policy.ExtraWork;
+                    return Policy.FoodSaving;
                 case SpecialBubbleType.FALSE_RELIGION:
                     return Policy.MissionaryWork;
                 default:
                     return Policy.None;
             }
         }
+
+        public Event.SwitchID ConvertSpecialBubbleToSwitch(SpecialBubbleType specialBubbleType)
+        {
+            switch (specialBubbleType)
+            {
+                case SpecialBubbleType.REBELLION:
+                    return Event.SwitchID.NO7;
+                case SpecialBubbleType.DEMONSTRATE:
+                    return Event.SwitchID.NO6;
+                case SpecialBubbleType.FALSE_RELIGION:
+                    return Event.SwitchID.NO5;
+                default:
+                    return Event.SwitchID.None;
+            }
+        }
+
 
         public GameObject InstantiateSpecialBubble(SpecialBubbleType type)
         {
