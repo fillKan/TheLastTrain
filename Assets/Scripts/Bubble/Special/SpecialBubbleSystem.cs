@@ -53,11 +53,10 @@ namespace InGame.Bubble
             Policy policy = ConvertSpecialBubbleToPolicy(type);
             if (!PolicySystem.Instance.IsExistAccumulatePolicy(policy))
                 return false;
-            
+                
             GameObject[] bubbleObjects = GameObject.FindGameObjectsWithTag("Bubble") as GameObject[];
             GameObject poolObject = InstantiateSpecialBubble(type);
             poolObject.GetComponent<SpecialBubbleButton>().SpecialBubbleUP();
-
 
             PolicySystem.Instance.RemoveAccumulatePolicy(policy);
 
@@ -125,8 +124,6 @@ namespace InGame.Bubble
                     return Event.SwitchID.None;
             }
         }
-
-
         public GameObject InstantiateSpecialBubble(SpecialBubbleType type)
         {
             GameObject poolObject = null;
