@@ -42,6 +42,7 @@ namespace InGame.Event
         /// 야간 노동 (SWITCH)
         /// </summary>
         NO9,
+        None,
     }
 
     public class SwitchCondition : MonoBehaviour
