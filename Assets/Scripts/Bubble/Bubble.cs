@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using InGame.UI.Resource;
 
 namespace InGame.Bubble
 {
@@ -14,6 +14,10 @@ namespace InGame.Bubble
         public Vehicles GetVehicles() => vehicles;
 
         private BubbleSystem bubbleSystem;
+        private GameEvent gameEvent;
+
+        private Resource resource;
+
         public int lastBubbleTime = 0;
 
         private GameObject PoolObject;
@@ -76,6 +80,10 @@ namespace InGame.Bubble
         private void Start()
         {
             bubbleSystem = BubbleSystem.Instance;
+            gameEvent = GameEvent.Instance;
+
+            resource = gameEvent.GetResource;
+
             StartCoroutine(EInit());
         }
         IEnumerator EInit()
@@ -94,7 +102,7 @@ namespace InGame.Bubble
             });
             StartCoroutine(EUpdate());
 
-            GameEvent.Instance.SubscribeBubbleEvent(() => { BubbleTiming(); });
+            gameEvent.SubscribeBubbleEvent(() => { BubbleTiming(); });
             
         }
         IEnumerator EUpdate()
@@ -144,19 +152,18 @@ namespace InGame.Bubble
         /// <param name="vehicles">기차칸</param>
         protected void IncreaseResourceInBubble(Vehicles vehicles)
         {
+            const int _unitAmount = 1;
+
             switch (vehicles)
             {
                 case Vehicles.GUESTROOM:
-                    GameEvent.Instance.GetResource.ApplyPopulation(1);
-                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.Population);
+                    resource.ApplyPopulation(_unitAmount);
                     break;
                 case Vehicles.CULTIVATION:
-                    GameEvent.Instance.GetResource.ApplyFood(1);
-                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.Food);
+                    resource.ApplyFood(_unitAmount);
                     break;
                 case Vehicles.EDUCATION:
-                    GameEvent.Instance.GetResource.ApplyLeaderShip(1);
-                    PopupSystem.Instance.SpawnPopup("+1", ResourceType.LeaderShip);
+                    resource.ApplyLeaderShip(_unitAmount);
                     break;
                 default:
                     break;

@@ -202,7 +202,7 @@ public class MedicalIndustry : IEnforcementable
     {
         int amount = (int)(GameEvent.Instance.InitResourceTable.foodTable.Max * 0.3f);
 
-        GameEvent.Instance.GetResource.ApplyPopulation(-amount);
+        GameEvent.Instance.GetResource.ApplyFood(-amount);
 
         GameEvent.Instance.GetResource.ApplyLeaderShip(5);
     }
