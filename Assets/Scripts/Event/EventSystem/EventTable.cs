@@ -10,7 +10,7 @@ namespace InGame.Event
         public bool IsEventOn;
         public TAG tagType = TAG.NORMAL;
         public new string name;
-
+        
         public Sprite icon;
         [TextArea]
         public string description;
