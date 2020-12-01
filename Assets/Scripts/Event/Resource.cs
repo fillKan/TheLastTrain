@@ -70,7 +70,7 @@ namespace InGame.UI.Resource
 
         public void ApplyLeaderShip(int amount = 1)
         {
-            if (_resourceTable.leaderShipTable.Now + amount >= _resourceTable.leaderShipTable.Max)
+            if (_resourceTable.leaderShipTable.Now + amount > _resourceTable.leaderShipTable.Max)
                 return;
 
             _resourceTable.leaderShipTable.Now =
