@@ -464,15 +464,15 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO13:        // 식량 창고 개선
-                    if (resource.GetResourceTable.foodTable.Now
-                        >= (resource.GetResourceTable.foodTable.Max - 2))
+                    if (((float)resource.GetResourceTable.foodTable.Now / resource.GetResourceTable.foodTable.Max)
+                        >= 0.2f)
                     {
                         table.IsEventOn = true;
                         return _eventId;
                     }
                     break;
                 case EventID.NO14:        // 어이쿠 손이 미끄러졌네
-                    if (resource.GetResourceTable.foodTable.Now > 3)
+                    if (resource.GetResourceTable.foodTable.Now > resource.GetResourceTable.foodTable.Max * 0.3f)
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -487,7 +487,7 @@ namespace InGame.Event
                     }
                     break;
                 case EventID.NO16:        //베이비 붐 시대
-                    if (evt.GetTrain.GetTrainAmount().GuestRoom >= 2)
+                    if (evt.GetTrain.GetTrainAmount().GuestRoom >= (evt.GetWeek.GetAccumulateDate / 150f) * 2)
                     {
                         table.IsEventOn = true;
                         return _eventId;
@@ -576,17 +576,20 @@ namespace InGame.Event
         {
             UI.Resource.Resource resource = evt.GetResource;
             ResourceTable resourceTable = resource.GetResourceTable;
+            uint accumulateDate = evt.GetWeek.GetAccumulateDate;
 
             switch (_eventId)
             {
                 case EventID.NO1:     // 인구 급증
-                    resource.ApplyLeaderShip(-2);
+                    resource.ApplyLeaderShip(-(int)Utils.GetPercentValue(resourceTable.leaderShipTable.Max, 0.2f));
+                    resource.ApplyFood(-(int)(resourceTable.foodTable.Now * Mathf.Min((accumulateDate / 250f), 0.5f)));
+
                     ApplyEventUI(table);
                     break;
                 case EventID.NO2:     // 식중독 발생
-                    resource.ApplyLeaderShip(-3);
+                    resource.ApplyLeaderShip(-(int)Utils.GetPercentValue(resourceTable.leaderShipTable.Max, 0.3f));
                     ApplyEventUI(table);
-                    evt.SubscribeThreeDayEvent(() => { resource.ApplyPopulation(-1); });
+                    evt.SubscribeThreeDayEvent(() => { resource.ApplyPopulation(-(int)Utils.GetPercentValue(resourceTable.populationTable.Max, 0.1f)); });
                     table._nextEvent = false;
                     break;
                 default:
@@ -598,11 +601,12 @@ namespace InGame.Event
         {
             UI.Resource.Resource resource = evt.GetResource;
             ResourceTable resourceTable = resource.GetResourceTable;
+            uint accumulateDate = evt.GetWeek.GetAccumulateDate;
 
             switch (_eventId)
             {
                 case EventID.NO3:     // 단풍잎 이야기
-                    resource.ApplyLeaderShip(1);
+                    resource.ApplyLeaderShip((int)resource.GetLeaderShipResource(0.1d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO4:     // 식량 배분
@@ -615,6 +619,7 @@ namespace InGame.Event
                     break;
                 case EventID.NO6:     // 사고 발생
                     resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.1d));
+                    resource.ApplyPopulation(-(int)(resource.GetResourceTable.populationTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.1f), 0.5f)));
                     evt.switchCondition.SwitchON(SwitchID.NO2);
                     ApplyEventUI(table);
                     break;
@@ -624,7 +629,7 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO8:         // 감독관 배치
-                    resource.ApplyLeaderShip(1);
+                    resource.ApplyLeaderShip((int)Utils.GetPercentValue(resourceTable.leaderShipTable.Max, 0.1f));
                     evt.switchCondition.SwitchON(SwitchID.NO3);
                     ApplyEventUI(table);
                     break;
@@ -634,7 +639,8 @@ namespace InGame.Event
                     break;
                 case EventID.NO10:        // 부정 부패
                     resource.ApplyFood(-(int)resource.GetFoodResource(0.2d));
-                    resource.ApplyLeaderShip(-2);
+                    resource.ApplyFood(-(int)(resourceTable.foodTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.1f), 0.5f)));
+                    resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.2d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO11:        // 노후 부품 발견
@@ -643,20 +649,22 @@ namespace InGame.Event
                     break;
                 case EventID.NO12:        // 식량 분쟁
                     resource.ApplyFood(-(int)resource.GetFoodResource(0.3d));
+                    resource.ApplyFood(-(int)(resourceTable.foodTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.1f), 0.5f)));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO13:        // 식량 창고 개선
-                    resource.ApplyMaxFood(1);
+                    resource.ApplyMaxFood((int)evt.GetTrain.GetTrainAmount().Storage);
                     resource.ApplyPopulation(-(int)resource.GetFoodResource(0.2d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO14:        // 어이쿠 손이 미끄러졌네
-                    resource.ApplyFood(-(int)resource.GetFoodResource(0.2d));
-                    resource.ApplyLeaderShip(-1);
+                    resource.ApplyFood(-(int)resource.GetFoodResource(0.3d));
+                    resource.ApplyFood(-(int)(resourceTable.foodTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.1f), 0.5f)));
+                    resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.1d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO15:        // 재배 시설 강화
-                    resource.ApplyPopulation((int)resource.GetFoodResource(0.2d));
+                    resource.ApplyFood((int)evt.GetTrain.GetTrainAmount().Cultivation);
                     resource.ApplyFood((int)resource.GetFoodResource(0.3d));
                     ApplyEventUI(table);
                     break;
@@ -665,7 +673,7 @@ namespace InGame.Event
                     ApplyEventUI(table);
                     break;
                 case EventID.NO17:        // 의문의 지도자
-                    resource.ApplyLeaderShip(-1);
+                    resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.1d));
                     resource.ApplyFood((int)resource.GetFoodResource(0.2d));
                     evt.switchCondition.SwitchON(SwitchID.NO4);
                     ApplyEventUI(table);
@@ -679,46 +687,57 @@ namespace InGame.Event
         {
             UI.Resource.Resource resource = evt.GetResource;
             ResourceTable resourceTable = resource.GetResourceTable;
+            uint accumulateDate = evt.GetWeek.GetAccumulateDate;
+
             switch (_eventId)
             {
                 case EventID.NO18:        // 식인 사건
-                    resource.ApplyPopulation(-3);
+                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.3d));
+                    resource.ApplyPopulation(-(int)(resourceTable.populationTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.1f), 0.5f)));
                     resource.ApplyFood((int)resource.GetFoodResource(0.1d));
-                    resource.ApplyLeaderShip(-4);
+                    resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.4d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO19:        // 인신 공양
-                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.4d));
-                    resource.ApplyFood((int)resource.GetFoodResource(0.2d));
-                    resource.ApplyLeaderShip(-3);
+                    resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.5d));
+                    resource.ApplyFood((int)resource.GetFoodResource(0.1d));
+                    resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(-0.4d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO20:        // 반란 발생
                     if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.REBELLION))
+                    {
+                        resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(-0.1d));
+                        resource.ApplyPopulation(-(int)(resourceTable.populationTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.15f), 0.5f)));
                         ApplyEventUI(table);
+                    }
                     table.IsEventOn = false;
                     break;
                 case EventID.NO21:        // 집단 시위
                     if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.DEMONSTRATE))
+                    {
+                        resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(-0.1d));
+                        resource.ApplyFood(-(int)(resourceTable.foodTable.Now * Mathf.Min((float)Utils.GetPercentValue((accumulateDate / 250f), 0.15f), 0.5f)));
                         ApplyEventUI(table);
+                    }
                     table.IsEventOn = false;
                     break;
                 case EventID.NO22:        // 알 수 없는 종교
                     if (SpecialBubbleSystem.Instance.SpawnSpecialBubble(SpecialBubbleType.FALSE_RELIGION))
                     {
-                        resource.ApplyLeaderShip(-1);
+                        resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.1d));
                         ApplyEventUI(table);
                     }
                     table.IsEventOn = false;
                     break;
                 case EventID.NO23:        // 만족하는 복지
-                    resource.ApplyLeaderShip(2);
+                    resource.ApplyLeaderShip((int)resource.GetLeaderShipResource(0.3d));
                     ApplyEventUI(table);
                     break;
                 case EventID.NO24:        // 만성 피로
                     table._nextEvent = false;
-                    evt.SubscribeThreeDayEvent(() => { resource.ApplyLeaderShip(-1); });
-                    evt.SubscribeTwoDayEvent(() => { resource.ApplyPopulation(-1); });
+                    evt.SubscribeThreeDayEvent(() => { resource.ApplyLeaderShip(-(int)resource.GetLeaderShipResource(0.1d)); });
+                    evt.SubscribeTwoDayEvent(() => { resource.ApplyPopulation(-(int)resource.GetPopulationResource(0.1d)); });
                     ApplyEventUI(table);
                     break;
                 default:
