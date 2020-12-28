@@ -10,6 +10,8 @@ namespace InGame.Train
         public uint GuestRoom;
         public uint Cultivation;
         public uint Education;
+        public uint Preserve;
+        public uint Storage;
     }
 
     public class Train : MonoBehaviour
@@ -41,6 +43,9 @@ namespace InGame.Train
         public void ApplyGuestRoomAmount(int Amount) => trainAmount.GuestRoom = (uint)Mathf.Max(0, trainAmount.GuestRoom + Amount);
         public void ApplyCultivationAmount(int Amount) => trainAmount.Cultivation = (uint)Mathf.Max(0, trainAmount.Cultivation + Amount);
         public void ApplyEducationAmount(int Amount) => trainAmount.Education = (uint)Mathf.Max(0, trainAmount.Education + Amount);
+        public void ApplyPreserveAmount(int Amount) => trainAmount.Preserve = (uint)Mathf.Max(0, trainAmount.Preserve + Amount);
+        public void ApplyStorageAmount(int Amount) => trainAmount.Storage = (uint)Mathf.Max(0, trainAmount.Storage + Amount);
+
         public void DisableAnimation()
         {
             if (gameObject.TryGetComponent(out Animator animator)) {
@@ -144,9 +149,11 @@ namespace InGame.Train
                     break;
                 case Vehicles.PRESERVE:
                     @object = m_PreservationPool.pop();
+                    ApplyPreserveAmount(1);
                     break;
                 case Vehicles.STORAGE:
                     @object = m_StoragePool.pop();
+                    ApplyStorageAmount(1);
                     break;
                 default:
                     break;

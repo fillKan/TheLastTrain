@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InGame.Bubble
@@ -55,6 +56,13 @@ namespace InGame.Bubble
                 return false;
                 
             GameObject[] bubbleObjects = GameObject.FindGameObjectsWithTag("Bubble") as GameObject[];
+            if (bubbleObjects.Length == 0) {
+                var list = bubbleObjects.ToList();
+                FindObjectsOfType<Bubble>().ToList().ForEach(e => {
+                    list.Add(e.gameObject);
+                });
+                bubbleObjects = list.ToArray();
+            }
             GameObject poolObject = InstantiateSpecialBubble(type);
             poolObject.GetComponent<SpecialBubbleButton>().SpecialBubbleUP();
 

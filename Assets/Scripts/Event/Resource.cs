@@ -124,18 +124,12 @@ namespace InGame.UI.Resource
         {
             return (double)GetResourceTable.populationTable.Max * offset;
         }
-
-        //Convert Percent To Resource Table
-        public short ConvertPercent(uint now, uint max)
+        public double GetLeaderShipResource(double offset)
         {
-            return (short)(((float)now / max) * 100);
+            return (double)GetResourceTable.leaderShipTable.Max * offset;
         }
 
-        //Convert Percent To Point
-        float ConvertPercentToPoint(short percentage ,int pointUnit)
-        {
-            return (percentage * Mathf.Pow(0.1f, pointUnit));
-        }
+        
 
         // Show Table State In InGame Scene
         void ApplyResource(GazeTable gazeTable, Table table)
@@ -146,7 +140,7 @@ namespace InGame.UI.Resource
                 gazeTable.GazeText.color = new Color32(255, 161, 161, 255);
             else gazeTable.GazeText.color = Color.white;
             gazeTable.GazeText.text = $"{table.Now} / {table.Max}";
-            gazeTable.GazeImage.fillAmount = ConvertPercentToPoint(ConvertPercent(table.Now, table.Max), 2);
+            gazeTable.GazeImage.fillAmount = Utils.ConvertPercentToPoint(Utils.ConvertPercent(table.Now, table.Max), 2);
         }
         
 

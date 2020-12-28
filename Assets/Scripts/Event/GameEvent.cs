@@ -192,6 +192,7 @@ public class GameEvent : Singleton<GameEvent>
 
         StartCoroutine(GetWeek.EWeekProcess());
         StartCoroutine(GetResource.EResourceProcess());
+
     }
     void OnDisable()
     {

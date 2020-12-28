@@ -59,7 +59,7 @@ namespace InGame.UI.Resource.Control
             if (population_Val < foodCnt)
                 return EXCEPTION_KEY;
 
-            return res.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt));
+            return Utils.ConvertPercent((population_Val - foodCnt), (population_Val + foodCnt));
         }
 
         bool CheckFoodDiffToPercent(short percent)
