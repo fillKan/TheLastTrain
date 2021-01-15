@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1160584029}
   - component: {fileID: 1160584031}
-  - component: {fileID: 1160584030}
   m_Layer: 0
   m_Name: Sun (Cloud only)
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5027663149310332152}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1160584031
 MonoBehaviour:
@@ -73,24 +72,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &1160584030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160584028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7623256abccb44399245f25aac0a8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mIsSun: 0
-  mRotaryBody: {fileID: 5027663149310332159}
-  mLight2D: {fileID: 1160584031}
-  ColorOfDawn: {r: 0.9150943, g: 0.70694685, b: 0.14676043, a: 1}
-  ColorOfNoon: {r: 1, g: 1, b: 1, a: 1}
-  ColorOfDusk: {r: 0.18431373, g: 0.24705882, b: 0.6784314, a: 1}
 --- !u!1001 &1403097316802974873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,15 +287,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1403097316802974873}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5027663149310332159 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6250175412562729062, guid: 482e955bfc720e14b97b53964bc4d5e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1403097316802974873}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b4a084fb0b2ca4eb0a896f8bc81250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
