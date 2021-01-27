@@ -31,4 +31,17 @@ public class ScrollElement : MonoBehaviour
     {
         InvisibleEvent?.Invoke(this);
     }
+
+    public void Scrolling(float xValue)
+    {
+        transform.position += Vector3.right * xValue;
+    }
+    public void SetHeadToTail(ScrollElement scrollElement)
+    {
+        transform.position = scrollElement.Tail + Head;
+    }
+    public void SetTailToHead(ScrollElement scrollElement)
+    {
+        transform.position = scrollElement.Head + Tail;
+    }
 }
