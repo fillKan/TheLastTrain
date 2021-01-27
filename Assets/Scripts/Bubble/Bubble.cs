@@ -93,7 +93,7 @@ namespace InGame.Bubble
             yield return new WaitForSeconds(bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime);
 
             PoolObject = popGameObjectInPool(vehicles);
-            PoolObject.transform.localPosition = CameraScreen.Instance.ConvertWorldToScreenPoint(transform.position);
+            PoolObject.transform.localPosition = CameraScreen.Instance.WorldToScreenPointWithCameraSpace(transform.position);
             PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
             PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
             {
@@ -110,7 +110,7 @@ namespace InGame.Bubble
             while (true)
             {
                 PoolObject.transform.localPosition
-                        = CameraScreen.Instance.ConvertWorldToScreenPoint(transform.position);
+                        = CameraScreen.Instance.WorldToScreenPointWithCameraSpace(transform.position);
                 yield return null;
             }
         }
@@ -131,7 +131,7 @@ namespace InGame.Bubble
                 if (IsCompleteTimer(lastBubbleTime, bubbleSystem.BubbleTables[(int)vehicles].bubbleUpTime))
                 {
                     PoolObject = popGameObjectInPool(vehicles);
-                    PoolObject.transform.localPosition = CameraScreen.Instance.ConvertWorldToScreenPoint(transform.position);
+                    PoolObject.transform.localPosition = CameraScreen.Instance.WorldToScreenPointWithCameraSpace(transform.position);
                     PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
                     PoolObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
                     {

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// IF you use this script, Must Changed Render Mode (Screen Space - Camera)
+/// IF you're using 'Camera.main.WorldToScreenPoint', replace it with 'WorldToScreenPointWithCameraSpace' in this script
+/// </summary>
+
 [DefaultExecutionOrder(-200)]
 public class CameraScreen : Singleton<CameraScreen>
 {
@@ -21,7 +26,7 @@ public class CameraScreen : Singleton<CameraScreen>
     }
     
 
-    public Vector3 ConvertWorldToScreenPoint(Vector3 vector3)
+    public Vector3 WorldToScreenPointWithCameraSpace(Vector3 vector3)
     {
         pos = Vector2.zero;
         Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, vector3);

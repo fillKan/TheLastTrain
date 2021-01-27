@@ -80,7 +80,7 @@ namespace InGame.Bubble
             while (poolObject.activeInHierarchy)
             {
                 poolObject.transform.localPosition 
-                    = CameraScreen.Instance.ConvertWorldToScreenPoint(bubble.transform.position);
+                    = CameraScreen.Instance.WorldToScreenPointWithCameraSpace(bubble.transform.position);
                 yield return null;
             }
         }
