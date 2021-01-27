@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class Scroller : MonoBehaviour
 {
-    public float DeltaTime
-    { get => Time.deltaTime * Time.timeScale; }
+    [SerializeField] private Vector2 mDirection = Vector2.right;
+    [SerializeField] private float mSpeed;
 
-    private Renderer mRenderer;
-
-    [SerializeField]
-    private Vector2 mDirection = Vector2.right;
-
-    [SerializeField] 
-    private float mSpeed;
-    private float mOffset;
-
-    private void OnEnable()
-    {
-        mOffset = 0f;
-
-        Debug.Assert(TryGetComponent(out mRenderer));
-    }
     private void Update()
     {
-        mRenderer.material.mainTextureOffset += mDirection * (mSpeed * DeltaTime) * 0.12f;
+        float deltaTime = Time.deltaTime * Time.timeScale;
+
+        transform.position -= (Vector3)mDirection * (mSpeed * deltaTime) * 20f;
     }
 }
