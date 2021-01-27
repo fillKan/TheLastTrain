@@ -5,12 +5,14 @@ using UnityEngine.Serialization;
 
 public class Scroller : MonoBehaviour
 {
+    [SerializeField] private Updater _Updater; [Space()]
+
     [SerializeField] private float _DirectionX;
     [FormerlySerializedAs("mSpeed")]
     [SerializeField] private float _Speed;
 
     [SerializeField] private ScrollElement[] _ScrollElement;
-
+    
     private void Awake()
     {
         for (int i = 0; i < _ScrollElement.Length; ++i)
@@ -27,12 +29,9 @@ public class Scroller : MonoBehaviour
                 }
             };
         }
+        _Updater.Update += UpdateAction;
     }
-    private void Scrolling(int index, ScrollElement element)
-    {
-        element.SetHeadToTail(_ScrollElement[index]);
-    }
-    private void Update()
+    private void UpdateAction()
     {
         float deltaTime = Time.deltaTime * Time.timeScale;
 

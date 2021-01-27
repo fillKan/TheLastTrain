@@ -1457,6 +1457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568378017440}
   - component: {fileID: 7348036568378017441}
+  - component: {fileID: 93483326253699333}
   m_Layer: 0
   m_Name: Moutain_big
   m_TagString: Untagged
@@ -1492,11 +1493,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 93483326253699333}
   _DirectionX: -1
   _Speed: 0.05
   _ScrollElement:
   - {fileID: 5046967194522717491}
   - {fileID: 773368811052848306}
+--- !u!114 &93483326253699333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568378017446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036568512119099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568523945055}
   - component: {fileID: 7348036568523945048}
+  - component: {fileID: 2854448255558239382}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -1576,11 +1591,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 2854448255558239382}
   _DirectionX: -1
   _Speed: 0.5
   _ScrollElement:
   - {fileID: 3235798692726939728}
   - {fileID: 8218430270828931429}
+--- !u!114 &2854448255558239382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568523945053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036568641653264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568641653266}
   - component: {fileID: 7348036568641653267}
+  - component: {fileID: 8759564333088461143}
   m_Layer: 0
   m_Name: Moutain_small
   m_TagString: Untagged
@@ -1626,11 +1655,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 8759564333088461143}
   _DirectionX: -1
   _Speed: 0.2
   _ScrollElement:
   - {fileID: 5101503055957140467}
   - {fileID: 9173727591783220116}
+--- !u!114 &8759564333088461143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568641653264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036568686777096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568749463318}
   - component: {fileID: 7348036568749463319}
+  - component: {fileID: 5364144678071874880}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -1709,11 +1752,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 5364144678071874880}
   _DirectionX: -1
   _Speed: 0.335
   _ScrollElement:
   - {fileID: 513162028662593104}
   - {fileID: 6450822742912542912}
+--- !u!114 &5364144678071874880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568749463316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036568761307118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568761307112}
   - component: {fileID: 7348036568761307113}
+  - component: {fileID: 6127964964373457254}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -1759,11 +1816,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 6127964964373457254}
   _DirectionX: -1
   _Speed: 0.28
   _ScrollElement:
   - {fileID: 2139272888662842864}
   - {fileID: 4666529583308335252}
+--- !u!114 &6127964964373457254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568761307118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036568773403987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,6 +1844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036568773403981}
   - component: {fileID: 7348036568773403982}
+  - component: {fileID: 849607839382578289}
   m_Layer: 0
   m_Name: Moutain_middle
   m_TagString: Untagged
@@ -1809,11 +1880,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 849607839382578289}
   _DirectionX: -1
   _Speed: 0.1
   _ScrollElement:
   - {fileID: 1569946461355156554}
   - {fileID: 5200021058679122634}
+--- !u!114 &849607839382578289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036568773403987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036569008882484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036569035859313}
   - component: {fileID: 7348036569035859314}
+  - component: {fileID: 2685871793285449807}
   m_Layer: 0
   m_Name: TelegraphPole
   m_TagString: Untagged
@@ -1940,11 +2025,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 2685871793285449807}
   _DirectionX: -1
   _Speed: 0.44
   _ScrollElement:
   - {fileID: 8022586141762217127}
   - {fileID: 7261042770339805139}
+--- !u!114 &2685871793285449807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036569035859319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036569123549407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,6 +2053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348036569123549401}
   - component: {fileID: 7348036569123549402}
+  - component: {fileID: 6671618464865906344}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -1990,11 +2089,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee791a57745e64aafb54b8196dae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Updater: {fileID: 6671618464865906344}
   _DirectionX: -1
   _Speed: 0.1
   _ScrollElement:
   - {fileID: 5854339744533831163}
   - {fileID: 2473100971913676072}
+--- !u!114 &6671618464865906344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036569123549407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d827af1108a6a4f9d66d266e771d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036569173657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7348036569173657551}
+  - component: {fileID: 5087445313768506366}
   m_Layer: 0
   m_Name: IceAge
   m_TagString: Untagged
@@ -2030,6 +2143,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5087445313768506366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348036569173657550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68245e2830356d4eadc0bd396a9c170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7348036569173773488
 GameObject:
   m_ObjectHideFlags: 0
