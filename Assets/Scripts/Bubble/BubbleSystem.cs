@@ -31,7 +31,6 @@ namespace InGame.Bubble
 
     internal class BubbleSystem : Singleton<BubbleSystem>
     {
-        
         [SerializeField] Transform objectPoolParent;
         public BubbleTable[] BubbleTables;
 
@@ -64,10 +63,7 @@ namespace InGame.Bubble
                 return true;
             return false;
         }
-        public static Vector3 ConvertWorldToScreenPoint(Vector3 vector3)
-        {
-            return Camera.main.WorldToScreenPoint(vector3);
-        }
+        
     }
 
 }
