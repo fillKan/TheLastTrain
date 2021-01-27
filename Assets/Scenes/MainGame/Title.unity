@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 5505365441550998198, guid: e511ec6f235159745867dbc784e0055a,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5505365441550998198, guid: e511ec6f235159745867dbc784e0055a,
         type: 3}
@@ -406,8 +406,8 @@ PrefabInstance:
       objectReference: {fileID: 1489073621}
     - target: {fileID: 5505365441550998198, guid: e511ec6f235159745867dbc784e0055a,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: 2096539039
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5505365441550998199, guid: e511ec6f235159745867dbc784e0055a,
         type: 3}
@@ -532,25 +532,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1299437291}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1299437293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5505365441550998203, guid: e511ec6f235159745867dbc784e0055a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1299437291}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1299437294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299437293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60080f28f9daf4c4c91b99722f753e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasTransfrom: {fileID: 1299437292}
 --- !u!1001 &1424234468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -878,7 +859,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -153, y: -35}
-  m_SizeDelta: {x: 154.125, y: 32.625}
+  m_SizeDelta: {x: 231.1875, y: 48.9375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778432253
 MonoBehaviour:
