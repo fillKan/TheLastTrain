@@ -38,10 +38,10 @@ public class ScrollElement : MonoBehaviour
     }
     public void SetHeadToTail(ScrollElement scrollElement)
     {
-        transform.position = scrollElement.Tail + Head;
+        transform.position = scrollElement.Tail + Vector2.right * _PivotToHeadLength;
     }
     public void SetTailToHead(ScrollElement scrollElement)
     {
-        transform.position = scrollElement.Head + Tail;
+        transform.position = scrollElement.Head + Vector2.right * _PivotToTailLength;
     }
 }
