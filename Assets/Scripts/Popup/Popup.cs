@@ -11,12 +11,13 @@ public class Popup : MonoBehaviour
     private float DeltaTime => Time.deltaTime * Time.timeScale;
 
     private Vector3 startPos;
+    private Vector3 endPos;
     void OnEnable()
     {
         text = GetComponent<Text>();
         text.color = mColor;
         startPos = transform.position;
-
+        endPos = new Vector3(startPos.x, startPos.y + 500, startPos.z);
         StartCoroutine(Processing());
     }
 
@@ -24,12 +25,15 @@ public class Popup : MonoBehaviour
     {
         while (gameObject.activeSelf)
         {
-            if (text.color.a <= 0)
+            if (text.color.a <= 0.1f)
                 Destroy(this.transform.parent.gameObject);
-            float y = Mathf.Lerp(transform.position.y, startPos.y + 20, DeltaTime);
+             
+            transform.localPosition = Vector2.MoveTowards(startPos, endPos, DeltaTime * 5);
+            //float y = Mathf.Lerp(transform.position.y, startPos.y + 20, DeltaTime);
 
-            transform.position = new Vector3(startPos.x, y, startPos.z);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - 0.01f);
+            //transform.position = new Vector3(startPos.x, y, startPos.z);
+            //text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - 0.01f);
+            text.color = Color.Lerp(text.color, new Color(1, 1, 1, 0), DeltaTime * 2);
             yield return null;
         }
     }

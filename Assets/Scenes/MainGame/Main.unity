@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2499,6 +2499,7 @@ GameObject:
   - component: {fileID: 1732917973}
   - component: {fileID: 1732917972}
   - component: {fileID: 1732917976}
+  - component: {fileID: 1732917977}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2554,7 +2555,7 @@ Canvas:
   m_GameObject: {fileID: 1732917971}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 308171050}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2563,7 +2564,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2096539039
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1732917975
@@ -2613,6 +2614,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1732917977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732917971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60080f28f9daf4c4c91b99722f753e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasTransfrom: {fileID: 1732917975}
 --- !u!1 &1767225433
 GameObject:
   m_ObjectHideFlags: 0
