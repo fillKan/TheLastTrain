@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1359619989
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 998
   m_Sprite: {fileID: 21300000, guid: a7e273715ceed0147803e72f99a015a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -227,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1359619989
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 998
   m_Sprite: {fileID: 21300000, guid: 518d485194aabcb4980b895390edef1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -315,7 +315,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1359619989
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_Sprite: {fileID: 21300000, guid: 62afb9337202d0f4a855272106a83c43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -357,6 +357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 997
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
@@ -433,6 +438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 997
+      objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -508,6 +518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel
       objectReference: {fileID: 0}
+    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 997
+      objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -582,6 +597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621497783004036286, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 997
       objectReference: {fileID: 0}
     - target: {fileID: 8621497783004036287, guid: 1dffc9ecafe6f6b49a359c452ee2b926,
         type: 3}
