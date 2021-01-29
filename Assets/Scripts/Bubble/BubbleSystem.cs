@@ -37,7 +37,7 @@ namespace InGame.Bubble
         public float BubbleEndTime = 7.0f;
         public bool IsAbleProduce = true;
 
-
+        public System.Action OnClickBubbleAny = delegate { };
         [HideInInspector] public Bubble[] bubbles;
         [HideInInspector] public ObjectPool m_PopulationPool;
         [HideInInspector] public ObjectPool m_FoodPool;
