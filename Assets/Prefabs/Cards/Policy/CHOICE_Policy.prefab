@@ -142,7 +142,8 @@ MonoBehaviour:
   AddResourceType: 0
   AddResourceAmount: 0
   AddResourceWhatTo: 0
-  AddCompartment: {fileID: 0}
+  AddCompartment: 0
+  HeadTrain: {fileID: 0}
   EnforcePolicy: 0
 --- !u!95 &-1415847015156909693
 Animator:
@@ -156,7 +157,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6084bb34e0c6b684795b70b7361cee45, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -175,4 +176,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f07e4e96b217c4cb4e52f12c8336c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaySpeed: PlaySpeed
