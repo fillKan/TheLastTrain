@@ -56,7 +56,7 @@ namespace InGame.UI.Resource
         {
             _resourceTable.populationTable.Now =
             (uint)Mathf.Max(0, _resourceTable.populationTable.Now + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+"
                 + amount.ToString() : amount.ToString(), ResourceType.Population);
         }
 
@@ -64,7 +64,7 @@ namespace InGame.UI.Resource
         {
             _resourceTable.foodTable.Now =
             (uint)Mathf.Max(0, _resourceTable.foodTable.Now + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+"
                 + amount.ToString() : amount.ToString(), ResourceType.Food);
         }
 
@@ -75,7 +75,7 @@ namespace InGame.UI.Resource
 
             _resourceTable.leaderShipTable.Now =
             (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Now + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+" 
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+" 
                 + amount.ToString() : amount.ToString(), ResourceType.LeaderShip);
         }
 
@@ -83,7 +83,7 @@ namespace InGame.UI.Resource
         {
             _resourceTable.populationTable.Max =
             (uint)Mathf.Max(0, _resourceTable.populationTable.Max + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+"
                 + amount.ToString() : amount.ToString(), ResourceType.Population);
         }
 
@@ -91,7 +91,7 @@ namespace InGame.UI.Resource
         {
             _resourceTable.foodTable.Max =
             (uint)Mathf.Max(0, _resourceTable.foodTable.Max + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+" 
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+" 
                 + amount.ToString() : amount.ToString(), ResourceType.Food);
         }
 
@@ -99,7 +99,7 @@ namespace InGame.UI.Resource
         {
             _resourceTable.leaderShipTable.Max =
             (uint)Mathf.Max(0, _resourceTable.leaderShipTable.Max + amount);
-            PopupSystem.Instance.SpawnPopup((amount >= 0) ? "+"
+            evt.popupSystem.SpawnPopup((amount >= 0) ? "+"
                 + amount.ToString() : amount.ToString(), ResourceType.LeaderShip);
         }
 

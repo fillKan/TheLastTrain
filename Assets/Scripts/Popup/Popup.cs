@@ -16,8 +16,8 @@ public class Popup : MonoBehaviour
     {
         text = GetComponent<Text>();
         text.color = mColor;
-        startPos = transform.position;
-        endPos = new Vector3(startPos.x, startPos.y + 500, startPos.z);
+        //startPos = transform.localPosition;
+        //endPos = new Vector3(startPos.x, startPos.y + 500, startPos.z);
         StartCoroutine(Processing());
     }
 
@@ -27,8 +27,8 @@ public class Popup : MonoBehaviour
         {
             if (text.color.a <= 0.1f)
                 Destroy(this.transform.parent.gameObject);
-             
-            transform.localPosition = Vector2.MoveTowards(startPos, endPos, DeltaTime * 5);
+
+            //transform.localPosition = Vector2.MoveTowards(startPos, endPos, DeltaTime * 5);
             //float y = Mathf.Lerp(transform.position.y, startPos.y + 20, DeltaTime);
 
             //transform.position = new Vector3(startPos.x, y, startPos.z);

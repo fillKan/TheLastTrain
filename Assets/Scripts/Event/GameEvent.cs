@@ -138,6 +138,7 @@ public class GameEvent : Singleton<GameEvent>
 
     public EventEffect eventEffect;
     public SwitchCondition switchCondition;
+    public PopupSystem popupSystem;
 
     public void SubscribeMonthEvent(Action action) => GetWeek.OnMonthEvent += action;
     public void DescribeMonthEvent(Action action) => GetWeek.OnMonthEvent -= action;
