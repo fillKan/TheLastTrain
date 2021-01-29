@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e160415cd4649944bfb1f561503bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PivotToHeadLength: 92.64
-  _PivotToTailLength: 92.64
+  _PivotToHeadLength: 31.32
+  _PivotToTailLength: 31.32
 --- !u!1 &1577166848758530740
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e160415cd4649944bfb1f561503bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PivotToHeadLength: 92.64
-  _PivotToTailLength: 92.64
+  _PivotToHeadLength: 31.32
+  _PivotToTailLength: 31.32
 --- !u!1 &1771375955622146956
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,8 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e160415cd4649944bfb1f561503bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PivotToHeadLength: 92.64
-  _PivotToTailLength: 92.64
+  _PivotToHeadLength: 31.32
+  _PivotToTailLength: 31.32
 --- !u!1 &6008718833804324991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e160415cd4649944bfb1f561503bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PivotToHeadLength: 92.64
-  _PivotToTailLength: 92.64
+  _PivotToHeadLength: 31.32
+  _PivotToTailLength: 31.32
 --- !u!1 &8937810541182165197
 GameObject:
   m_ObjectHideFlags: 0
