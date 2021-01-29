@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public Image targetImage;
+    public Image skipImage;
     public Sprite[] sprites;
 
     public int CurSequence = 0;
@@ -16,14 +17,18 @@ public class Tutorial : MonoBehaviour
         targetImage.sprite = sprites[CurSequence];
     }
 
+    public bool IsEndPage => sprites.Length == CurSequence + 1;
+
     [ContextMenu("NEXT")]
     public void OnNext()
     {
-        if (sprites.Length == CurSequence + 1)
+        if (IsEndPage)
             ClosePanel();
         if (sprites.Length <= CurSequence + 1)
             return;
         CurSequence += 1;
+        if (IsEndPage)
+            skipImage.gameObject.SetActive(false);
         targetImage.sprite = sprites[CurSequence];
     }
     public void OnSkip() => ClosePanel();
