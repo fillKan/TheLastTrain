@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 377491109699182228}
+  skipImage: {fileID: 377491111491481300}
   sprites:
   - {fileID: 21300000, guid: 998e164175212dc41ba86d7be5c6c363, type: 3}
   - {fileID: 21300000, guid: 8d4cf5ddda042244faeb210c58ce9cde, type: 3}
