@@ -6,34 +6,36 @@ using UnityEngine.UI;
 public class Popup : MonoBehaviour
 {
     public Color32 mColor;
-    private Text text;
+    public Text popupText { get; set; }
 
     private float DeltaTime => Time.deltaTime * Time.timeScale;
 
     private Vector3 startPos;
     private Vector3 endPos;
+
+    private ObjectPool objectPool;
+    public void SetPool(ObjectPool objectPool) => this.objectPool = objectPool;
+
     void OnEnable()
     {
-        text = GetComponent<Text>();
-        text.color = mColor;
+        popupText = GetComponent<Text>();
+        popupText.color = mColor;
         //startPos = transform.localPosition;
         //endPos = new Vector3(startPos.x, startPos.y + 500, startPos.z);
         StartCoroutine(Processing());
     }
-
+    private void OnDisable()
+    {
+        objectPool = null;
+    }
     IEnumerator Processing()
     {
         while (gameObject.activeSelf)
         {
-            if (text.color.a <= 0.1f)
-                Destroy(this.transform.parent.gameObject);
+            if (popupText.color.a <= 0.1f)
+                objectPool?.push(transform.parent.gameObject);
 
-            //transform.localPosition = Vector2.MoveTowards(startPos, endPos, DeltaTime * 5);
-            //float y = Mathf.Lerp(transform.position.y, startPos.y + 20, DeltaTime);
-
-            //transform.position = new Vector3(startPos.x, y, startPos.z);
-            //text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - 0.01f);
-            text.color = Color.Lerp(text.color, new Color(1, 1, 1, 0), DeltaTime * 2);
+            popupText.color = Color.Lerp(popupText.color, new Color(1, 1, 1, 0), DeltaTime * 2);
             yield return null;
         }
     }

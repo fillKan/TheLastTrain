@@ -50,6 +50,13 @@ namespace InGame.UI.Resource
             _foodController = new FoodControl(this);
 
             evt.SetElevenDayEvent(_foodController.FoodBalance);
+            InGame.Bubble.BubbleSystem.Instance.OnClickBubbleAny += () =>
+            {
+                ApplyResource(evt.PopulationUITable, GetResourceTable.populationTable);
+                ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
+                ApplyResource(evt.LeaderShipUITable, GetResourceTable.leaderShipTable);
+            };
+            InGame.Bubble.BubbleSystem.Instance.OnClickBubbleAny?.Invoke();
         }
 
         public void ApplyPopulation(int amount = 1)
@@ -146,13 +153,14 @@ namespace InGame.UI.Resource
 
         public IEnumerator EResourceProcess()
         {
-            while (true)
-            {
-                ApplyResource(evt.PopulationUITable, GetResourceTable.populationTable);
-                ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
-                ApplyResource(evt.LeaderShipUITable, GetResourceTable.leaderShipTable);
-                yield return null;
-            }
+            //while (true)
+            //{
+            //    ApplyResource(evt.PopulationUITable, GetResourceTable.populationTable);
+            //    ApplyResource(evt.FoodUITable, GetResourceTable.foodTable);
+            //    ApplyResource(evt.LeaderShipUITable, GetResourceTable.leaderShipTable);
+            //    yield return null;
+            //}
+            yield return null;
         }
     }
 }

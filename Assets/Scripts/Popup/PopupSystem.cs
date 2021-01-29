@@ -19,7 +19,8 @@ public class PopupTransformPoint : PopupPointBase<Transform> { }
 [System.Serializable]
 public class PopupPositionPoint : PopupPointBase<Vector2> { }
 
-
+[System.Serializable]
+public class PopupObjectPool : PopupPointBase<ObjectPool> { }
 
 public class PopupSystem : MonoBehaviour
 {
@@ -28,7 +29,17 @@ public class PopupSystem : MonoBehaviour
 
     [SerializeField] PopupObjectPoint    mPopupPrefabs;
     [SerializeField] PopupTransformPoint mPopupTransform;
-    public PopupPositionPoint mPopupPoint;
+    public PopupPositionPoint mPopupPoint { get; private set; }
+    public PopupObjectPool mPopupObjectPool { get; private set; }
+
+    private void Awake()
+    {
+        mPopupPoint = new PopupPositionPoint();
+        mPopupObjectPool = new PopupObjectPool();
+        mPopupObjectPool.populationPopup = new ObjectPool(mPopupPrefabs.populationPopup, 2, mParent);
+        mPopupObjectPool.FoodPopup       = new ObjectPool(mPopupPrefabs.FoodPopup, 2, mParent);
+        mPopupObjectPool.LeadershipPopup = new ObjectPool(mPopupPrefabs.LeadershipPopup, 2, mParent);
+    }
 
     private bool PositionCaching()
     {
@@ -45,35 +56,46 @@ public class PopupSystem : MonoBehaviour
 
     public GameObject SpawnPopup(string number, ResourceType resourceType)
     {
+        InGame.Bubble.BubbleSystem.Instance.OnClickBubbleAny?.Invoke();
+
         PositionCaching();
 
-
+        ObjectPool objectPool = null;
         GameObject obj = null;
-        UnityEngine.UI.Text text;
+        Popup popup;
         switch (resourceType)
         {
             case ResourceType.None:
                 break;
             case ResourceType.Population:
-                obj = Instantiate(mPopupPrefabs.populationPopup, mParent);
+                objectPool = mPopupObjectPool.populationPopup;
+
+                obj = objectPool.pop();
                 obj.transform.localPosition = mPopupPoint.populationPopup;
 
-                text = obj.GetComponentInChildren<UnityEngine.UI.Text>();
-                text.text = number;
+                popup = obj.GetComponentInChildren<Popup>();
+                popup.popupText.text = number;
+                popup.SetPool(objectPool);
                 return obj;
             case ResourceType.Food:
-                obj = Instantiate(mPopupPrefabs.FoodPopup, mParent);
+                objectPool = mPopupObjectPool.FoodPopup;
+
+                obj = objectPool.pop();
                 obj.transform.localPosition = mPopupPoint.FoodPopup;
 
-                text = obj.GetComponentInChildren<UnityEngine.UI.Text>();
-                text.text = number;
+                popup = obj.GetComponentInChildren<Popup>();
+                popup.popupText.text = number;
+                popup.SetPool(objectPool);
                 return obj;
             case ResourceType.LeaderShip:
-                obj = Instantiate(mPopupPrefabs.LeadershipPopup, mParent);
+                objectPool = mPopupObjectPool.LeadershipPopup;
+
+                obj = objectPool.pop();
                 obj.transform.localPosition = mPopupPoint.LeadershipPopup;
 
-                text = obj.GetComponentInChildren<UnityEngine.UI.Text>();
-                text.text = number;
+                popup = obj.GetComponentInChildren<Popup>();
+                popup.popupText.text = number;
+                popup.SetPool(objectPool);
                 return obj;
             default:
                 break;
