@@ -27,12 +27,15 @@ public class ChoiceSystem : Singleton<ChoiceSystem>
     private int mDayCondition;
     public void NotifyChooseOne()
     {
-        DirectAnimation.SetFloat("PlaySpeed", -1.0f);
+        int hash = DirectAnimation.GetParameter(0).nameHash;
+        DirectAnimation.SetBool(hash, !DirectAnimation.GetBool(hash));
 
         for (int i = 0; i < mChooseCards.Length; i++)
         {
             if (mChooseCards[i].TryGetComponent(out Animator animator)) {
-                animator.SetFloat("PlaySpeed", -1.0f);
+
+                hash = animator.GetParameter(0).nameHash;
+                animator.SetBool(hash, !animator.GetBool(hash));
             }
             mChooseCards[i] = null;
         }
@@ -50,6 +53,11 @@ public class ChoiceSystem : Singleton<ChoiceSystem>
     }
     private void ShowUpChoiceCards()
     {
+        DirectAnimation.gameObject.SetActive(true);
+
+        int hash = DirectAnimation.GetParameter(0).nameHash;
+        DirectAnimation.SetBool(hash, !DirectAnimation.GetBool(hash));
+
         if (UnityEngine.Random.value <= TrainCardProbability && TrainCards.Length > 0) {
             EnableCard(TrainCards);
         }
@@ -60,9 +68,6 @@ public class ChoiceSystem : Singleton<ChoiceSystem>
     }
     private void EnableCard(ChoiceCard[] cards)
     {
-        DirectAnimation.gameObject.SetActive(true);
-        DirectAnimation.SetFloat("PlaySpeed", 1.0f);
-
         if (GameEvent.Instance.GetWeek.GetWeekTable.years - mStartByWeekTable.years > 0)
         {
             if (mDayCondition != 2) {
@@ -106,6 +111,12 @@ public class ChoiceSystem : Singleton<ChoiceSystem>
             mChooseCards[i].transform.localPosition = CadrPositions[i];
 
             mChooseCards[i].gameObject.SetActive(true);
+
+            if (mChooseCards[i].TryGetComponent(out Animator animator))
+            {
+                int hash = animator.GetParameter(0).nameHash;
+                animator.SetBool(hash, !animator.GetBool(hash));
+            }
         }
 
     }

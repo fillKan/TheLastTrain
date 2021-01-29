@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 643675832446061676}
   - component: {fileID: 643675832446061677}
   m_Layer: 0
-  m_Name: ChoiceCardSystem
+  m_Name: CardManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dc8a9f4b628726b4894758e8e5fa96a6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -636,7 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f07e4e96b217c4cb4e52f12c8336c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaySpeed: PlaySpeed
 --- !u!1 &643675832947007003
 GameObject:
   m_ObjectHideFlags: 0
