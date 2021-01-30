@@ -48,7 +48,8 @@ SpriteAtlas:
     - {fileID: 2710082040296712839, guid: 418d968b15b1f1d43b599ce5c17d5a29, type: 3}
     - {fileID: -4278524470360309824, guid: 59cb078e8e70e9841897c696757f09e9, type: 3}
     - {fileID: -4370753746592197646, guid: 59cb078e8e70e9841897c696757f09e9, type: 3}
-    totalSpriteSurfaceArea: 12185054
+    - {fileID: 21300000, guid: 6da1a1fe952fa2442a4df7817beb94e2, type: 3}
+    totalSpriteSurfaceArea: 14258654
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -58,6 +59,7 @@ SpriteAtlas:
   - {fileID: -5918588787273757450, guid: 418d968b15b1f1d43b599ce5c17d5a29, type: 3}
   - {fileID: -4370753746592197646, guid: 59cb078e8e70e9841897c696757f09e9, type: 3}
   - {fileID: -4278524470360309824, guid: 59cb078e8e70e9841897c696757f09e9, type: 3}
+  - {fileID: 21300000, guid: 6da1a1fe952fa2442a4df7817beb94e2, type: 3}
   m_PackedSpriteNamesToIndex:
   - Moutain_big_0
   - Moutain_big_1
@@ -65,5 +67,6 @@ SpriteAtlas:
   - Moutain_middle_0
   - Moutain_small_1
   - Moutain_small_0
+  - Background
   m_Tag: IceAge_Moutain
   m_IsVariant: 0

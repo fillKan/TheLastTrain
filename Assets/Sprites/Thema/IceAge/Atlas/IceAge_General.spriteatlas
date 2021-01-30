@@ -50,14 +50,15 @@ SpriteAtlas:
     - {fileID: -7516920269732917880, guid: 722df4001ba8d3944aff443637a2a2e1, type: 3}
     - {fileID: 7316229441688303391, guid: 1bc1425d7aee51543aedd7b180d04f8a, type: 3}
     - {fileID: 7480371962187380152, guid: 1bc1425d7aee51543aedd7b180d04f8a, type: 3}
-    - {fileID: 102900000, guid: 9e3f29d2150487f49a88c97ce204566e, type: 3}
-    totalSpriteSurfaceArea: 19134930
+    - {fileID: 102900000, guid: 6b5ee397b5e289648bdea2a8e0481ad6, type: 3}
+    totalSpriteSurfaceArea: 20359890
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -7516920269732917880, guid: 722df4001ba8d3944aff443637a2a2e1, type: 3}
   - {fileID: -293648007925071999, guid: 722df4001ba8d3944aff443637a2a2e1, type: 3}
   - {fileID: 21300000, guid: 6bd6ab51cd77d9c45bcd18b8fa10f854, type: 3}
+  - {fileID: 21300000, guid: 26e05c539c79eb940b0ae0e62623c729, type: 3}
   - {fileID: 21300000, guid: e29d37e723d177944a59caca75e3a285, type: 3}
   - {fileID: 21300000, guid: 68d4623abcbfecb4cbed265694a3d689, type: 3}
   - {fileID: 21300000, guid: 3270d51b0d6c7464e9a4e7ec2287e5d8, type: 3}
@@ -71,6 +72,7 @@ SpriteAtlas:
   - TelegraphPole_0
   - TelegraphPole_1
   - SunLight_overlay
+  - Bliner
   - Bridge
   - Cloud
   - Halo
