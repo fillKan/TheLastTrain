@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Card_Assemble
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 724e7e0ff46d79746a36153a121a8163, type: 3}
+    - {fileID: 102900000, guid: f0fb463165a56c1489cf72d03e8333b3, type: 3}
+    totalSpriteSurfaceArea: 15832960
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6dec6640da9837c41891527e2afd3656, type: 3}
+  - {fileID: 21300000, guid: 4c027346f50ef7d4db90c8748bf66981, type: 3}
+  - {fileID: 21300000, guid: 502924a6f3378334b9e1715eea382ba9, type: 3}
+  - {fileID: 21300000, guid: b15c63e6d9dea984ba55e5f1f9cfca47, type: 3}
+  - {fileID: 21300000, guid: e51338e6b0ff2cb44aa6a1d4c5941b50, type: 3}
+  - {fileID: 21300000, guid: 255d5888dc7d2154facf2369d7cfe3a0, type: 3}
+  - {fileID: 21300000, guid: 3104cd6c5bf8f034fb2e481d1b04b39b, type: 3}
+  - {fileID: 21300000, guid: 187c442e64cf1734b9b8c6ba323522ae, type: 3}
+  - {fileID: 21300000, guid: a095719f06986e0449b783c371517cbd, type: 3}
+  - {fileID: 21300000, guid: ff9665bf6e34bcd41b7fe009dfa7fbf9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TrainGuestRoom
+  - TrainPreserveRoom
+  - PolicyFoodSaving
+  - TrainStorageRoom
+  - TrainEducateRoom
+  - TrainCultivateRoom
+  - PolicyExtraWork
+  - PolicyMedicalIndustry
+  - PolicyMissionaryWork
+  - PolicyPopulationDown
+  m_Tag: Card_Assemble
+  m_IsVariant: 0
