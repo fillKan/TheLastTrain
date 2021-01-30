@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Train_Assemble
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 32543f8d55fb2084da1d9e874a0a9a39, type: 3}
+    - {fileID: 102900000, guid: cc7e5d0bf32f16f42ac34e22d7a85d90, type: 3}
+    - {fileID: 102900000, guid: c959b4a57df117d4aa8d8f2b0e898750, type: 3}
+    - {fileID: 102900000, guid: 0ce0fd9fcf46429478a1a1fe764f292f, type: 3}
+    - {fileID: 102900000, guid: b3668947b0b96b4448f0d5870ae47557, type: 3}
+    - {fileID: 102900000, guid: 87e2054ceee7e41408aca0ee07074716, type: 3}
+    - {fileID: 21300000, guid: 4f0915d3a71ab524d9c774968781f9af, type: 3}
+    totalSpriteSurfaceArea: 5026636
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 518d485194aabcb4980b895390edef1a, type: 3}
+  - {fileID: 21300000, guid: a7e273715ceed0147803e72f99a015a6, type: 3}
+  - {fileID: -7200132072931614835, guid: 93b092e15023d014f95e04b6c0970913, type: 3}
+  - {fileID: 4130640169021434097, guid: 93b092e15023d014f95e04b6c0970913, type: 3}
+  - {fileID: 2161284124966242572, guid: a5e6d542732d5b54e8e2a2239c1797b4, type: 3}
+  - {fileID: 6623151957235123224, guid: a5e6d542732d5b54e8e2a2239c1797b4, type: 3}
+  - {fileID: -6470460504253458178, guid: a5e6d542732d5b54e8e2a2239c1797b4, type: 3}
+  - {fileID: 21300000, guid: 62afb9337202d0f4a855272106a83c43, type: 3}
+  - {fileID: 21300000, guid: a49b96934c0d4424cafcf5a5a12e0ce0, type: 3}
+  - {fileID: 21300000, guid: c69d5cb3379fc7546b06dc7b606e491f, type: 3}
+  - {fileID: 21300000, guid: 4f0915d3a71ab524d9c774968781f9af, type: 3}
+  - {fileID: 9180251791023625898, guid: caa54265af35378428e64689ca0b7e59, type: 3}
+  - {fileID: -855298285791758126, guid: caa54265af35378428e64689ca0b7e59, type: 3}
+  - {fileID: -5167413608083449488, guid: caa54265af35378428e64689ca0b7e59, type: 3}
+  - {fileID: -549789443665989942, guid: caa54265af35378428e64689ca0b7e59, type: 3}
+  - {fileID: 21300000, guid: dfb8eea7e186032468283439dca9b53e, type: 3}
+  - {fileID: 21300000, guid: 68750c194f2254c42a7a03f20d020496, type: 3}
+  - {fileID: 5382512944479897801, guid: e12ab22973c303340aa4bcc6030130c1, type: 3}
+  - {fileID: 6937817954938267909, guid: e12ab22973c303340aa4bcc6030130c1, type: 3}
+  - {fileID: 3191122964850554743, guid: e12ab22973c303340aa4bcc6030130c1, type: 3}
+  - {fileID: 21300000, guid: 997d57393f424404f92eaf038cd8b297, type: 3}
+  - {fileID: 3465286685962602723, guid: e8dfb68b717f053449233819f8c4a61c, type: 3}
+  - {fileID: 6653994858678897968, guid: e8dfb68b717f053449233819f8c4a61c, type: 3}
+  - {fileID: 21300000, guid: 0f7d8bfbf9b8c194ea4913a5dc712dd5, type: 3}
+  - {fileID: 21300000, guid: d8c07e0d08f4fd140ac856eb5519ba99, type: 3}
+  - {fileID: 21300000, guid: e699c8adcf3e5c245a1dcfd654fc820e, type: 3}
+  - {fileID: -4178046375966092550, guid: 1f817cde4bef1084fb5ef0358cea07a8, type: 3}
+  - {fileID: 8982099749623107299, guid: 1f817cde4bef1084fb5ef0358cea07a8, type: 3}
+  - {fileID: -2214249495721929474, guid: 1f817cde4bef1084fb5ef0358cea07a8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Cultivation_Plants
+  - Cultivation_Piston
+  - 5_1
+  - 5_0
+  - 3_2
+  - 3_1
+  - 3_0
+  - Cultivation
+  - StorageRoom
+  - Education
+  - Wheel
+  - 1_1
+  - 1_0
+  - 1_3
+  - 1_2
+  - 3
+  - Fish
+  - 2_2
+  - 2_0
+  - 2_1
+  - PreserveRoom
+  - 6_0
+  - 6_1
+  - 2
+  - 1
+  - GuestRoom
+  - 4_0
+  - 4_1
+  - 4_2
+  m_Tag: Train_Assemble
+  m_IsVariant: 0

@@ -8,7 +8,7 @@ public class ResolutionSettings : MonoBehaviour
     public Camera GetCamera {
         get => (_camera) ? _camera : _camera = Camera.main;
     }
-    private Vector2 Resolution = new Vector2(18, 9);
+    private readonly Vector2 Resolution = new Vector2(16, 9);
     private void Awake()
     {
         if (Application.isEditor) return;
