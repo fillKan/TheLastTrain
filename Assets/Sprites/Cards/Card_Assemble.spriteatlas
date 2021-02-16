@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Nuclear_Sky
+  m_Name: Card_Assemble
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 4096
+      m_MaxTextureSize: 8192
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 1
@@ -42,24 +42,32 @@ SpriteAtlas:
       enableTightPacking: 1
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: ec0c2b222779aa64087edb8564585dc8, type: 3}
-    - {fileID: 102900000, guid: da510df57645f304fbc7e9e7a12bcff2, type: 3}
-    totalSpriteSurfaceArea: 5003759
+    - {fileID: 102900000, guid: 724e7e0ff46d79746a36153a121a8163, type: 3}
+    - {fileID: 102900000, guid: f0fb463165a56c1489cf72d03e8333b3, type: 3}
+    totalSpriteSurfaceArea: 15832960
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 5d7a27004705ca849a6bf48ae9b280bf, type: 3}
-  - {fileID: 21300000, guid: 65451e00bfdb92d48a69c726c5be3d62, type: 3}
-  - {fileID: 21300000, guid: 1140d47819a4bc541b67be820907a335, type: 3}
-  - {fileID: 21300000, guid: 89b0869a4ddcfe04388f651bbbcfe593, type: 3}
-  - {fileID: 21300000, guid: ff05c51ded3fb3549b0e43a84e1c3255, type: 3}
-  - {fileID: 21300000, guid: 78ba0b2ed3b5cff4cb617b0349d46834, type: 3}
+  - {fileID: 21300000, guid: 6dec6640da9837c41891527e2afd3656, type: 3}
+  - {fileID: 21300000, guid: 4c027346f50ef7d4db90c8748bf66981, type: 3}
+  - {fileID: 21300000, guid: 502924a6f3378334b9e1715eea382ba9, type: 3}
+  - {fileID: 21300000, guid: b15c63e6d9dea984ba55e5f1f9cfca47, type: 3}
+  - {fileID: 21300000, guid: e51338e6b0ff2cb44aa6a1d4c5941b50, type: 3}
+  - {fileID: 21300000, guid: 255d5888dc7d2154facf2369d7cfe3a0, type: 3}
+  - {fileID: 21300000, guid: 3104cd6c5bf8f034fb2e481d1b04b39b, type: 3}
+  - {fileID: 21300000, guid: 187c442e64cf1734b9b8c6ba323522ae, type: 3}
+  - {fileID: 21300000, guid: a095719f06986e0449b783c371517cbd, type: 3}
+  - {fileID: 21300000, guid: ff9665bf6e34bcd41b7fe009dfa7fbf9, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Cloud_middle
-  - SunLight_2
-  - Sun
-  - Cloud_big
-  - SunLight_1
-  - Cloud_small
-  m_Tag: Nuclear_Sky
+  - TrainGuestRoom
+  - TrainPreserveRoom
+  - PolicyFoodSaving
+  - TrainStorageRoom
+  - TrainEducateRoom
+  - TrainCultivateRoom
+  - PolicyExtraWork
+  - PolicyMedicalIndustry
+  - PolicyMissionaryWork
+  - PolicyPopulationDown
+  m_Tag: Card_Assemble
   m_IsVariant: 0

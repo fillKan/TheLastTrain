@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Nuclear_Assemble
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 6682738439518977790, guid: b95c981e688f48d41a28b87e71014ba0, type: 3}
+    - {fileID: -562605217060080129, guid: b95c981e688f48d41a28b87e71014ba0, type: 3}
+    - {fileID: 6443428727756326488, guid: 74798c629626b1f4cb65710b8dc1ee85, type: 3}
+    - {fileID: -8405665286497791190, guid: 74798c629626b1f4cb65710b8dc1ee85, type: 3}
+    - {fileID: -1370150288747598966, guid: 90eaac16b1c19c34880cd57682be3d02, type: 3}
+    - {fileID: 961210159572563268, guid: 90eaac16b1c19c34880cd57682be3d02, type: 3}
+    - {fileID: 1880468155601440578, guid: c1b45c44a97748f45ad6579b4f547f1b, type: 3}
+    - {fileID: 5697333236133637795, guid: c1b45c44a97748f45ad6579b4f547f1b, type: 3}
+    - {fileID: 7412368813281270981, guid: 7c55450f7768d5c4dacdb3b34bdbca61, type: 3}
+    - {fileID: -5013149928326332234, guid: 7c55450f7768d5c4dacdb3b34bdbca61, type: 3}
+    - {fileID: -2830071645898275730, guid: 8373320de56dae94196f01dc3f67cd7e, type: 3}
+    - {fileID: 130561695280464317, guid: 8373320de56dae94196f01dc3f67cd7e, type: 3}
+    - {fileID: 102900000, guid: da510df57645f304fbc7e9e7a12bcff2, type: 3}
+    - {fileID: 102900000, guid: ec0c2b222779aa64087edb8564585dc8, type: 3}
+    - {fileID: 102900000, guid: ac66869a0e4942f4e836b1b814f1ec51, type: 3}
+    - {fileID: 21300000, guid: 1cd471a295e11d344b9ed93ea1878625, type: 3}
+    - {fileID: 21300000, guid: 1cd471a295e11d344b9ed93ea1878625, type: 3}
+    totalSpriteSurfaceArea: 27154069
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5d7a27004705ca849a6bf48ae9b280bf, type: 3}
+  - {fileID: 21300000, guid: 65451e00bfdb92d48a69c726c5be3d62, type: 3}
+  - {fileID: 6443428727756326488, guid: 74798c629626b1f4cb65710b8dc1ee85, type: 3}
+  - {fileID: -8405665286497791190, guid: 74798c629626b1f4cb65710b8dc1ee85, type: 3}
+  - {fileID: 21300000, guid: 1cd471a295e11d344b9ed93ea1878625, type: 3}
+  - {fileID: 5697333236133637795, guid: c1b45c44a97748f45ad6579b4f547f1b, type: 3}
+  - {fileID: 1880468155601440578, guid: c1b45c44a97748f45ad6579b4f547f1b, type: 3}
+  - {fileID: -1370150288747598966, guid: 90eaac16b1c19c34880cd57682be3d02, type: 3}
+  - {fileID: 961210159572563268, guid: 90eaac16b1c19c34880cd57682be3d02, type: 3}
+  - {fileID: 21300000, guid: 1140d47819a4bc541b67be820907a335, type: 3}
+  - {fileID: 21300000, guid: 89b0869a4ddcfe04388f651bbbcfe593, type: 3}
+  - {fileID: 21300000, guid: 60dc978cb0bb0634cb1731eece3588a7, type: 3}
+  - {fileID: 21300000, guid: 5083b39c71ec38042af7de938d315cc7, type: 3}
+  - {fileID: -2830071645898275730, guid: 8373320de56dae94196f01dc3f67cd7e, type: 3}
+  - {fileID: 130561695280464317, guid: 8373320de56dae94196f01dc3f67cd7e, type: 3}
+  - {fileID: 21300000, guid: ff05c51ded3fb3549b0e43a84e1c3255, type: 3}
+  - {fileID: -562605217060080129, guid: b95c981e688f48d41a28b87e71014ba0, type: 3}
+  - {fileID: 6682738439518977790, guid: b95c981e688f48d41a28b87e71014ba0, type: 3}
+  - {fileID: 21300000, guid: 78ba0b2ed3b5cff4cb617b0349d46834, type: 3}
+  - {fileID: -5013149928326332234, guid: 7c55450f7768d5c4dacdb3b34bdbca61, type: 3}
+  - {fileID: 7412368813281270981, guid: 7c55450f7768d5c4dacdb3b34bdbca61, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Cloud_middle
+  - SunLight_2
+  - Ground_low_0
+  - Ground_low_1
+  - Background
+  - Building_dark_1
+  - Building_dark_0
+  - Building_0
+  - Building_1
+  - Sun
+  - Cloud_big
+  - ShadeDark
+  - Shade
+  - Statue_0
+  - Statue_1
+  - SunLight_1
+  - Ground_1
+  - Ground_0
+  - Cloud_small
+  - NearObject_1
+  - NearObject_0
+  m_Tag: Nuclear_Assemble
+  m_IsVariant: 0
